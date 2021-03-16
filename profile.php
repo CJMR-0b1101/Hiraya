@@ -38,8 +38,8 @@
     
                 if($result) {
                     echo "<h2 style = 'color:green;'>File uploaded successfully.</h2>";
-                    $_SESSION['profile_picture'] = $filename;
-                    $user = $_SESSION['user'];
+                    $user['profile_picture'] = $filename;
+                    $_SESSION['user'] = $user;
                     
                     // echo '<pre>';
                     // print_r($user);
@@ -61,10 +61,10 @@
     <?php
 		$filename = "default_icon.png";
 		if(!empty($user['profile_picture']))
-			$filename = $user['profile_picture'];
+			$filename = $user['profile_picture']; 
 
 	?>
-    <img src="<?php echo $filename; ?>" alt="Profile-Picture-Here" width="100px">
+    <img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here" width="100px">
 	<form method="post" enctype="multipart/form-data">
         <br>
 		<label for="">Select photo:</label>
