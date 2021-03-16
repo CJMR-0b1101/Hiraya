@@ -1,0 +1,594 @@
+.main-body {
+  background-image: url(https://i.imgur.com/8fthuou.png);
+}
+
+.div-body {
+	margin: auto;
+	width: 1000px;
+  background-color: none;
+}
+
+.div-body-margin{
+  height: 10px;
+  width: 100%;
+  background: none;
+}
+
+/* NAVIGATION BAR */
+
+.div-nav-bar {
+	padding: 10px;
+  background-color: #025959;
+  color: #FFFFFF;
+  height: 50px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: white;
+}
+
+.div-nav-bar-left {
+	float: left;
+  padding: 5px;
+}
+
+.div-nav-bar-right {
+	float: right;
+  padding: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  min-width: 100px;
+  margin: 0px 10px;
+}
+
+.dropbtn {
+  border: none;
+  background: none;
+  color: white;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background-color: #A0A603;
+  color: #73563D;
+}
+
+.nav-bar-btn {
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: #FFFFFF;
+  min-width: 100px;
+  margin: 0px 10px;
+}
+
+.search-form {
+  float: left;
+  margin: 0px 10px;
+}
+
+.dropdown-content a:hover {background-color: #F2E0C9;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {color: #04ADBF;}
+.nav-bar-btn:hover {cursor: pointer; color: #04ADBF;}
+.nav-bar-btn:focus {outline: none;}
+
+/* CONTENT */
+
+.div-content-left {
+  width: 60%;
+}
+
+.div-content-background {
+  background-color: white;
+  padding: 10px;
+}
+
+.div-content-left-header {
+  height: 50px;
+  background-color: #025959;
+  color: white;
+}
+
+.div-content-left-header p {
+  position: absolute;
+  margin-left: 2%;
+}
+
+.div-content-left-background {
+  background-color: #04BFBF;
+  padding: 1px;
+}
+
+.div-content-left-list {
+  list-style: none;
+  background: none;
+  width: 98%;
+  margin: 1%;
+}
+
+.div-content-left-list-content {
+  background-color: #FFFFFF;
+
+}
+
+.div-content-left-list-content-header a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #025959;
+}
+
+.div-content-left-list-content-header a:hover {color: #04ADBF;}
+
+.div-content-right {
+  width: 40%;
+}
+
+/* DESTINATION */
+
+.div-content-image-container {
+  width: 80%;
+  margin-left: 10%;
+  display: inline-block;
+}
+
+.div-content-image-container-left {
+  width: 50%;
+  height: 400px;
+  float: left;
+  position: relative;
+  border: solid;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.div-content-image-container-left img {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  -ms-: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.div-content-image-container-right {
+  width: 50%;
+  height: 400px;
+  float: right;
+  position: relative;
+}
+
+.div-content-image-container-right-upper {
+  width: 100%;
+  height: 50%;
+  border: solid;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.div-content-image-container-right-upper img {
+  width: 90%;
+  padding: 10px;
+  position: absolute;
+  top: 25%;
+  bottom: 75%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.div-content-image-container-right-lower {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+.div-content-image-container-right-lower-left {
+  border: solid;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+.div-content-image-container-right-lower-right {
+  border: solid;
+  border-radius: 20px;
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  float: right;
+  position: relative;
+}
+
+.div-content-image-container-right-lower-left img {
+  width: 100%;
+  padding: 10px;
+  float: left;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.div-content-image-container-right-lower-right img {
+  width: 100%;
+  padding: 10px;
+  float: right;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.div-content-image-container-content {
+  width: 33.3%;
+  height: 266.6px;
+  float: left;
+  position: relative;
+  border: solid;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.div-content-image-container-content img {
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* LOCATION */
+
+.div-content-location {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.location-img {
+  width: 100%;
+  height: 300px;
+  object-fit: none;
+  object-position: 0px 30%;
+}
+
+.div-content-location-text {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.location-travel-slideshow {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.location-hotel-map-img {
+  max-width: 60%;
+}
+
+.location-station-content {
+  width: 80%;
+  max-height: 300px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.location-station-img {
+  width: 100%;
+  height: 300px;
+  object-fit: none;
+  object-position: 0px 30%;
+}
+
+.location-station-text {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  color: white;
+}
+
+ /* Style the tab */
+.tab {
+  overflow: hidden;
+  margin: 10px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  height: 50px;
+  min-width: 150px;
+  margin-left: 10px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  border: solid;
+  border-radius: 30px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: pink;
+  border: solid;
+  border-radius: 30px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+} 
+
+/* LOGIN/REGISTRATION FORM */
+.modal-form {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding: 60px;
+  text-align: center;
+  color: #A0A603;
+  font-size: 20px;
+  font-family: 'Inconsolata', monospace; color: #747F42;
+  font-weight: bold;
+
+}
+
+.modal-content {
+  width: 30%;
+  margin: 1% 35%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 2px solid #04BFBF;
+  border-radius: 10px;
+}
+
+.modal-img-logo img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon{
+  margin-top: -5px;
+  font-size: 20px;
+}
+
+.modal-img-logo h1 {
+  margin-top: -10px;
+}
+
+.input-login-register {
+  width: 50%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  margin-top: 2px;
+  box-sizing: border-box;
+  border: 2px solid #747F42;
+  border-radius: 10px;
+}
+
+.input-login-register[type=text]:focus {
+  background-color: #04BFBF;
+  border-radius: 10px;
+}
+
+.input-login-register[type=int]:focus {
+  background-color: #04BFBF;
+  border-radius: 10px;
+}
+
+.modal-content {
+  background-color: #FFFFFF;
+  margin: 5px auto;
+  width: 400px;
+}
+
+.modal-content-header {
+  background-color: #025959;
+  height: 50px;
+  width: 100%;
+}
+
+.modal-content-header p {
+  color: white;
+  position: absolute;
+  margin-left: 15px;
+}
+
+.modal-content-body {
+  text-align: center
+}
+
+.modal-content-body .container input {
+  width: 300px;
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.submit-login, .submit-register {
+  font-size: 15px;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #747F42;
+  color:#A5CC82;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.submit-login, .submit-register:hover {
+  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+}
+
+span a {
+  color: blue;
+}
+
+span a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* SLIDE SHOW CSS */
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1000px;
+  height: auto;
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+#first_slide {
+	display: block;
+}
+
+#img_slide {
+	width: 100%;
+	height: 350px;
+  object-fit: none;
+  object-position: 20%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.div-slideshow-dot {
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #025959;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #FFFFFF;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* SLIDE SHOW CSS */
+
