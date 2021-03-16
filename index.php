@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hiraya Register</title>
+	<title>Hiraya</title>
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<style>
 		/* Background */
