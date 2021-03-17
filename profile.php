@@ -100,6 +100,9 @@
                 echo "<h2 style = 'color:red;'>Error in uploading file.</h2>";
             }
         }
+        else {
+            $filename = $user['profile_picture'];
+        }
 	}
 ?>
 <?php include 'navbar.php'; ?>

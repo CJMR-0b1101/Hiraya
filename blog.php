@@ -85,8 +85,6 @@
      * ['email'] = email
      * ['location'] = location
      * ['profile_picture'] = profile_picture from DB
-     * ['profilepic'] = profile picture from local folder
-     * ['blog_headerpic'] = profile picture from local folder
     */
     if(isset($_SESSION['login'])) {
         $user = $_SESSION['user'];
@@ -97,23 +95,43 @@
         // print_r($_SESSION);
         // echo '</pre>';
 
-        if(isset($_POST['upload'])) {
+        // FETCH BLOG HEADER FROM DB
+        include 'config.php';
+
+        $sql = "SELECT blog_header FROM blogs WHERE user_id = $user[user_id]";
+        $result = mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($result) == 1) {
+          $row = mysqli_fetch_array($result);
+    
+          $filename = $row['blog_header'];
+        } 
+        else {
+          $filename = 'default_header.png';
+        }
+        
+        // echo "Filename: $filename";
+        
+        if(isset($_POST['save_changes'])) {
+          if(empty($filename)) {
             $filename = $user['username']."--".$_FILES['blogheaderpic']['name'];
             // echo $filename;
-            $path = "images/".$filename;
+            $path = "blog_images/".$filename;
             // echo $path;
     
             if(move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path)) {
-                include 'config.php';
-    
-                $sql = "UPDATE users SET profile_picture = '$filename' WHERE user_id = $user[user_id]";
-                // echo $sql;``
+                $uid =  $user['user_id'];
+                $blog_title = "BLOG TITLE";
+                $blog_desc = "DESCRIPTION";
+                $blog_content = "This is taken from Boracay.";
+
+                $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
+                VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
+                // echo $sql;
                 $result = mysqli_query($conn, $sql);
     
                 if($result) {
                     echo "<h2 style = 'color:green;'>File uploaded successfully.</h2>";
-                    $user['profile_picture'] = $filename;
-                    $_SESSION['user'] = $user;
                     
                     // echo '<pre>';
                     // print_r($user);
@@ -125,6 +143,7 @@
             else {
                 echo "<h2 style = 'color:red;'>Error in uploading file.</h2>";
             }
+          }
         }
     }
 ?>
@@ -140,22 +159,18 @@
     <div class="card">
       <h2 contenteditable="true">TITLE HEADING</h2>
       <h5 contenteditable="true">Title description, date</h5>
-            <?php
-              $filename = "default_icon.png";
-              if(!empty($user['profile_picture']))
-                $filename = $user['profile_picture']; 
-
-            ?>
-        <img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here" style="height: 500px;">
+        <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
         <form method="post" enctype="multipart/form-data">
             <br>
             <label for="">Select photo:</label>
             <br>
             <input type="file" name="blogheaderpic">
-            <br>
-            <input type="submit" name="upload" value="Upload Photo">    
+            <br> 
         </form>
-      <p contenteditable="true">BODY HERE</p>
+      <p contenteditable="true">Body Here</p>
+      <form action="" method="post">
+        <input type="submit" name="save_changes" value="Save Changes">   
+      </form>
     </div>
   </div>
   <div class="rightcolumn">
