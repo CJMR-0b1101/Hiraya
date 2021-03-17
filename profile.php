@@ -131,9 +131,9 @@
         </div>
 
     </div>
-    <a href="home_page.php">Back to Home Page</a>
     <br>
-    <a href="blog.php">This way to Blog page</a>
-
-    
+    <a href="edit_blog.php">EDIT/CREATE BLOG</a>
+    <br>
+    <a href="view_blog.php">VIEW MY BLOGS</a>
+ 
 </div>
