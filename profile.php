@@ -1,3 +1,51 @@
+<link rel="stylesheet" href="styles.css">
+<style>
+ /* HEADER STYLES*/
+            div.header1{
+                border: 1px solid #e7e7e7;
+                background-image: url(https://i.imgur.com/atdbjCR.jpg)  ;
+                font-size: 30px;
+                
+                font-family: 'Acme', sans-serif;
+            }
+            .headername{
+                font-size: 30px;
+                padding-bottom: -50px;
+                padding-top:-60px;
+                margin-top: -250px;
+                margin-left: 500px;
+                font-family: 'Acme', sans-serif;
+                letter-spacing: 3px;
+            }
+            .headertitle{
+                margin-top: -80px;
+                font-size: 20px;
+                font-family: 'Acme', sans-serif;
+                letter-spacing: 4px;
+            }
+            .left{
+            background: transparent;
+            width: 250px;
+            margin-left: 380px;
+            padding-bottom: -30px;
+            }
+            .left .img_holder{
+                text-align: center;
+                margin-left: -500px;
+            }
+
+            .left .img_holder img{
+
+                width: 500px;
+                border-radius: 20%;
+                padding-top: 50px;
+                padding-bottom: -30px;
+            }
+            img{
+                max-width: 100%;
+                height: 50%;
+            }
+</style>
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 <?php
     session_start();
@@ -54,26 +102,35 @@
         }
 	}
 ?>
+<?php include 'navbar.php'; ?>
+<div class="maincontainer">
+    <div class="header1">
+        <div class="left">
+            <div class="img_holder">
+                <img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here" width="100px">
+                    <?php
+                    $filename = "default_icon.png";
+                    if(!empty($user['profile_picture']))
+                        $filename = $user['profile_picture']; 
+                    ?>
+                    <form method="post" enctype="multipart/form-data">
+                        <br>
+                        <label for="">Select photo:</label>
+                        <br>
+                        <input type="file" name="profilepic">
+                        <br>
+                        <input type="submit" name="upload" value="Upload Photo">    
+                    </form>
+            </div>
+        </div>
+        <div class="headername">
+            <h1><?php echo $user['first_name'].' '.$user['last_name']; ?></h1>
+        </div>
 
-<h1>Hi <?php echo $user['first_name'].' '.$user['last_name']; ?></h1>
+    </div>
+    <a href="home_page.php">Back to Home Page</a>
+    <br>
+    <a href="blog.php">This way to Blog page</a>
 
-<div>
-    <?php
-		$filename = "default_icon.png";
-		if(!empty($user['profile_picture']))
-			$filename = $user['profile_picture']; 
-
-	?>
-    <img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here" width="100px">
-	<form method="post" enctype="multipart/form-data">
-        <br>
-		<label for="">Select photo:</label>
-		<br>
-		<input type="file" name="profilepic">
-		<br>
-		<input type="submit" name="upload" value="Upload Photo">	
-	</form>
+    
 </div>
-<a href="home_page.php">Back to Home Page</a>
-<br>
-<a href="blog.php">This way to Blog page</a>
