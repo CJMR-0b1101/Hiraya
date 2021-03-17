@@ -121,22 +121,22 @@
 				</div>
 			</div>
 			<div class="dropdown">
-				<button class="dropbtn">ITINERARY</button>
+				<button class="dropbtn"><a href="itinerary_page.php">ITINERARY</a></button>
 				<div class="dropdown-content">
-					<a href="#">BORACAY</a>
-					<a href="#">MANILA</a>
-					<a href="#">BOHOL</a>
-					<a href="#">PUERTO PRINSESA</a>
-					<a href="#">EL NIDO PALAWAN</a>
-					<a href="#">CEBU</a>
-					<a href="#">CORON PALAWAN</a>
-					<a href="#">BAGUIO</a>
-					<a href="#">SIARGAO</a>
-					<a href="#">PUERTO GALLERA</a>
-					<a href="#">DAVAO</a>
-					<a href="#">SAGADA</a>
-					<a href="#">VIGAN</a>
-					<a href="#">MINDANAO</a>
+					<a href="diy_page.php">BORACAY</a>
+					<a href="diy_page.php">MANILA</a>
+					<a href="diy_page.php">BOHOL</a>
+					<a href="diy_page.php">PUERTO PRINSESA</a>
+					<a href="diy_page.php">EL NIDO PALAWAN</a>
+					<a href="diy_page.php">CEBU</a>
+					<a href="diy_page.php">CORON PALAWAN</a>
+					<a href="diy_page.php">BAGUIO</a>
+					<a href="diy_page.php">SIARGAO</a>
+					<a href="diy_page.php">PUERTO GALLERA</a>
+					<a href="diy_page.php">DAVAO</a>
+					<a href="diy_page.php">SAGADA</a>
+					<a href="diy_page.php">VIGAN</a>
+					<a href="diy_page.php">MINDANAO</a>
 				</div>
 			</div>
 		</div>
