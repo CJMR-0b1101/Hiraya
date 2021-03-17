@@ -128,12 +128,13 @@
         </div>
         <div class="headername">
             <h1><?php echo $user['first_name'].' '.$user['last_name']; ?></h1>
+            <br>
+            <a href="create_blog.php">CREATE BLOG</a>
+            <br>
+            <a href="edit_blog.php">EDIT BLOG</a>
+            <br>
+            <a href="view_blog_list.php">VIEW MY BLOGS</a>
         </div>
 
     </div>
-    <br>
-    <a href="edit_blog.php">EDIT/CREATE BLOG</a>
-    <br>
-    <a href="view_blog.php">VIEW MY BLOGS</a>
- 
 </div>
