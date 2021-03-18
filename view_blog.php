@@ -94,7 +94,7 @@
   <div class="header">
       <br>
       <!-- BLOG TITLE TEXTAREA-->
-      <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
+      <textarea readonly style="resize: none; font-size: 50px; text-align: center; border: none;" 
       name="blog_title" id="" cols="30" rows="1">BLOG TITLE</textarea>
       <br>
   </div>
@@ -103,17 +103,17 @@
     <div class="leftcolumn">
         <div class="card">
             <!-- BLOG TITLE HEADING TEXTAREA-->
-            <textarea style="resize: none; font-size: 28px; border: none;" 
+            <textarea readonly style="resize: none; font-size: 28px; border: none;" 
             name="blog_titlehead" id="" cols="65" rows="1">TITLE HEADING</textarea>
             <br><br>
             <!-- BLOG DESCRIPTION TEXTAREA-->
-            <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1">DESCRIPTION</textarea>
+            <textarea readonly style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1">DESCRIPTION</textarea>
             <br><br>
 
             <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
               <br><br>
               <!-- BLOG BODY TEXTAREA -->
-              <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5">BODY</textarea>
+              <textarea readonly style="resize: none;" name="blog_body" id="" cols="139" rows="5">BODY</textarea>
               <br>  
       </div>
     </div>
