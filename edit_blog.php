@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blogs</title>
+  <title>Edit Blog</title>
   <style>
           * {
               box-sizing: border-box;
