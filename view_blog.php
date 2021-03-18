@@ -77,54 +77,13 @@
 
     if(isset($_SESSION['login'])) {
         $user = $_SESSION['user'];
-        $filename = 'default_header.png';
+        $filename = "default_header.jpg";
         // echo '<pre>';
-        // print_r($_FILES);
         // print_r($user);
         // print_r($_SESSION);
         // echo '</pre>';
 
-        if(isset($_POST['create'])) {
-          // Get values from text areas
-          $blog_title = $_POST['blog_title'];
-          $blog_titlehead = $_POST['blog_titlehead'];
-          $blog_desc = $_POST['blog_desc'];
-          $blog_content = $_POST['blog_body'];
-
-        //   echo "<pre>";
-        //   print_r($_POST);
-        //   echo "</pre>";
-        
-          // Image file is chosen
-          if(!empty($_FILES['blogheaderpic']['name'])) {
-            $filename = $user['username']."--".$_FILES['blogheaderpic']['name'];
-            // echo $filename;
-            $path = "images/".$filename;
-            
-            if(move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path)) {  
-                echo "<h2 style = 'color:green;'>Image updated!</h2>";
-            }
-            else {
-              echo "<h2 style = 'color:red;'>Error in uploading file.</h2>";
-            }
-          }
-          
-          // Insert to DB
-          include 'config.php';
-          $uid =  $user['user_id'];
-
-          $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
-          VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
-        //   echo $sql;    
-          $result = mysqli_query($conn, $sql);
-
-          if($result) {
-              echo "<h2 style = 'color:green;'>Inserted successfully.</h2>";
-              echo '<a href="view_blog.php">Click here to view your blogs</a>';
-          }
-          else
-            echo "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
-        }
+        // FETCH DATA FROM DB
     }
   ?>
 </head>
@@ -134,28 +93,28 @@
 <form action="" method="post" enctype="multipart/form-data">
   <div class="header">
       <br>
-      <textarea style="font-size: 50px; text-align: center" name="blog_title" id="" cols="30" rows="1">Blog Title</textarea>
+      <!-- BLOG TITLE TEXTAREA-->
+      <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
+      name="blog_title" id="" cols="30" rows="1">BLOG TITLE</textarea>
       <br>
   </div>
 
   <div class="row">
     <div class="leftcolumn">
         <div class="card">
-            <textarea style="font-size: 28px;" name="blog_titlehead" id="" cols="20" rows="1">TITLE HEADING</textarea>
+            <!-- BLOG TITLE HEADING TEXTAREA-->
+            <textarea style="resize: none; font-size: 28px; border: none;" 
+            name="blog_titlehead" id="" cols="65" rows="1">TITLE HEADING</textarea>
             <br><br>
-            <textarea name="blog_desc" id="" cols="50" rows="1">Title description, date</textarea>
+            <!-- BLOG DESCRIPTION TEXTAREA-->
+            <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1">DESCRIPTION</textarea>
             <br><br>
 
             <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
-            
-              <br>
-              <label for="">Select photo:</label>
-              <br>
-              <input type="file" name="blogheaderpic">
               <br><br>
-              <textarea name="blog_body" id="" cols="50" rows="5">Body Here</textarea>
-              <br>
-            <input type="submit" name="create" value="Create post">   
+              <!-- BLOG BODY TEXTAREA -->
+              <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5">BODY</textarea>
+              <br>  
       </div>
     </div>
     <div class="rightcolumn">

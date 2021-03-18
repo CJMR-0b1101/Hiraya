@@ -47,7 +47,6 @@
             }
 </style>
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
-
 <?php
     include 'navbar.php';
     
@@ -157,17 +156,48 @@
             // print_r($row);
             // echo "</pre>";
             $row_length = count($row);
-
+            $blog_id_array = array();
+            
+            // [$i][0] = blog_id
             for($i = 0; $i < $row_length; $i++) {
-                for($j = 1; $j < 3; $j++) {
-                    $temp = $j == 1? "Title: " : "Description: ";
-                    echo $temp.$row[$i][$j].'<br>';
+                for($j = 0; $j < 3; $j++) {
+                    if($j == 0) {
+                        $blog_id_array[$i] = $row[$i][$j];
+                        $_SESSION['blog_id'] = $blog_id_array;
+                    }
+                    elseif($j == 1)
+                        echo "<a href='view_blog.php    '>Title: ".$row[$i][$j]."</a><br>";
+                    else
+                        echo "Description: ".$row[$i][$j].'<br>';
                 }
                 echo "<br>";
             }
+            // echo "<pre>";
+            // print_r($_SESSION);
+            // echo "</pre>";
+
+            // echo "<form action='view_blog.php' method='post'>";
+            // for($i = 0; $i < $row_length; $i++) {
+            //     for($j = 0; $j < 3; $j++) {
+            //         if($j == 0) {
+            //             $blog_id_array[$i] = $row[$i][$j];
+            //             echo $blog_id_array[$i]."<br>";
+            //         }
+            //         elseif($j == 1)
+            //             echo "<input type='submit' value='Title: ".$row[$i][$j]."'<br><br>";
+            //         else
+            //             echo "Description: ".$row[$i][$j].'<br>';
+            //     }
+            //     echo "<br>";
+            // }
+            // echo "</form>";
         }
         else {
-            echo "<h3>You don't have blogs yet.</h3>";
+            echo "You don't have blogs yet.";
         }
     ?>
+    <form action="create_blog.php" method="post">
+        <br>
+        <input type="submit" value="Create a Blog">
+    </form>
 </div>

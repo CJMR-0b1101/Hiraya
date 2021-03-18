@@ -77,7 +77,9 @@
 
     if(isset($_SESSION['login'])) {
         $user = $_SESSION['user'];
-        $filename = 'default_header.png';
+        $filename = 'default_header.jpg';
+        $file_upload_msg = '';
+        $insert_to_db_msg = '';
         // echo '<pre>';
         // print_r($_FILES);
         // print_r($user);
@@ -95,35 +97,37 @@
         //   print_r($_POST);
         //   echo "</pre>";
         
-          // Image file is chosen
+          // IMAGE FILE IS CHOSEN
           if(!empty($_FILES['blogheaderpic']['name'])) {
-            $filename = $user['username']."--".$_FILES['blogheaderpic']['name'];
+            $filename = $user['username'].rand().$_FILES['blogheaderpic']['name'];
             // echo $filename;
-            $path = "images/".$filename;
+            $path = "blog_images/".$filename;
             
             if(move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path)) {  
-                echo "<h2 style = 'color:green;'>Image updated!</h2>";
+                $file_upload_msg = "<h3 style = 'color:green;'>Image updated!</h3>";
             }
             else {
-              echo "<h2 style = 'color:red;'>Error in uploading file.</h2>";
+                $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
             }
           }
+          else {
+            $file_upload_msg = "<h3 style = 'color:red;'>No image chosen.</h3>";
+          }
           
-          // Insert to DB
+          // INSERT TO DATABASE
           include 'config.php';
           $uid =  $user['user_id'];
 
           $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
           VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
-        //   echo $sql;    
+          // echo $sql;    
           $result = mysqli_query($conn, $sql);
 
           if($result) {
-              echo "<h2 style = 'color:green;'>Inserted successfully.</h2>";
-              echo '<a href="view_blog.php">Click here to view your blogs</a>';
+              $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
           }
           else
-            echo "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+              $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
         }
     }
   ?>
@@ -134,16 +138,22 @@
 <form action="" method="post" enctype="multipart/form-data">
   <div class="header">
       <br>
-      <textarea style="font-size: 50px; text-align: center" name="blog_title" id="" cols="30" rows="1">Blog Title</textarea>
+      <!-- BLOG TITLE TEXTAREA-->
+      <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
+      name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required></textarea>
       <br>
   </div>
 
   <div class="row">
     <div class="leftcolumn">
         <div class="card">
-            <textarea style="font-size: 28px;" name="blog_titlehead" id="" cols="20" rows="1">TITLE HEADING</textarea>
+            <!-- BLOG TITLE HEADING TEXTAREA-->
+            <textarea style="resize: none; font-size: 28px; border: none;" 
+            name="blog_titlehead" id="" cols="65" rows="1" placeholder="Your blog heading here" required></textarea>
             <br><br>
-            <textarea name="blog_desc" id="" cols="50" rows="1">Title description, date</textarea>
+            <!-- BLOG DESCRIPTION TEXTAREA-->
+            <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1" 
+            placeholder="Your blog description here" required></textarea>
             <br><br>
 
             <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
@@ -153,8 +163,14 @@
               <br>
               <input type="file" name="blogheaderpic">
               <br><br>
-              <textarea name="blog_body" id="" cols="50" rows="5">Body Here</textarea>
+              <!-- BLOG BODY TEXTAREA -->
+              <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5" 
+              placeholder="Your blog content here" required></textarea>
               <br>
+              <?php 
+                echo $file_upload_msg;
+                echo $insert_to_db_msg;
+              ?>
             <input type="submit" name="create" value="Create post">   
       </div>
     </div>

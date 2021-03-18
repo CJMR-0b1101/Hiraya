@@ -78,7 +78,7 @@
 							</div>
 							<div class="div-content-left-list-content">
 								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 1</a>
+									<a href="#">TITLE 2</a>
 								</div>
 								<div class="div-content-left-list-content-content">
 									<p>Welcome to HIRAYA!</p>
@@ -86,7 +86,7 @@
 							</div>
 							<div class="div-content-left-list-content">
 								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 1</a>
+									<a href="#">TITLE 3</a>
 								</div>
 								<div class="div-content-left-list-content-content">
 									<p>Welcome to HIRAYA!</p>
@@ -94,7 +94,7 @@
 							</div>
 							<div class="div-content-left-list-content">
 								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 1</a>
+									<a href="#">TITLE 4</a>
 								</div>
 								<div class="div-content-left-list-content-content">
 									<p>Welcome to HIRAYA!</p>
@@ -102,7 +102,7 @@
 							</div>
 							<div class="div-content-left-list-content">
 								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 1</a>
+									<a href="#">TITLE 5</a>
 								</div>
 								<div class="div-content-left-list-content-content">
 									<p>Welcome to HIRAYA!</p>
