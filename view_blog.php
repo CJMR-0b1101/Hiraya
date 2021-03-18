@@ -77,13 +77,24 @@
 
     if(isset($_SESSION['login'])) {
         $user = $_SESSION['user'];
-        $filename = "default_header.jpg";
-        // echo '<pre>';
-        // print_r($user);
-        // print_r($_SESSION);
-        // echo '</pre>';
+        $blog_id = $_GET['blog_id'];
 
         // FETCH DATA FROM DB
+        include 'config.php';
+
+        $sql = "SELECT * FROM blogs WHERE blog_id = $blog_id";
+        // echo $sql;
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) == 1) {
+          $row = mysqli_fetch_array($result);
+          $blog_title = $row['blog_title'];
+          $blog_desc = $row['blog_description'];
+          $blog_content = $row['blog_content'];
+          $blog_header = $row['blog_header'];
+        }
+        else {
+          header("location: home_page.php");
+        }
     }
   ?>
 </head>
@@ -95,7 +106,7 @@
       <br>
       <!-- BLOG TITLE TEXTAREA-->
       <textarea readonly style="resize: none; font-size: 50px; text-align: center; border: none;" 
-      name="blog_title" id="" cols="30" rows="1">BLOG TITLE</textarea>
+      name="blog_title" id="" cols="30" rows="1"><?php echo $blog_title?></textarea>
       <br>
   </div>
 
@@ -107,13 +118,13 @@
             name="blog_titlehead" id="" cols="65" rows="1">TITLE HEADING</textarea>
             <br><br>
             <!-- BLOG DESCRIPTION TEXTAREA-->
-            <textarea readonly style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1">DESCRIPTION</textarea>
+            <textarea readonly style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1"><?php echo $blog_desc?></textarea>
             <br><br>
 
-            <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
+            <img src="blog_images/<?php echo $blog_header; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
               <br><br>
               <!-- BLOG BODY TEXTAREA -->
-              <textarea readonly style="resize: none;" name="blog_body" id="" cols="139" rows="5">BODY</textarea>
+              <textarea readonly style="resize: none;" name="blog_body" id="" cols="139" rows="5"><?php echo $blog_content?></textarea>
               <br>  
       </div>
     </div>

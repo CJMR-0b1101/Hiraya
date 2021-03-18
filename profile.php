@@ -140,6 +140,7 @@
     </p>
 </div>
 
+
 <!-- FETCH USER'S BLOGS FROM DATABASE -->
 <div style="border: 1px solid black; width: 300px;">
     <h3>My Blogs</h3>
@@ -156,17 +157,15 @@
             // print_r($row);
             // echo "</pre>";
             $row_length = count($row);
-            $blog_id_array = array();
             
             // [$i][0] = blog_id
             for($i = 0; $i < $row_length; $i++) {
                 for($j = 0; $j < 3; $j++) {
                     if($j == 0) {
                         $blog_id_array[$i] = $row[$i][$j];
-                        $_SESSION['blog_id'] = $blog_id_array;
                     }
                     elseif($j == 1)
-                        echo "<a href='view_blog.php    '>Title: ".$row[$i][$j]."</a><br>";
+                        echo "<a href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a><br>";
                     else
                         echo "Description: ".$row[$i][$j].'<br>';
                 }

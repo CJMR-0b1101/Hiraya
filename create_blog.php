@@ -120,7 +120,7 @@
 
           $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
           VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
-          // echo $sql;    
+          // echo $sql;      
           $result = mysqli_query($conn, $sql);
 
           if($result) {
