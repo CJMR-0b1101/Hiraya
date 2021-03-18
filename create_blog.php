@@ -93,9 +93,9 @@
           $blog_desc = $_POST['blog_desc'];
           $blog_content = $_POST['blog_body'];
 
-        //   echo "<pre>";
-        //   print_r($_POST);
-        //   echo "</pre>";
+          // echo "<pre>";
+          // print_r($_FILES);
+          // echo "</pre>";
         
           // IMAGE FILE IS CHOSEN
           if(!empty($_FILES['blogheaderpic']['name'])) {
@@ -114,20 +114,20 @@
             $file_upload_msg = "<h3 style = 'color:red;'>No image chosen.</h3>";
           }
           
-          // INSERT TO DATABASE
-          include 'config.php';
-          $uid =  $user['user_id'];
+          // INSERT TO DATABASE (BLOG TABLE)
+          // include 'config.php';
+          // $uid =  $user['user_id'];
 
-          $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
-          VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
-          // echo $sql;      
-          $result = mysqli_query($conn, $sql);
+          // $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
+          // VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
+          // // echo $sql;      
+          // $result = mysqli_query($conn, $sql);
 
-          if($result) {
-              $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
-          }
-          else
-              $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+          // if($result) {
+          //     $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
+          // }
+          // else
+          //     $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
         }
     }
   ?>
@@ -174,13 +174,18 @@
             <input type="submit" name="create" value="Create post">   
       </div>
     </div>
+
+    <!-- ABOUT ME -->
     <div class="rightcolumn">
       <div class="card">
         <h2>About Me</h2>
         <p contenteditable="true">content</p>
       </div>
+
+      <!-- GALLERY -->
       <div class="card">
         <h3>Gallery</h3>
+          <input type="file" name="gallery_files" id="" multiple>
       </div>
     </div>
   </div>

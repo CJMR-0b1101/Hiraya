@@ -171,25 +171,6 @@
                 }
                 echo "<br>";
             }
-            // echo "<pre>";
-            // print_r($_SESSION);
-            // echo "</pre>";
-
-            // echo "<form action='view_blog.php' method='post'>";
-            // for($i = 0; $i < $row_length; $i++) {
-            //     for($j = 0; $j < 3; $j++) {
-            //         if($j == 0) {
-            //             $blog_id_array[$i] = $row[$i][$j];
-            //             echo $blog_id_array[$i]."<br>";
-            //         }
-            //         elseif($j == 1)
-            //             echo "<input type='submit' value='Title: ".$row[$i][$j]."'<br><br>";
-            //         else
-            //             echo "Description: ".$row[$i][$j].'<br>';
-            //     }
-            //     echo "<br>";
-            // }
-            // echo "</form>";
         }
         else {
             echo "You don't have blogs yet.";
