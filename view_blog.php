@@ -79,7 +79,7 @@
         $user = $_SESSION['user'];
         $blog_id = $_GET['blog_id'];
 
-        // FETCH DATA FROM DB
+        // FETCH DATA FROM DB (BLOG TABLE)
         include 'config.php';
 
         $sql = "SELECT * FROM blogs WHERE blog_id = $blog_id";
@@ -91,9 +91,20 @@
           $blog_desc = $row['blog_description'];
           $blog_content = $row['blog_content'];
           $blog_header = $row['blog_header'];
+          $about_me = $row['about_me'];
         }
         else {
           header("location: home_page.php");
+        }
+
+        // FETCH DATA FROM gallery TABLE
+        $sql = "SELECT * FROM gallery WHERE blog_id = $blog_id";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result)) {
+          $row = mysqli_fetch_all($result);
+        }
+        else {
+          echo "ERROR GALLERY";
         }
     }
   ?>
@@ -113,10 +124,6 @@
   <div class="row">
     <div class="leftcolumn">
         <div class="card">
-            <!-- BLOG TITLE HEADING TEXTAREA-->
-            <textarea readonly style="resize: none; font-size: 28px; border: none;" 
-            name="blog_titlehead" id="" cols="65" rows="1">TITLE HEADING</textarea>
-            <br><br>
             <!-- BLOG DESCRIPTION TEXTAREA-->
             <textarea readonly style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1"><?php echo $blog_desc?></textarea>
             <br><br>
@@ -131,10 +138,18 @@
     <div class="rightcolumn">
       <div class="card">
         <h2>About Me</h2>
-        <p contenteditable="true">content</p>
+        <textarea readonlystyle="resize: none;" name="about_me" id="" cols="38" rows="10" 
+              placeholder="Tell us about yourself"><?php echo $about_me?></textarea>
       </div>
       <div class="card">
         <h3>Gallery</h3>
+        <?php
+          $len = count($row);
+          for($i = 0; $i < $len; $i++) {
+            // echo $row[$i][3]."<br>";
+            echo  "<a href='".$row[$i][3]."'><img src='".$row[$i][3]."'  /></a>";
+          }
+        ?>
       </div>
     </div>
   </div>
