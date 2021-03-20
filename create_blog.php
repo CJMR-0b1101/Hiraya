@@ -125,7 +125,7 @@
                   $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
                   $len = count($gallery_files);
   
-                  setcookie('uploads', time() - 3600);
+                  setcookie('uploads', '', time() - 3600);
 
                   // INSERT TO DATABASE (BLOG TABLE)
                   include 'config.php';

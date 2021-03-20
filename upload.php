@@ -18,7 +18,6 @@
                     'file' => $path
                 );
                 setcookie('uploads', serialize($uploaded));
-                setcookie('upmsg', "<h3 style = 'color:green;'>Gallery updated!</h3>");
             }
         }
     }
