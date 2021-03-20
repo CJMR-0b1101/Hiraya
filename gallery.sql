@@ -24,17 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blogs`
+-- Table structure for table `gallery`
 --
 
-CREATE TABLE `blogs` (
+CREATE TABLE `gallery` (
+  `picture_id` int(10) NOT NULL,
   `blog_id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL,
-  `blog_title` varchar(300) NOT NULL,
-  `blog_description` varchar(400) NOT NULL,
-  `blog_content` varchar(1000) NOT NULL,
-  `blog_header` varchar(300) NOT NULL,
-  `about_me` varchar(800) NOT NULL
+  `picture_name` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,20 +39,20 @@ CREATE TABLE `blogs` (
 --
 
 --
--- Indexes for table `blogs`
+-- Indexes for table `gallery`
 --
-ALTER TABLE `blogs`
-  ADD PRIMARY KEY (`blog_id`);
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`picture_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `blogs`
+-- AUTO_INCREMENT for table `gallery`
 --
-ALTER TABLE `blogs`
-  MODIFY `blog_id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `gallery`
+  MODIFY `picture_id` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

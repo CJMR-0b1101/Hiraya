@@ -71,6 +71,19 @@
                 padding: 0;
               }
             }
+            /*  Drag and drop box for Gallery */
+            .dropzone {
+              width: 300px;
+              height: 300px;
+              border: 2px dashed #ccc;
+              color: #ccc;
+              line-height: 300px;
+              text-align: center;
+            }
+            .dropzone.dragover {
+              border-color: black;
+              color: black;
+            }
   </style>
   <?php
     session_start();
@@ -80,6 +93,7 @@
         $filename = 'default_header.jpg';
         $file_upload_msg = '';
         $insert_to_db_msg = '';
+        $gallery_file_upload_msg = "";
         // echo '<pre>';
         // print_r($_FILES);
         // print_r($user);
@@ -92,43 +106,80 @@
           $blog_titlehead = $_POST['blog_titlehead'];
           $blog_desc = $_POST['blog_desc'];
           $blog_content = $_POST['blog_body'];
+          $about_me = $_POST['about_me'];
 
           // echo "<pre>";
           // print_r($_FILES);
           // echo "</pre>";
-        
-          // IMAGE FILE IS CHOSEN
+          
+          // IF BLOG PICTURE IS CHOSEN
           if(!empty($_FILES['blogheaderpic']['name'])) {
             $filename = $user['username'].rand().$_FILES['blogheaderpic']['name'];
             // echo $filename;
             $path = "blog_images/".$filename;
             
-            if(move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path)) {  
-                $file_upload_msg = "<h3 style = 'color:green;'>Image updated!</h3>";
+            if((move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path))) {
+                // IF GALLERY HAS ATLEAST 1 FILE
+                if(isset($_COOKIE['uploads'])) {
+                  $file_upload_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
+  
+                  $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
+                  $len = count($gallery_files);
+  
+                  unset($_COOKIE['uploads']);
+
+                  // INSERT TO DATABASE (BLOG TABLE)
+                  include 'config.php';
+                  $uid =  $user['user_id'];
+
+                  $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
+                  VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename', '$about_me')";
+                  // echo $sql;      
+                  $result = mysqli_query($conn, $sql);
+
+                  if($result) {
+                      // INSERT TO DATABASE (GALLERY TABLE)
+                      $blog_id = queryBlogID($conn);
+                      
+                      // echo "<pre>";
+                      // print_r($gallery_files);
+                      // echo "</pre>";
+                      for($i = 0; $i < $len; $i++) {
+                        $file = $gallery_files[$i]['file'];
+                        $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
+                        VALUES($blog_id, $uid, '$file')";
+                        $result = mysqli_query($conn, $sql);
+                        if($result) {
+                          $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
+                        }
+                        else {
+                          $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
+                        }
+                      }
+                  }
+                  else
+                      $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+                }
+                else {
+                  $file_upload_msg = "<h3 style = 'color:red;'>Please upload atleast 1 image for your gallery.</h3>";
+                }
             }
             else {
                 $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
             }
           }
           else {
-            $file_upload_msg = "<h3 style = 'color:red;'>No image chosen.</h3>";
+            $file_upload_msg = "<h3 style = 'color:red;'>Please upload image for your blog.</h3>";
           }
-          
-          // INSERT TO DATABASE (BLOG TABLE)
-          // include 'config.php';
-          // $uid =  $user['user_id'];
-
-          // $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header)
-          // VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename')";
-          // // echo $sql;      
-          // $result = mysqli_query($conn, $sql);
-
-          // if($result) {
-          //     $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
-          // }
-          // else
-          //     $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
         }
+    }
+    function queryBlogID($conn) {
+      $sql = "SELECT MAX(blog_id) as bmax FROM blogs";
+      $result = mysqli_query($conn, $sql);
+      if(mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_array($result);
+        return $row['bmax'];
+      }
     }
   ?>
 </head>
@@ -170,6 +221,7 @@
               <?php 
                 echo $file_upload_msg;
                 echo $insert_to_db_msg;
+                echo $gallery_file_upload_msg;
               ?>
             <input type="submit" name="create" value="Create post">   
       </div>
@@ -179,13 +231,17 @@
     <div class="rightcolumn">
       <div class="card">
         <h2>About Me</h2>
-        <p contenteditable="true">content</p>
+        <textarea style="resize: none;" name="about_me" id="" cols="38" rows="10" 
+              placeholder="Tell us about yourself" required></textarea>
       </div>
 
       <!-- GALLERY -->
       <div class="card">
         <h3>Gallery</h3>
-          <input type="file" name="gallery_files" id="" multiple>
+          <div class="dropzone" id="dropzone">Drop files to upload here</div>
+          <div id="uploads">
+          </div>
+          <script src='gallery_upload.js'></script> 
       </div>
     </div>
   </div>
