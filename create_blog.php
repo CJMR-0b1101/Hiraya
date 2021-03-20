@@ -89,21 +89,20 @@
     session_start();
 
     if(isset($_SESSION['login'])) {
+      // VARIABLES
         $user = $_SESSION['user'];
         $filename = 'default_header.jpg';
+        $blog_title = '';
+        $blog_desc = '';
+        $blog_content = '';
+        $about_me = '';
         $file_upload_msg = '';
         $insert_to_db_msg = '';
         $gallery_file_upload_msg = "";
-        // echo '<pre>';
-        // print_r($_FILES);
-        // print_r($user);
-        // print_r($_SESSION);
-        // echo '</pre>';
 
         if(isset($_POST['create'])) {
           // Get values from text areas
           $blog_title = $_POST['blog_title'];
-          $blog_titlehead = $_POST['blog_titlehead'];
           $blog_desc = $_POST['blog_desc'];
           $blog_content = $_POST['blog_body'];
           $about_me = $_POST['about_me'];
@@ -126,7 +125,7 @@
                   $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
                   $len = count($gallery_files);
   
-                  unset($_COOKIE['uploads']);
+                  setcookie('uploads', time() - 3600);
 
                   // INSERT TO DATABASE (BLOG TABLE)
                   include 'config.php';
@@ -191,20 +190,16 @@
       <br>
       <!-- BLOG TITLE TEXTAREA-->
       <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
-      name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required></textarea>
+      name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required><?php echo $blog_title?></textarea>
       <br>
   </div>
 
   <div class="row">
     <div class="leftcolumn">
         <div class="card">
-            <!-- BLOG TITLE HEADING TEXTAREA-->
-            <textarea style="resize: none; font-size: 28px; border: none;" 
-            name="blog_titlehead" id="" cols="65" rows="1" placeholder="Your blog heading here" required></textarea>
-            <br><br>
             <!-- BLOG DESCRIPTION TEXTAREA-->
             <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1" 
-            placeholder="Your blog description here" required></textarea>
+            placeholder="Your blog description here" required><?php echo $blog_desc?></textarea>
             <br><br>
 
             <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
@@ -216,7 +211,7 @@
               <br><br>
               <!-- BLOG BODY TEXTAREA -->
               <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5" 
-              placeholder="Your blog content here" required></textarea>
+              placeholder="Your blog content here" required><?php echo $blog_content?></textarea>
               <br>
               <?php 
                 echo $file_upload_msg;
@@ -232,7 +227,7 @@
       <div class="card">
         <h2>About Me</h2>
         <textarea style="resize: none;" name="about_me" id="" cols="38" rows="10" 
-              placeholder="Tell us about yourself" required></textarea>
+              placeholder="Tell us about yourself" required><?php echo $about_me?></textarea>
       </div>
 
       <!-- GALLERY -->
