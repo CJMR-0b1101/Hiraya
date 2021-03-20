@@ -147,7 +147,7 @@
           $len = count($row);
           for($i = 0; $i < $len; $i++) {
             // echo $row[$i][3]."<br>";
-            echo  "<a href='".$row[$i][3]."'><img src='".$row[$i][3]."'  /></a>";
+            echo  "<a href='".$row[$i][3]."'><img style='height: 100px;' src='".$row[$i][3]."'  /></a>";
           }
         ?>
       </div>

@@ -17,7 +17,7 @@
                     'name' => $name,
                     'file' => $path
                 );
-                setcookie('uploads', serialize($uploaded));
+                setcookie('uploads', serialize($uploaded), time() + 3600);
             }
         }
     }
