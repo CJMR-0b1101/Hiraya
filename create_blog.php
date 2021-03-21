@@ -90,89 +90,86 @@
 
     if(isset($_SESSION['login'])) {
       // VARIABLES
-        $user = $_SESSION['user'];
-        $filename = 'default_header.jpg';
-        $blog_title = '';
-        $blog_desc = '';
-        $blog_content = '';
-        $about_me = '';
-        $file_upload_msg = '';
-        $insert_to_db_msg = '';
-        $gallery_file_upload_msg = "";
+      $user = $_SESSION['user'];
+      $filename = 'default_header.jpg';
+      $blog_title = '';
+      $blog_desc = '';
+      $blog_content = '';
+      $about_me = '';
+      $file_upload_msg = '';
+      $insert_to_db_msg = '';
+      $gallery_file_upload_msg = "";
 
-        if(isset($_POST['create'])) {
-          // Get values from text areas
-          $blog_title = $_POST['blog_title'];
-          $blog_desc = $_POST['blog_desc'];
-          $blog_content = $_POST['blog_body'];
-          $about_me = $_POST['about_me'];
-
-          // echo "<pre>";
-          // print_r($_FILES);
-          // echo "</pre>";
+      if(isset($_POST['create'])) {
+        // Get values from text areas
+        $blog_title = $_POST['blog_title'];
+        $blog_desc = $_POST['blog_desc'];
+        $blog_content = $_POST['blog_body'];
+        $about_me = $_POST['about_me'];
+        
+        // IF BLOG PICTURE IS CHOSEN
+        if(!empty($_FILES['blogheaderpic']['name'])) {
+          $filename = $user['username'].rand().$_FILES['blogheaderpic']['name'];
+          // echo $filename;
+          $path = "blog_images/".$filename;
           
-          // IF BLOG PICTURE IS CHOSEN
-          if(!empty($_FILES['blogheaderpic']['name'])) {
-            $filename = $user['username'].rand().$_FILES['blogheaderpic']['name'];
-            // echo $filename;
-            $path = "blog_images/".$filename;
-            
-            if((move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path))) {
-                // IF GALLERY HAS ATLEAST 1 FILE
-                if(isset($_COOKIE['uploads'])) {
-                  // echo "COOKIE";
-                  $file_upload_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
-  
-                  $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
-                  $len = count($gallery_files);
+          if((move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path))) {
+            // IF GALLERY HAS ATLEAST 1 FILE
+            if(isset($_COOKIE['uploads'])) {
+              // echo "COOKIE";
+              $file_upload_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
 
-                  setcookie('uploads', "", time() - 3600);
-                  // INSERT TO DATABASE (BLOG TABLE)
-                  include 'config.php';
-                  $uid =  $user['user_id'];
+              $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
+              $len = count($gallery_files);
 
-                  $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
-                  VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename', '$about_me')";
-                  // echo $sql;      
+              setcookie('uploads', "", time() - 3600);
+              // INSERT TO DATABASE (BLOG TABLE)
+              include 'config.php';
+              $uid =  $user['user_id'];
+
+              $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
+              VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename', '$about_me')";
+              // echo $sql;      
+              $result = mysqli_query($conn, $sql);
+
+              // echo "<pre>";
+              // print_r($gallery_files);
+              // echo "</pre>";
+
+              if($result) {
+                // INSERT TO DATABASE (GALLERY TABLE)
+                $blog_id = queryBlogID($conn);
+                
+                for($i = 0; $i < $len; $i++) {
+                  $file = $gallery_files[$i]['file'];
+                  $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
+                  VALUES($blog_id, $uid, '$file')";
                   $result = mysqli_query($conn, $sql);
-
-                  // echo "<pre>";
-                  // print_r($gallery_files);
-                  // echo "</pre>";
-
                   if($result) {
-                      // INSERT TO DATABASE (GALLERY TABLE)
-                      $blog_id = queryBlogID($conn);
-                      
-                      for($i = 0; $i < $len; $i++) {
-                        $file = $gallery_files[$i]['file'];
-                        $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
-                        VALUES($blog_id, $uid, '$file')";
-                        $result = mysqli_query($conn, $sql);
-                        if($result) {
-                          $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
-                        }
-                        else {
-                          $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
-                        }
-                      }
+                    $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
                   }
-                  else
-                      $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+                  else {
+                    $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
+                  }
                 }
-                else {
-                  $file_upload_msg = "<h3 style = 'color:red;'>Please upload atleast 1 image for your gallery.</h3>";
-                }
+              }
+              else
+                  $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
             }
             else {
-                $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
+              $file_upload_msg = "<h3 style = 'color:red;'>Please upload atleast 1 image for your gallery.</h3>";
             }
           }
           else {
-            $file_upload_msg = "<h3 style = 'color:red;'>Please upload image for your blog.</h3>";
+              $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
           }
         }
+        else {
+          $file_upload_msg = "<h3 style = 'color:red;'>Please upload image for your blog.</h3>";
+        }
+      }
     }
+
     function queryBlogID($conn) {
       $sql = "SELECT MAX(blog_id) as bmax FROM blogs";
       $result = mysqli_query($conn, $sql);

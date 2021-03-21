@@ -80,6 +80,12 @@
 	$firstname = "";
 	$lastname = "";
 	$username = "";
+	
+	session_start();
+	
+	if(isset($_SESSION['login'])) {
+		header("location: home_page.php");
+	}
 
     if(isset($_POST['signup'])) {
         // include 'config.php';
