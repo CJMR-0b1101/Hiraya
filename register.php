@@ -128,7 +128,7 @@
 						echo '<h2 align="center" style="color: green";>Registered Succesfully</h2>';
 						echo '<h4 align="center" style="color: green";>Redirecting to Login in 3 seconds</h4>';
 
-						header( "Refresh:3; url=login.php", True, 303);
+						header("Refresh:3; url=login.php", True, 303);
 					}
 					else {
 						echo '<h2 align="center" style="color: red;">Registration Failed</h2>';

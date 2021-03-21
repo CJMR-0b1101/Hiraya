@@ -67,7 +67,7 @@
             }
             // FILE CHOSEN
             else {
-                $filename = $user['username']."--".$_FILES['profilepic']['name'];
+                $filename = $user['username'].".jpg";
                 $path = "images/".$filename;
                 // echo $path;
 

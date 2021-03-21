@@ -91,6 +91,7 @@
     if(isset($_SESSION['login'])) {
       // VARIABLES
       $user = $_SESSION['user'];
+      $_SESSION['user']['up_count'] = 1;
       $filename = 'default_header.jpg';
       $blog_title = '';
       $blog_desc = '';
@@ -99,7 +100,21 @@
       $file_upload_msg = '';
       $insert_to_db_msg = '';
       $gallery_file_upload_msg = "";
+      
+      include 'config.php';
+      $sql = "SELECT AUTO_INCREMENT
+              FROM  INFORMATION_SCHEMA.TABLES
+              WHERE TABLE_SCHEMA = 'hiraya_db'
+              AND   TABLE_NAME   = 'blogs'";
+      $result = mysqli_query($conn, $sql);
 
+      if($result) {
+        $row = mysqli_fetch_array($result);
+        $blog_id = $row[0];
+        // echo "<h2>$blog_id</h2>";
+        $_SESSION['blog_id'] = $blog_id;
+      }
+      
       if(isset($_POST['create'])) {
         // Get values from text areas
         $blog_title = $_POST['blog_title'];
@@ -109,7 +124,7 @@
         
         // IF BLOG PICTURE IS CHOSEN
         if(!empty($_FILES['blogheaderpic']['name'])) {
-          $filename = $user['username'].rand().$_FILES['blogheaderpic']['name'];
+          $filename = $user['username']."-blog-".$blog_id.".jpg";
           // echo $filename;
           $path = "blog_images/".$filename;
           
@@ -124,7 +139,6 @@
 
               setcookie('uploads', "", time() - 3600);
               // INSERT TO DATABASE (BLOG TABLE)
-              include 'config.php';
               $uid =  $user['user_id'];
 
               $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
@@ -132,21 +146,18 @@
               // echo $sql;      
               $result = mysqli_query($conn, $sql);
 
-              // echo "<pre>";
-              // print_r($gallery_files);
-              // echo "</pre>";
-
               if($result) {
-                // INSERT TO DATABASE (GALLERY TABLE)
-                $blog_id = queryBlogID($conn);
-                
+                // INSERT TO DATABASE (GALLERY TABLE)                
                 for($i = 0; $i < $len; $i++) {
                   $file = $gallery_files[$i]['file'];
                   $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
                   VALUES($blog_id, $uid, '$file')";
                   $result = mysqli_query($conn, $sql);
                   if($result) {
-                    $insert_to_db_msg = "<h3 style = 'color:green;'>Blog created!</h3>";
+                    $file_upload_msg = "";
+                    $gallery_file_upload_msg = "";
+                    $insert_to_db_msg = "Blog created!";
+                    redirectConfirmation($blog_id, $uid);
                   }
                   else {
                     $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
@@ -161,7 +172,7 @@
             }
           }
           else {
-              $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
+            $file_upload_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
           }
         }
         else {
@@ -169,18 +180,18 @@
         }
       }
     }
-
-    function queryBlogID($conn) {
-      $sql = "SELECT MAX(blog_id) as bmax FROM blogs";
-      $result = mysqli_query($conn, $sql);
-      if(mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_array($result);
-        return $row['bmax'];
-      }
+    function redirectConfirmation($blog_id, $uid) {
+      echo 
+        '<script>
+          var r = confirm("Blog created. View post?");
+          if(r == true)
+            window.location.replace("view_blog.php?blog_id='.$blog_id.'");
+          else
+            window.location.replace("edit_blog.php?blog_id='.$blog_id.'&user_id='.$uid.'")
+        </script>';
     }
   ?>
 </head>
-
 <body>
   <?php include 'navbar.php'; ?>
 <form action="" method="post" enctype="multipart/form-data">
