@@ -77,6 +77,12 @@
 
 <!-- LOGIN PHP -->
 <?php
+	session_start();
+	
+	if(isset($_SESSION['login'])) {
+		header("location: home_page.php");
+	}
+
 	if(isset($_POST['login'])) {
 		$username = $_POST['uname'];
 		$password = sha1($_POST['pword']);
@@ -95,7 +101,6 @@
 
 			$_SESSION['login'] = true;
 			$_SESSION['user'] = $row;
-			
 			header("location: home_page.php");
 		} 
 		else {
