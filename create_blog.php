@@ -85,14 +85,17 @@
               color: black;
             }
   </style>
+
+  <!-- MAIN PROGRAM STARTS HERE -->
   <?php
     session_start();
 
     if(isset($_SESSION['login'])) {
       // VARIABLES
       $user = $_SESSION['user'];
+      $uid =  $user['user_id'];
       $_SESSION['user']['up_count'] = 1;
-      $filename = 'default_header.jpg';
+      $blog_pic = 'default_header.jpg';
       $blog_title = '';
       $blog_desc = '';
       $blog_content = '';
@@ -111,64 +114,46 @@
       if($result) {
         $row = mysqli_fetch_array($result);
         $blog_id = $row[0];
-        // echo "<h2>$blog_id</h2>";
         $_SESSION['blog_id'] = $blog_id;
       }
       
       if(isset($_POST['create'])) {
-        // Get values from text areas
-        $blog_title = $_POST['blog_title'];
-        $blog_desc = $_POST['blog_desc'];
-        $blog_content = $_POST['blog_body'];
-        $about_me = $_POST['about_me'];
+        parseValues($blog_title, $blog_desc, $blog_content, $about_me);
         
-        // IF BLOG PICTURE IS CHOSEN
-        if(!empty($_FILES['blogheaderpic']['name'])) {
-          $filename = $user['username']."-blog-".$blog_id.".jpg";
-          // echo $filename;
-          $path = "blog_images/".$filename;
+        // BLOG HEADER PIC IS CHOSEN
+        if(!empty($_FILES['blog_pic']['name'])) {
+          $blog_pic = $user['username']."-blog-".$blog_id.".jpg";
+          $path = "blog_images/".$blog_pic;
           
-          if((move_uploaded_file($_FILES['blogheaderpic']['tmp_name'], $path))) {
+          if((move_uploaded_file($_FILES['blog_pic']['tmp_name'], $path))) {
             // IF GALLERY HAS ATLEAST 1 FILE
-            if(isset($_COOKIE['uploads'])) {
-              // echo "COOKIE";
-              $file_upload_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
+            $file_upload_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
 
-              $gallery_files = unserialize($_COOKIE['uploads'], ["allowed_classes" => false]);
-              $len = count($gallery_files);
+            // INSERT TO DATABASE (BLOG TABLE)
+            $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
+            VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$blog_pic', '$about_me')";     
+            $result = mysqli_query($conn, $sql);
 
-              setcookie('uploads', "", time() - 3600);
-              // INSERT TO DATABASE (BLOG TABLE)
-              $uid =  $user['user_id'];
-
-              $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
-              VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$filename', '$about_me')";
-              // echo $sql;      
-              $result = mysqli_query($conn, $sql);
-
-              if($result) {
-                // INSERT TO DATABASE (GALLERY TABLE)                
-                for($i = 0; $i < $len; $i++) {
-                  $file = $gallery_files[$i]['file'];
-                  $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
-                  VALUES($blog_id, $uid, '$file')";
-                  $result = mysqli_query($conn, $sql);
-                  if($result) {
-                    $file_upload_msg = "";
-                    $gallery_file_upload_msg = "";
-                    $insert_to_db_msg = "Blog created!";
-                    redirectConfirmation($blog_id, $uid);
-                  }
-                  else {
-                    $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
-                  }
-                }
-              }
-              else
-                  $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+            if($result) {
+              // // INSERT TO DATABASE (GALLERY TABLE)                
+              // for($i = 0; $i < $len; $i++) {
+              //   $file = $gallery_files.$i;
+              //   $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
+              //   VALUES($blog_id, $uid, '$file')";
+              //   $result = mysqli_query($conn, $sql);
+              //   if($result) {
+              //     $file_upload_msg = "";
+              //     $gallery_file_upload_msg = "";
+              //     $insert_to_db_msg = "Blog created!";
+              //     redirectConfirmation($blog_id, $uid);
+              //   }
+              //   else {
+              //     $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting to gallery.</h2>";
+              //   }
+              // }
             }
             else {
-              $file_upload_msg = "<h3 style = 'color:red;'>Please upload atleast 1 image for your gallery.</h3>";
+                $insert_to_db_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
             }
           }
           else {
@@ -179,6 +164,13 @@
           $file_upload_msg = "<h3 style = 'color:red;'>Please upload image for your blog.</h3>";
         }
       }
+    }
+    function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
+      // Get values from text areas
+      $blog_title = $_POST['blog_title'];
+      $blog_desc = $_POST['blog_desc'];
+      $blog_content = $_POST['blog_body'];
+      $about_me = $_POST['about_me'];
     }
     function redirectConfirmation($blog_id, $uid) {
       echo 
@@ -191,68 +183,76 @@
         </script>';
     }
   ?>
+  
 </head>
 <body>
   <?php include 'navbar.php'; ?>
-<form action="" method="post" enctype="multipart/form-data">
-  <div class="header">
-      <br>
-      <!-- BLOG TITLE TEXTAREA-->
-      <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
-      name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required><?php echo $blog_title?></textarea>
-      <br>
-  </div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <div class="header">
+        <br>
+        <!-- BLOG TITLE TEXTAREA-->
+        <textarea style="resize: none; font-size: 50px; text-align: center; border: none;" 
+        name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required><?php echo $blog_title?></textarea>
+        <br>
+    </div>
 
-  <div class="row">
-    <div class="leftcolumn">
-        <div class="card">
-            <!-- BLOG DESCRIPTION TEXTAREA-->
-            <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1" 
-            placeholder="Your blog description here" required><?php echo $blog_desc?></textarea>
-            <br><br>
+    <div class="row">
+      <div class="leftcolumn">
+          <div class="card">
 
-            <img src="blog_images/<?php echo $filename; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
-            
-              <br>
-              <label for="">Select photo:</label>
-              <br>
-              <input type="file" name="blogheaderpic">
+              <!-- BLOG DESCRIPTION TEXTAREA-->
+              <textarea style="resize: none; border: none;" name="blog_desc" id="" cols="100" rows="1" 
+              placeholder="Your blog description here" required><?php echo $blog_desc?></textarea>
               <br><br>
-              <!-- BLOG BODY TEXTAREA -->
-              <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5" 
-              placeholder="Your blog content here" required><?php echo $blog_content?></textarea>
-              <br>
-              <?php 
-                echo $file_upload_msg;
-                echo $insert_to_db_msg;
-                echo $gallery_file_upload_msg;
-              ?>
-            <input type="submit" name="create" value="Create post">   
+
+              <!-- BLOG IMAGE HEADER -->
+              <img src="blog_images/<?php echo $blog_pic; ?>" alt="Blog-Header-Picture-Here" style="height: 500px;">
+                <br>
+                <label for="">Select photo:</label>
+                <br>
+                <input type="file" name="blog_pic">
+                <br><br>
+
+                <!-- BLOG BODY TEXTAREA -->
+                <textarea style="resize: none;" name="blog_body" id="" cols="139" rows="5" 
+                placeholder="Your blog content here" required><?php echo $blog_content?></textarea>
+                <br>
+                <?php 
+                  echo $file_upload_msg;
+                  echo $insert_to_db_msg;
+                  echo $gallery_file_upload_msg;
+                ?>
+              <input type="submit" name="create" value="Create post">   
+              
+        </div>
+      </div>
+
+      <!-- ABOUT ME -->
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <textarea style="resize: none;" name="about_me" id="" cols="38" rows="10" 
+                placeholder="Tell us about yourself" required><?php echo $about_me?></textarea>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="card">
+          <h3>Gallery</h3>
+            <!-- UPLOAD FILES -->
+            <div>
+              <input type="file" name="gallery1">
+              <input type="file" name="gallery2">
+              <input type="file" name="gallery3">
+              <input type="file" name="gallery4">
+            </div>
+            <script src='gallery_upload.js'></script> 
+        </div>
       </div>
     </div>
+  </form>
 
-    <!-- ABOUT ME -->
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>About Me</h2>
-        <textarea style="resize: none;" name="about_me" id="" cols="38" rows="10" 
-              placeholder="Tell us about yourself" required><?php echo $about_me?></textarea>
-      </div>
-
-      <!-- GALLERY -->
-      <div class="card">
-        <h3>Gallery</h3>
-          <div class="dropzone" id="dropzone">Drop files to upload here</div>
-          <div id="uploads">
-          </div>
-          <script src='gallery_upload.js'></script> 
-      </div>
-    </div>
+  <div class="footer">
+    <h2>Footer</h2>
   </div>
-</form>
-
-<div class="footer">
-  <h2>Footer</h2>
-</div>
 </body>
 </html>
