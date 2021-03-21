@@ -256,14 +256,14 @@
                 $currfile = $rows[$i][1];
                 // echo $currfile."<br>";
                 echo  "<a href='blog_images/".$currfile."'><img style='width: 100px; object-fit: cover;' src='blog_images/".$currfile."'  /></a>";
-                echo "<a href='#'>Delete file.".$rows[$i][0]."</a><br>";
+                echo "<a href='#'>Delete file".$rows[$i][0]."</a><br>";
+              }
+              
+              for($i = 0; $i < 4; $i++) {
+                echo "<input type='file' name='gallery$i'>";
               }
             }
           ?>
-          <div class="dropzone" id="dropzone">Drop files to upload here</div>
-          <div id="uploads">
-          </div>
-          <script src='gallery_upload.js'></script> 
       </div>
     </div>
   </div>
