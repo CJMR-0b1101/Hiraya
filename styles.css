@@ -398,7 +398,6 @@
 .div-blog-header {
   padding: 30px;
   text-align: center;
-  background: white;
 }
 
 .div-blog-left {   
@@ -422,7 +421,6 @@
 
 /* Add a card effect for articles */
 .div-blog-card {
-   background-color: white;
    padding: 20px;
 }
 
