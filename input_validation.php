@@ -155,6 +155,9 @@
         return True;
     }
     function isValidAge($age) {
+        if(empty($age)) {
+            return true;
+        }
         return is_numeric($age);
     }
     // Sample data:

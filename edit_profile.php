@@ -87,8 +87,8 @@
                         <?php
                             include 'input_validation.php';
 
-                            $valid_edit = true;
                             $status_msg = "";
+                            $uid = $user['user_id'];
                             $new_fn = $user['first_name'];
                             $new_ln = $user['last_name'];
                             $new_pw = "";
@@ -103,9 +103,9 @@
                                 $new_ln = empty($_POST['new_ln']) ? $user['last_name'] : $_POST['new_ln'];
                                 $new_pw = $_POST['new_pw'];
                                 $cnew_pw = $_POST['cnew_pw'];
-                                $age = $_POST['age'];
-                                $email = $_POST['email'];
-                                $location = $_POST['location'];
+                                $age = empty($_POST['age']) ? $user['age'] : $_POST['age'];
+                                $email = empty($_POST['email']) ? $user['email'] : $_POST['email'];
+                                $location = empty($_POST['location']) ? $user['location'] : $_POST['location'];
                                 
                                 if($new_pw != $cnew_pw) {
                                     $status_msg = "<h4 style = 'color:red;'>Confirm password should be the same with password.</h4>";
@@ -115,8 +115,20 @@
                                         $status_msg = "<h4 style = 'color:red;'>Age should be a number.</h4>";
                                     }
                                     else {
-                                        if(updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $location))
+                                        if(updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $location, $uid)) {
                                             $status_msg = "<h4 style = 'color:green;'>Profile updated.</h4>";
+                                            $details = fetchDetails($user['user_id']);
+                                            
+                                            // echo '<pre>';
+                                            // print_r($details);
+                                            // echo '</pre>';
+
+                                            $_SESSION['user']['first_name'] = $new_fn;
+                                            $_SESSION['user']['last_name'] = $new_ln;
+                                            $_SESSION['user']['age'] = $user['age'] = $details['age'];
+                                            $_SESSION['user']['email'] = $user['email'] = $details['email'];
+                                            $_SESSION['user']['location'] = $user['location'] = $details['location'];
+                                        }
                                         else
                                             $status_msg = "<h4 style = 'color:red;'>Profile update failed.</h4>";
                                     }
@@ -126,11 +138,6 @@
                             if(isset($_POST['cancel'])) {
                                 echo'<script> window.location="profile.php"; </script>';
                             }
-
-                            $details = fetchDetails($user['user_id']);
-                            $_SESSION['user']['age'] = $user['age'] = $details['age'];
-                            $_SESSION['user']['email'] = $user['email'] = $details['email'];
-                            $_SESSION['user']['location'] = $user['location'] = $details['location'];
                             
                             // echo '<pre>';
                             // print_r($_SESSION);
@@ -153,20 +160,28 @@
                             }
 
                             // UPDATE DATABASE
-                            function updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $loc) {
+                            function updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $loc, $uid) {
                                 include 'config.php';
                                 
-                                $sql = "SELECT password FROM users WHERE user_id = $user[user_id]";
+                                // FETCH CURRENT PASSWORD
+                                $sql = "SELECT password FROM users WHERE user_id = $uid";
                                 $result = mysqli_query($conn, $sql);
-
                                 if($result) {
                                     $row = mysqli_fetch_array($result);
-                                    echo $row['password'];
+                                    $new_pw = !empty($new_pw) ? sha1($new_pw): $row['password'];
                                 }
-                                // $new_pw = !empty($new_pw) ? sha1($new_pw) : "";
 
-                                // $sql = "UPDATE ";
-                                return true;
+                                $sql = "UPDATE users SET first_name = '$new_fn', last_name = '$new_ln', password = '$new_pw',
+                                age = '$age', email = '$email', location = '$loc' WHERE user_id = $uid";
+                                // echo $sql;
+
+                                $result = mysqli_query($conn, $sql);
+                                if($result) {
+                                    return true;
+                                }
+                                else {
+                                    return false;
+                                }
                             }
                         ?>
                         <p><input type="text" name="new_fn" placeHolder='First name' value='<?php echo $new_fn ?>'></p>
@@ -174,8 +189,8 @@
                         <p><input type="password" name="new_pw" placeHolder='New password'></p>
                         <p><input type="password" name="cnew_pw" placeHolder='Confirm new password'></p>
                         <p><input type="text" name="age" placeHolder='Age' value='<?php echo $age ?>'></p>
-                        <p><input type="text" name="email" placeHolder='Email' value='<?php $email ?>'></p>
-                        <p><input type="text" name="location" placeHolder='Location' value='<?php $location ?>'></p>
+                        <p><input type="text" name="email" placeHolder='Email' value='<?php echo $email ?>'></p>
+                        <p><input type="text" name="location" placeHolder='Location' value='<?php echo $location ?>'></p>
 
                         <button name='save' type="submit">Save changes</button>
                         <button name='cancel' type="submit">Cancel</button>
@@ -206,7 +221,7 @@
                         WHERE user_id = $user[user_id]";
                         // echo $sql;
                         $results = mysqli_query($conn, $sql);
-
+                        
                         if(mysqli_num_rows($results) != 0) {
                             $row = mysqli_fetch_all($results);
                             // echo "<pre>";
