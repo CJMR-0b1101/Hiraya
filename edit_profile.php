@@ -85,6 +85,8 @@
                     <h3>Information</h3>
                     <form action="" method="post">
                         <?php
+                            include 'input_validation.php';
+
                             $valid_edit = true;
                             $status_msg = "";
                             $new_fn = $user['first_name'];
@@ -97,15 +99,28 @@
 
                             // SAVE CHANGES BUTTON IS CLICKED
                             if(isset($_POST['save'])) {
-                                $new_fn = $_POST['new_fn'];
-                                $new_ln = $_POST['new_ln'];
+                                $new_fn = empty($_POST['new_fn']) ? $user['first_name'] : $_POST['new_fn'];
+                                $new_ln = empty($_POST['new_ln']) ? $user['last_name'] : $_POST['new_ln'];
                                 $new_pw = $_POST['new_pw'];
                                 $cnew_pw = $_POST['cnew_pw'];
                                 $age = $_POST['age'];
                                 $email = $_POST['email'];
                                 $location = $_POST['location'];
-
-                                $status_msg = "<h3 style = 'color:green;'>Profile updated.</h3>";
+                                
+                                if($new_pw != $cnew_pw) {
+                                    $status_msg = "<h4 style = 'color:red;'>Confirm password should be the same with password.</h4>";
+                                }
+                                else {
+                                    if(!isValidAge($age)) {
+                                        $status_msg = "<h4 style = 'color:red;'>Age should be a number.</h4>";
+                                    }
+                                    else {
+                                        if(updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $location))
+                                            $status_msg = "<h4 style = 'color:green;'>Profile updated.</h4>";
+                                        else
+                                            $status_msg = "<h4 style = 'color:red;'>Profile update failed.</h4>";
+                                    }
+                                }
                             }
                             // CANCEL BUTTON IS CLICKED
                             if(isset($_POST['cancel'])) {
@@ -121,7 +136,6 @@
                             // print_r($_SESSION);
                             // echo '</pre>';
 
-
                             // FETCH USER DETAILS FROM DATABASE
                             function fetchDetails($uid) {
                                 include 'config.php';
@@ -136,6 +150,23 @@
                                 else {
                                     echo "Error in fetching details.";
                                 }
+                            }
+
+                            // UPDATE DATABASE
+                            function updateProfileInfo($new_fn, $new_ln, $new_pw, $age, $email, $loc) {
+                                include 'config.php';
+                                
+                                $sql = "SELECT password FROM users WHERE user_id = $user[user_id]";
+                                $result = mysqli_query($conn, $sql);
+
+                                if($result) {
+                                    $row = mysqli_fetch_array($result);
+                                    echo $row['password'];
+                                }
+                                // $new_pw = !empty($new_pw) ? sha1($new_pw) : "";
+
+                                // $sql = "UPDATE ";
+                                return true;
                             }
                         ?>
                         <p><input type="text" name="new_fn" placeHolder='First name' value='<?php echo $new_fn ?>'></p>

@@ -61,58 +61,54 @@
 		</script>
 		<div class="div-body-margin"></div>
 		<div class="div-content">
-			<div class="div-content-background">
-				<div class="div-content-left">
-					<div class="div-content-left-header">
-						<p>LATEST BLOGS</p>
-					</div>
-					<div class="div-content-left-background">
-						<div class="div-content-left-list">
-							<div class="div-content-left-list-content">
-								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 1</a>
-								</div>
-								<div class="div-content-left-list-content-content">
-									<p>Welcome to HIRAYA!</p>
-								</div>
+			<div class="div-content-home">
+				<div class="div-content-home-header">
+					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="">See all</a></h1>
+					
+				</div>
+				<div class="div-content-home-background">
+					<div class="div-content-home-list">
+						<div class="div-content-home-list-content">
+							<div class="div-content-home-list-content-header">
+								<a href="#">TITLE 1</a>
 							</div>
-							<div class="div-content-left-list-content">
-								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 2</a>
-								</div>
-								<div class="div-content-left-list-content-content">
-									<p>Welcome to HIRAYA!</p>
-								</div>
+							<div class="div-content-home-list-content-content">
+								<p>Welcome to HIRAYA!</p>
 							</div>
-							<div class="div-content-left-list-content">
-								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 3</a>
-								</div>
-								<div class="div-content-left-list-content-content">
-									<p>Welcome to HIRAYA!</p>
-								</div>
+						</div>
+						<div class="div-content-home-list-content">
+							<div class="div-content-home-list-content-header">
+								<a href="#">TITLE 2</a>
 							</div>
-							<div class="div-content-left-list-content">
-								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 4</a>
-								</div>
-								<div class="div-content-left-list-content-content">
-									<p>Welcome to HIRAYA!</p>
-								</div>
+							<div class="div-content-home-list-content-content">
+								<p>Welcome to HIRAYA!</p>
 							</div>
-							<div class="div-content-left-list-content">
-								<div class="div-content-left-list-content-header">
-									<a href="#">TITLE 5</a>
-								</div>
-								<div class="div-content-left-list-content-content">
-									<p>Welcome to HIRAYA!</p>
-								</div>
+						</div>
+						<div class="div-content-home-list-content">
+							<div class="div-content-home-list-content-header">
+								<a href="#">TITLE 3</a>
+							</div>
+							<div class="div-content-home-list-content-content">
+								<p>Welcome to HIRAYA!</p>
+							</div>
+						</div>
+						<div class="div-content-home-list-content">
+							<div class="div-content-home-list-content-header">
+								<a href="#">TITLE 4</a>
+							</div>
+							<div class="div-content-home-list-content-content">
+								<p>Welcome to HIRAYA!</p>
+							</div>
+						</div>
+						<div class="div-content-home-list-content">
+							<div class="div-content-home-list-content-header">
+								<a href="#">TITLE 5</a>
+							</div>
+							<div class="div-content-home-list-content-content">
+								<p>Welcome to HIRAYA!</p>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="div-content-right">
-					
 				</div>
 			</div>
 		</div>

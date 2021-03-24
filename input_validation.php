@@ -154,7 +154,9 @@
         }
         return True;
     }
-    
+    function isValidAge($age) {
+        return is_numeric($age);
+    }
     // Sample data:
     // $un = "Samantha123";
     // $fn = "Samantha";

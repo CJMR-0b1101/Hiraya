@@ -99,7 +99,7 @@
 	<div class="div-nav-bar">
 		<div class="div-nav-bar-left">
 			<div class="dropdown">
-				<button class="nav-bar-btn"><a href="home_page.php">HOME</button>
+				<button class="nav-bar-btn"><a href="home_page.php">HOME</a></button>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"><a href="destination_page.php">DESTINATION</a></button>

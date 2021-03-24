@@ -5,7 +5,8 @@
 
 .div-body {
   margin: auto;
-  width: 1000px;
+  width: 100%;
+  min-width: 1000px;
   background-color: none;
 }
 
@@ -19,14 +20,12 @@
 
 .div-nav-bar {
   padding: 10px;
-  background-color: #025959;
-  color: #FFFFFF;
+  color: black;
   height: 50px;
 }
 
 .dropdown a {
   text-decoration: none;
-  color: white;
 }
 
 .div-nav-bar-left {
@@ -49,7 +48,6 @@
 .dropbtn {
   border: none;
   background: none;
-  color: white;
   width: 100%;
 }
 
@@ -58,7 +56,7 @@
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 2;
 }
 
 .dropdown-content a {
@@ -67,20 +65,14 @@
   text-decoration: none;
   display: block;
   background-color: #A0A603;
-  color: #73563D;
 }
 
 .nav-bar-btn {
   text-decoration: none;
   border: none;
   background: none;
-  color: #FFFFFF;
+  color: black;
   min-width: 100px;
-  margin: 0px 10px;
-}
-
-.search-form {
-  float: left;
   margin: 0px 10px;
 }
 
@@ -90,56 +82,54 @@
 .nav-bar-btn:hover {cursor: pointer; color: #04ADBF;}
 .nav-bar-btn:focus {outline: none;}
 
-/* CONTENT */
-
-.div-content-left {
-  width: 60%;
-}
+/* HOME CONTENT */
 
 .div-content-background {
   background-color: white;
   padding: 10px;
 }
 
-.div-content-left-header {
+.div-content-home-header {
   height: 50px;
-  background-color: #025959;
-  color: white;
+  color: black;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-.div-content-left-header p {
-  position: absolute;
-  margin-left: 2%;
+.div-content-home-header-blog {
+  float: right;
+  text-decoration: none;
+  color: black;
 }
 
-.div-content-left-background {
-  background-color: #04BFBF;
+.div-content-home-header-blog:hover {
+  text-decoration: underline;
+}
+
+.div-content-home-background {
   padding: 1px;
 }
 
-.div-content-left-list {
+.div-content-home-list {
   list-style: none;
   background: none;
-  width: 98%;
-  margin: 1%;
+  width: 100%;
 }
 
-.div-content-left-list-content {
-  background-color: #FFFFFF;
+.div-content-home-list-content {
+  border: 1px solid black;
+  margin-bottom: 5px;
+  padding: 5px;
 
 }
 
-.div-content-left-list-content-header a {
+.div-content-home-list-content-header a {
   text-decoration: none;
   font-weight: bolder;
   color: #025959;
 }
 
-.div-content-left-list-content-header a:hover {color: #04ADBF;}
-
-.div-content-right {
-  width: 40%;
-}
+.div-content-home-list-content-header a:hover {color: #04ADBF;}
 
 /* DESTINATION */
 
@@ -151,7 +141,7 @@
 
 .div-content-image-container-left {
   width: 50%;
-  height: 400px;
+  height: 600px;
   float: left;
   position: relative;
   border: solid;
@@ -160,7 +150,7 @@
 }
 
 .div-content-image-container-left img {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   position: absolute;
   top: 50%;
@@ -171,7 +161,7 @@
 
 .div-content-image-container-right {
   width: 50%;
-  height: 400px;
+  height: 600px;
   float: right;
   position: relative;
 }
@@ -185,7 +175,8 @@
 }
 
 .div-content-image-container-right-upper img {
-  width: 90%;
+  max-width: 90%;
+  height: 50%;
   padding: 10px;
   position: absolute;
   top: 25%;
@@ -252,7 +243,7 @@
 }
 
 .div-content-image-container-content img {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   position: absolute;
   top: 50%;
@@ -709,7 +700,8 @@ span a:hover {
 * {box-sizing:border-box}
 
 .slideshow-container {
-  max-width: 1000px;
+  width: 100%;
+  min-width: 1000px;
   height: auto;
   position: relative;
 }
@@ -724,7 +716,7 @@ span a:hover {
 
 #img_slide {
   width: 100%;
-  height: 350px;
+  height: 600px;
   object-fit: none;
   object-position: 20%;
 }
