@@ -104,8 +104,7 @@
 		if(isValidName($firstname) && isValidName($lastname) && isValidUsername($username) 
 		&& (isValidPassword($password))) {
 			if($password != $cpassword) {
-				echo "Password does not match<br>";
-				return;
+				echo '<h2 align="center" style="color: red;">Password does not match.</h2>';
 			}
 			else {
 				// Check if user is existing

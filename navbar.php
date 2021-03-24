@@ -179,7 +179,6 @@
 			}
 		?>
 	</div>
-
 	<!-- LOGIN FORM -->
 	<div id="id01" class="modal-form">
 		<div class="modal-content animate">
@@ -261,5 +260,7 @@
 		  }
 		}
 	</script>
+
+		
 </body>
 </html>

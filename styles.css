@@ -1,5 +1,6 @@
 .main-body {
   background-image: url(https://i.imgur.com/atdbjCR.jpg);
+  font-family: Arial;
 }
 
 .div-body {
@@ -351,6 +352,144 @@
   padding: 6px 12px;
 } 
 
+/* PROFILE */
+.div-profile-content-left {
+  width: 30%;
+  float: left;
+}
+
+.div-profile-picture {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+
+.div-profile-picture img {
+  width: 60%;
+  margin-top: 20px;
+}
+
+.div-profile-info {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.div-profile-content-right {
+  width: 69%;
+  float: right;
+}
+
+.div-profile-itinerary {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.div-profile-blog {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.btn-submit {
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.btn-upload {
+  padding: 5px;
+  width: 100%;
+}
+
+
+/* BLOG */
+
+.div-blog-header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.div-blog-left {   
+  float: left;
+  width: 74%;
+}
+
+/* Right column */
+.div-blog-right {
+  float: right;
+  width: 25%;
+}
+
+/* Fake image */
+.div-blog-img {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+  height: 500px;
+}
+
+/* Add a card effect for articles */
+.div-blog-card {
+   background-color: white;
+   padding: 20px;
+}
+
+/* Clear floats after the columns */
+.div-blog-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.div-blog-footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+.blog-header-txt {
+  resize: none;
+  font-size: 50px;
+  text-align: center;
+  border: none;
+}
+
+.blog-body-txt, .blog-about-txt {
+  resize: none;
+  width: 100%;
+  padding: 5px;
+}
+
+.blog-desc-txt {
+  resize: none;
+  height: 60px;
+  width: 100%;
+  padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+/*  Drag and drop box for Gallery */
+.dropzone {
+  width: 300px;
+  height: 300px;
+  border: 2px dashed #ccc;
+  color: #ccc;
+  line-height: 300px;
+  text-align: center;
+}
+.dropzone.dragover {
+  border-color: black;
+  color: black;
+}
+
 /* DIY */
 
 .diy-progress-container {
@@ -667,6 +806,4 @@ span a:hover {
   from {opacity: .4}
   to {opacity: 1}
 }
-
-/* SLIDE SHOW CSS */
 

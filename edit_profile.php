@@ -1,7 +1,10 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile</title>
+    <title>Edit Profile</title>
 </head>
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
@@ -15,12 +18,6 @@
                 $user = $_SESSION['user'];
                 $file_upload_msg = "";
 
-                // echo '<pre>';
-                // print_r($_FILES);
-                // print_r($user);
-                // print_r($_SESSION);
-                // echo '</pre>';
-
                 if(isset($_POST['upload'])) {
                     // NO FILE CHOSEN
                     if(empty($_FILES['profilepic']['name'])) {
@@ -28,7 +25,7 @@
                     }
                     // FILE CHOSEN
                     else {
-                        $filename = $user['username'].".jpg";
+                        $filename = $user['username'].rand().".jpg";
                         $path = "images/".$filename;
                         // echo $path;
 
@@ -70,28 +67,85 @@
                     ?>
                     <center><img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here">
                     <h3><?php echo $user['username']; ?></h3></center>
+                    <form method="post" enctype="multipart/form-data">
+                        <br>
+                        <label for="">Select photo:</label>
+                        <br>
+                        <input class="btn-upload" type="file" name="profilepic">
+                        <br>
+                        <center><input class="btn-submit" type="submit" name="upload" value="Upload Photo"></center>
+                    </form>
+                    <!-- DISPLAY FILE UPLOAD STATUS MESSAGE -->
+                    <?php echo $file_upload_msg; ?>
                 </div>
                 <div class="div-body-margin"></div>
 
                 <!-- DISPLAY USER INFORMATION -->
                 <div class="div-profile-info">
                     <h3>Information</h3>
-                    <?php
-                        $fullname = $user['first_name'].' '.$user['last_name'];
-                        echo "Full name: ".$fullname.'<br>';
-                        echo empty($user['age']) ? "Age: Not yet set<br>" : "Age: ".$user['age'].'<br>';
-                        echo empty($user['email']) ? "Email: Not yet set<br>" : "Email: ".$user['email'].'<br>';
-                        echo empty($user['location']) ? "Location: Not yet set<br>" : "Location: ".$user['location'].'<br>';
-
-                        // EDIT PROFILE IS CLICKED
-                        if(isset($_POST['edit_info']))
-                            echo'<script> window.location="edit_profile.php"; </script>';
-                    ?>
                     <form action="" method="post">
-                        <button name='edit_info' class='btn-submit'>Edit profile</button>
+                    <?php
+                        $valid_edit = true;
+                        $status_msg = "";
+                        $new_fn = $user['first_name'];
+                        $new_ln = $user['last_name'];
+
+                        // SAVE CHANGES BUTTON IS CLICKED
+                        if(isset($_POST['save'])) {
+                            $new_fn = $_POST['new_fn'];
+                            // echo $new_fn;
+                            $status_msg = "<h3 style = 'color:green;'>Profile updated.</h3>";
+                            // $status_msg = $_POST['new_fn'];
+                        }
+                        // CANCEL BUTTON IS CLICKED
+                        if(isset($_POST['cancel'])) {
+                            echo'<script> window.location="profile.php"; </script>';
+                        }
+
+                        $details = fetchDetails($user['user_id']);
+                        $_SESSION['user']['age'] = $user['age'] = $details['age'];
+                        $_SESSION['user']['email'] = $user['email'] = $details['email'];
+                        $_SESSION['user']['location'] = $user['location'] = $details['location'];
+                        
+                        // echo '<pre>';
+                        // print_r($_SESSION);
+                        // echo '</pre>';
+
+                        // FETCH USER DETAILS FROM DATABASE
+                        function fetchDetails($uid) {
+                            include 'config.php';
+
+                            $sql = "SELECT first_name, last_name, password, age, email, location FROM users WHERE user_id = $uid";
+                            $result = mysqli_query($conn, $sql);
+
+                            if($result) {
+                                $row = mysqli_fetch_array($result);
+                                return $row;
+                            }
+                            else {
+                                echo "Error in fetching details.";
+                            }
+                        }
+                        // function updateInfo($new_fn, $new_ln, $new_pw, $age, $email, $loc) {
+                        //     return true;
+                        // }
+                    ?>
+                        <p><input type="text" name="new_fn" placeHolder='First name' value='<?php echo $new_fn?>'></p>
+                        <p><input type="text" name="new_ln" placeHolder='Last name' value='<?php echo $new_ln?>'></p>
+                        <p><input type="password" name="new_pw" placeHolder='New password'></p>
+                        <p><input type="password" name="cnew_pw" placeHolder='Confirm new password'></p>
+                        <p><input type="text" name="age" placeHolder='Age' value='<?php echo $user['age']?>'></p>
+                        <p><input type="text" name="new_fn" placeHolder='Email' value='<?php echo $user['email']?>'></p>
+                        <p><input type="text" name="new_fn" placeHolder='Location' value='<?php echo $user['location']?>'></p>
+                        <button name='save' type="submit">Save changes</button>
+                        <button name='cancel' type="submit">Cancel</button>
+
+                        <!-- STATUS MESSAGE -->
+                        <?php echo $status_msg; ?>
                     </form>
                 </div>
             </div>
+
             <div class="div-profile-content-right">
                 <!-- ITINERARY OF USER -->
                 <div class="div-profile-itinerary">
