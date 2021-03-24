@@ -84,59 +84,68 @@
                 <div class="div-profile-info">
                     <h3>Information</h3>
                     <form action="" method="post">
-                    <?php
-                        $valid_edit = true;
-                        $status_msg = "";
-                        $new_fn = $user['first_name'];
-                        $new_ln = $user['last_name'];
+                        <?php
+                            $valid_edit = true;
+                            $status_msg = "";
+                            $new_fn = $user['first_name'];
+                            $new_ln = $user['last_name'];
+                            $new_pw = "";
+                            $cnew_pw = "";
+                            $age = $user['age'];
+                            $email = $user['email'];
+                            $location = $user['location'];
 
-                        // SAVE CHANGES BUTTON IS CLICKED
-                        if(isset($_POST['save'])) {
-                            $new_fn = $_POST['new_fn'];
-                            // echo $new_fn;
-                            $status_msg = "<h3 style = 'color:green;'>Profile updated.</h3>";
-                            // $status_msg = $_POST['new_fn'];
-                        }
-                        // CANCEL BUTTON IS CLICKED
-                        if(isset($_POST['cancel'])) {
-                            echo'<script> window.location="profile.php"; </script>';
-                        }
+                            // SAVE CHANGES BUTTON IS CLICKED
+                            if(isset($_POST['save'])) {
+                                $new_fn = $_POST['new_fn'];
+                                $new_ln = $_POST['new_ln'];
+                                $new_pw = $_POST['new_pw'];
+                                $cnew_pw = $_POST['cnew_pw'];
+                                $age = $_POST['age'];
+                                $email = $_POST['email'];
+                                $location = $_POST['location'];
 
-                        $details = fetchDetails($user['user_id']);
-                        $_SESSION['user']['age'] = $user['age'] = $details['age'];
-                        $_SESSION['user']['email'] = $user['email'] = $details['email'];
-                        $_SESSION['user']['location'] = $user['location'] = $details['location'];
-                        
-                        // echo '<pre>';
-                        // print_r($_SESSION);
-                        // echo '</pre>';
-
-                        // FETCH USER DETAILS FROM DATABASE
-                        function fetchDetails($uid) {
-                            include 'config.php';
-
-                            $sql = "SELECT first_name, last_name, password, age, email, location FROM users WHERE user_id = $uid";
-                            $result = mysqli_query($conn, $sql);
-
-                            if($result) {
-                                $row = mysqli_fetch_array($result);
-                                return $row;
+                                $status_msg = "<h3 style = 'color:green;'>Profile updated.</h3>";
                             }
-                            else {
-                                echo "Error in fetching details.";
+                            // CANCEL BUTTON IS CLICKED
+                            if(isset($_POST['cancel'])) {
+                                echo'<script> window.location="profile.php"; </script>';
                             }
-                        }
-                        // function updateInfo($new_fn, $new_ln, $new_pw, $age, $email, $loc) {
-                        //     return true;
-                        // }
-                    ?>
-                        <p><input type="text" name="new_fn" placeHolder='First name' value='<?php echo $new_fn?>'></p>
-                        <p><input type="text" name="new_ln" placeHolder='Last name' value='<?php echo $new_ln?>'></p>
+
+                            $details = fetchDetails($user['user_id']);
+                            $_SESSION['user']['age'] = $user['age'] = $details['age'];
+                            $_SESSION['user']['email'] = $user['email'] = $details['email'];
+                            $_SESSION['user']['location'] = $user['location'] = $details['location'];
+                            
+                            // echo '<pre>';
+                            // print_r($_SESSION);
+                            // echo '</pre>';
+
+
+                            // FETCH USER DETAILS FROM DATABASE
+                            function fetchDetails($uid) {
+                                include 'config.php';
+
+                                $sql = "SELECT first_name, last_name, password, age, email, location FROM users WHERE user_id = $uid";
+                                $result = mysqli_query($conn, $sql);
+
+                                if($result) {
+                                    $row = mysqli_fetch_array($result);
+                                    return $row;
+                                }
+                                else {
+                                    echo "Error in fetching details.";
+                                }
+                            }
+                        ?>
+                        <p><input type="text" name="new_fn" placeHolder='First name' value='<?php echo $new_fn ?>'></p>
+                        <p><input type="text" name="new_ln" placeHolder='Last name' value='<?php echo $new_ln ?>'></p>
                         <p><input type="password" name="new_pw" placeHolder='New password'></p>
                         <p><input type="password" name="cnew_pw" placeHolder='Confirm new password'></p>
-                        <p><input type="text" name="age" placeHolder='Age' value='<?php echo $user['age']?>'></p>
-                        <p><input type="text" name="new_fn" placeHolder='Email' value='<?php echo $user['email']?>'></p>
-                        <p><input type="text" name="new_fn" placeHolder='Location' value='<?php echo $user['location']?>'></p>
+                        <p><input type="text" name="age" placeHolder='Age' value='<?php echo $age ?>'></p>
+                        <p><input type="text" name="email" placeHolder='Email' value='<?php $email ?>'></p>
+                        <p><input type="text" name="location" placeHolder='Location' value='<?php $location ?>'></p>
+
                         <button name='save' type="submit">Save changes</button>
                         <button name='cancel' type="submit">Cancel</button>
 
