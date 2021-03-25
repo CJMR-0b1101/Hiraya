@@ -145,10 +145,6 @@
 			if(isset($_SESSION['guestlogin']) && !isset($_SESSION['login'])) {
 				echo '<div class="div-nav-bar-right">
 					<button class="nav-bar-btn" id="btn-login">Guest</button>
-<<<<<<< HEAD
-					
-=======
->>>>>>> 9a40b4cf086ac36481cc36e95fbb268832f856a4
 				</div>';
 			}
 			elseif(isset($_SESSION['login'])) {
