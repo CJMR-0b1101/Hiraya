@@ -12,6 +12,7 @@
 
         if(isset($_SESSION['login'])) {
             $user = $_SESSION['user'];
+            $gallery = null;
 
             if(!isset($_GET['blog_id'])) {
                 header("location: home_page.php");
@@ -31,6 +32,7 @@
                 $blog_content = $row['blog_content'];
                 $blog_header = $row['blog_header'];
                 $about_me = $row['about_me'];
+                $blog_uid = $row['user_id'];
             }
             else {
                 header("location: home_page.php");
@@ -39,15 +41,14 @@
             // FETCH DATA FROM gallery TABLE
             $sql = "SELECT * FROM gallery WHERE blog_id = $blog_id";
             $result = mysqli_query($conn, $sql);
+
             if(mysqli_num_rows($result)) {
-            $row = mysqli_fetch_all($result);
-            }
-            else {
-            echo "ERROR GALLERY";
+              $gallery = mysqli_fetch_all($result);
             }
 
+            // EDIT POST IS CLICKED
             if(isset($_POST['edit'])) {
-            header("location: edit_blog.php?blog_id=".$blog_id."&user_id=".$user['user_id']);
+              echo "<script> window.location='edit_blog.php?blog_id=".$blog_id."&user_id=".$user['user_id']."'</script>";
             }
         }
         ?>
@@ -69,15 +70,16 @@
                 <br><br>
 
                 <!-- BLOG IMAGE HEADER -->
-                <img class="div-blog-img" src="blog_images/<?php echo $blog_header; ?>" alt="Blog-Header-Picture-Here">
+                <div class="div-blog-img" style="background-image: url(blog_images/<?php echo $blog_header; ?>); background-size: cover;"></div>
                   <br><br>
 
                   <!-- BLOG BODY TEXTAREA -->
                   <textarea readonly class="blog-body-txt" name="blog_body" id="" cols="139" rows="5" ><?php echo $blog_content?></textarea>
                   <br>
-
-                <input class="btn-submit" type="submit" name="edt" value="Edit post">   
-
+              <?php
+                if($blog_uid == $user['user_id'])
+                  echo '<input class="btn-submit" type="submit" name="edit" value="Edit post">';
+              ?>
           </div>
         </div>
 
@@ -91,17 +93,18 @@
           <div class="div-body-margin"></div>
           <!-- GALLERY -->
           <div class="div-blog-card">
-            <h3>Gallery</h3>
+            <center><h2>Gallery</h2></center>
 
               <!-- UPLOAD FILES -->
               <div>
                 <?php
-                    $len = count($row);
-                    for($i = 0; $i < $len; $i++) {
-                        // echo $row[$i][3]."<br>";
-                        $currfile = $row[$i][3];
+                  $len = count($gallery);
+                  
+                  for($i = 0; $i < $len; $i++) {
+                      $currfile = $gallery[$i][3];
+                      if(!empty($currfile))
                         echo  "<a href='blog_images/".$currfile."'><img style='width: 100px; object-fit: cover;' src='blog_images/".$currfile."'  /></a>";
-                    }
+                  }
                 ?>
               </div>
 

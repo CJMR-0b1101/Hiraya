@@ -10,7 +10,7 @@
 
   if(isset($_SESSION['login'])) {
     // VARIABLES
-    $ready = True;
+    $ready = true;
     $user = $_SESSION['user'];
     $username = $user['username'];
     $uid =  $user['user_id'];
@@ -36,60 +36,22 @@
     }
     
     if(isset($_POST['create'])) {
-      parseValues($blog_title, $blog_desc, $blog_content, $about_me);
+        parseValues($blog_title, $blog_desc, $blog_content, $about_me);
       
-      // BLOG HEADER PIC IS CHOSEN
-      if(!empty($_FILES['blog_pic']['name'])) {
-        $blog_pic = $username."-blog-".$blog_id.".jpg";
+        $blog_pic = $username."-blog-".$blog_id."-".rand().".jpg";
         $path = "blog_images/".$blog_pic;
         
-        // MOVE BLOG HEADER PIC TO FOLDER
+        // MOVE BLOG HEADER PIC TO FOLDER   
         if((move_uploaded_file($_FILES['blog_pic']['tmp_name'], $path))) {
-          $status_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
+            $status_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
         }
         else {
-          $status_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
+            $status_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
         }
-        
-        // COUNT NUMBER OF CHOSEN PICS IN GALLERY
-        $pics = 0;
-        for($i = 0; $i < 4; $i++) {
-          if(!empty($_FILES["gallery$i"]['name'])) {
-            $pics++;
-          }
-        }
+      
 
-        // ATLEAST 1 GALLERY PIC IS CHOSEN
-        if($pics != 0) {
-          for($i = 0; $i < $pics; $i++) {
-            $pic = $username.'-blog-'.$blog_id.'-gallery-pic-'.($i + 1).'.jpg';
-            $gallery_path = "blog_images/".$pic;
-            $gallery_files[] = $pic;
-
-            // MOVE GALLERY PIC TO FOLDER
-            if((move_uploaded_file($_FILES["gallery$i"]['tmp_name'], $gallery_path))) {
-              $status_msg = "<h3 style = 'color:green;'>Images uploaded!</h3>";
-            }
-            else {
-              $status_msg = "<h3 style = 'color:red;'>Error in uploading gallery file.</h3>";
-            }
-          } 
-        }
-        else {
-          $status_msg = "<h3 style = 'color:red;'>Please upload atleast 1 picture for your gallery.</h3>";
-          $ready = False;
-        }
-
-      }
-      else {
-        $status_msg = "<h3 style = 'color:red;'>Please upload image for your blog.</h3>";
-        $ready = False;
-      }
-
-      // INSERT TO DB
-      if($ready) {
-        createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, $gallery_files, $status_msg);
-      }
+        // INSERT TO DB
+        createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, $status_msg);
     }
   }
 
@@ -101,34 +63,58 @@
     $blog_content = $_POST['blog_body'];
     $about_me = $_POST['about_me'];
   }
-  function createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, $gallery_files, &$status_msg) {
+  function createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, &$status_msg) {
     include 'config.php';
 
     // INSERT TO BLOGS TABLE
     $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
     VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$blog_pic', '$about_me')";     
-
     $result = mysqli_query($conn, $sql);
 
     if($result) {
       $status_msg = "Blog created.";
       
-      // INSERT TO GALLERY TABLE
-      for($i = 0; $i < count($gallery_files); $i++) {
+      // INSERT 4 EMPTY FILES TO GALLERY TABLE
+      for($i = 0; $i < 4; $i++) {
         $sql = "INSERT INTO gallery(blog_id, user_id, picture_name)
-        VALUES($blog_id, $uid, '$gallery_files[$i]')";
-        $result = mysqli_query($conn, $sql);
-        if($result) {
+        VALUES($blog_id, $uid, '')";
+        $gallery_result = mysqli_query($conn, $sql);
+        if($gallery_result) {
           $status_msg = "<h2 style = 'color:green;'>Blog created.</h2>"; 
         }
         else {
-          $status_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+          $status_msg = "<h2 style = 'color:red;'>Error in inserting gallery.</h2>"; 
         }
       }
-      // redirectConfirmation($blog_id, $uid);
+
+      // CHECK IF THERE ARE FILES CHOSEN IN GALLERY FILE UPLOAD
+      $sql = "SELECT picture_id FROM gallery WHERE blog_id =".$_SESSION['blog_id'];
+      $gallery_result = mysqli_query($conn, $sql);
+
+      $rows = mysqli_fetch_all($gallery_result);
+
+        $pics = 0;
+        for($i = 0; $i < 4; $i++) {
+            if(!empty($_FILES["gallery$i"]['name'])) {
+                $pics++;
+            }
+        }
+        // echo "Chosen pics: ".$pics."<br>";
+        
+        for($i = 0; $i < $pics; $i++) {
+            $pic = $_SESSION['user']['username'].rand().'.jpg';
+            $gallery_path = "blog_images/".$pic;
+            move_uploaded_file($_FILES["gallery$i"]['tmp_name'], $gallery_path);
+
+            $sql = "UPDATE gallery SET picture_name='".$pic."'
+             WHERE picture_id=".$rows[$i][0];
+            $update_result = mysqli_query($conn, $sql);
+        } 
+
+      redirectConfirmation($blog_id, $uid);
     }
     else {
-        $status_msg = "<h2 style = 'color:red;'>Error in inserting.</h2>"; 
+        $status_msg = "<h2 style = 'color:red;'>Error in inserting blog.</h2>"; 
     }
   }
   function redirectConfirmation($blog_id, $uid) {
@@ -165,11 +151,11 @@
                 <br><br>
 
                 <!-- BLOG IMAGE HEADER -->
-                <img class="div-blog-img" src="blog_images/<?php echo $blog_pic; ?>" alt="Blog-Header-Picture-Here">
+                <div class="div-blog-img" style="background-image: url(blog_images/<?php echo $blog_pic; ?>); background-size: cover;"></div>
                   <br>
                   <label for="">Select photo:</label>
                   <br>
-                  <input class="btn-upload" type="file" name="blog_pic">
+                  <input class="btn-upload" type="file" name="blog_pic" required>
                   <br><br>
 
                   <!-- BLOG BODY TEXTAREA -->
@@ -192,15 +178,16 @@
                   placeholder="Tell us about yourself" required><?php echo $about_me?></textarea>
           </div>
           <div class="div-body-margin"></div>
+          
           <!-- GALLERY -->
           <div class="div-blog-card">
-            <h3>Gallery</h3>
+            <center><h2>Gallery</h2></center>
 
               <!-- UPLOAD FILES -->
               <div>
                 <?php
                   for($i = 0; $i < 4; $i++) {
-                    echo "<input type='file' name='gallery$i'>";
+                    echo "<input type='file' name='gallery$i'><hr>";
                   }
                 ?>
               </div>

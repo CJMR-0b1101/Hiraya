@@ -85,7 +85,7 @@
 
                         // EDIT PROFILE IS CLICKED
                         if(isset($_POST['edit_info']))
-                            echo'<script> window.location="edit_profile.php"; </script>';
+                            echo '<script> window.location="edit_profile.php"; </script>';
                     ?>
                     <form action="" method="post">
                         <button name='edit_info' class='btn-submit'>Edit profile</button>
