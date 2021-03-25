@@ -1,6 +1,8 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 .main-body {
   background-image: url(https://i.imgur.com/atdbjCR.jpg);
-  font-family: Arial;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .div-body {
@@ -14,14 +16,22 @@
   height: 10px;
   width: 100%;
   background: none;
+  border-bottom: 5px black;
 }
 
 /* NAVIGATION BAR */
+img{
+  height: 40px;
+  width: 100px;
+  padding-right: 15px;
+}
 
 .div-nav-bar {
   padding: 10px;
   color: black;
   height: 50px;
+  font-family: 'Noto Sans TC', sans-serif;
+  
 }
 
 .dropdown a {
@@ -31,11 +41,13 @@
 .div-nav-bar-left {
   float: left;
   padding: 5px;
+  padding-bottom: 5px;
 }
 
 .div-nav-bar-right {
   float: right;
-  padding: 5px;
+  padding-bottom: 5px;
+  border:2px solid black;
 }
 
 .dropdown {
@@ -49,6 +61,10 @@
   border: none;
   background: none;
   width: 100%;
+  color: black;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: large;
+  padding-top: 10px;
 }
 
 .dropdown-content {
@@ -74,6 +90,10 @@
   color: black;
   min-width: 100px;
   margin: 0px 10px;
+  font-size: large;
+  padding-bottom: 5px;
+  padding-top: 15px;
+  padding-left: 5px;
 }
 
 .dropdown-content a:hover {background-color: #F2E0C9;}
@@ -85,7 +105,7 @@
 /* HOME CONTENT */
 
 .div-content-background {
-  background-color: white;
+  background-color: red;
   padding: 10px;
 }
 
@@ -94,6 +114,8 @@
   color: black;
   margin-bottom: 10px;
   margin-left: 10px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size:medium;
 }
 
 .div-content-home-header-blog {
@@ -117,7 +139,7 @@
 }
 
 .div-content-home-list-content {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   margin-bottom: 5px;
   padding: 5px;
 
@@ -127,7 +149,11 @@
   text-decoration: none;
   font-weight: bolder;
   color: #025959;
+  font-size: large;
+  font-family: 'Noto Sans TC', sans-serif;
 }
+
+
 
 .div-content-home-list-content-header a:hover {color: #04ADBF;}
 
@@ -345,6 +371,7 @@
 
 /* PROFILE */
 .div-profile-content-left {
+  margin-top: 50px;
   width: 30%;
   float: left;
 }
@@ -464,19 +491,6 @@
     width: 100%;
     padding: 0;
   }
-}
-/*  Drag and drop box for Gallery */
-.dropzone {
-  width: 300px;
-  height: 300px;
-  border: 2px dashed #ccc;
-  color: #ccc;
-  line-height: 300px;
-  text-align: center;
-}
-.dropzone.dragover {
-  border-color: black;
-  color: black;
 }
 
 /* DIY */
@@ -702,6 +716,7 @@ span a:hover {
   min-width: 1000px;
   height: auto;
   position: relative;
+  margin-top: 10px;
 }
 
 .mySlides {

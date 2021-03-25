@@ -99,7 +99,7 @@
 	<div class="div-nav-bar">
 		<div class="div-nav-bar-left">
 			<div class="dropdown">
-				<button class="nav-bar-btn"><a href="home_page.php">HOME</a></button>
+				<button class="nav-bar-btn"><a href="home_page.php"><img src="https://i.imgur.com/L9KYRtV.png"></a></button>
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"><a href="destination_page.php">DESTINATION</a></button>
@@ -145,7 +145,10 @@
 			if(isset($_SESSION['guestlogin']) && !isset($_SESSION['login'])) {
 				echo '<div class="div-nav-bar-right">
 					<button class="nav-bar-btn" id="btn-login">Guest</button>
+<<<<<<< HEAD
 					
+=======
+>>>>>>> 9a40b4cf086ac36481cc36e95fbb268832f856a4
 				</div>';
 			}
 			elseif(isset($_SESSION['login'])) {
@@ -165,10 +168,6 @@
 			else {
 				echo '<div class="div-nav-bar-right">
 					<button class="nav-bar-btn" id="btn-login">Login</button>
-					
-					<form class=\'search-form\'>
-						<input type="text" name="">
-					</form>
 				</div>';
 			}
 		?>
@@ -179,7 +178,7 @@
 			<div class="modal-content-body">
 				<div class="modal-img-logo">
 					<img class="logo" src="https://i.imgur.com/is4Qk5D.png">
-					<h1>HIRAYA</h1>
+					<h1>H I R A Y A</h1>
 					<div class="icon"><i class="fas fa-user-circle fa-3x"></i></div><br>
 				</div>
 
