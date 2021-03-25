@@ -146,9 +146,6 @@
 				echo '<div class="div-nav-bar-right">
 					<button class="nav-bar-btn" id="btn-login">Guest</button>
 					
-					<form class=\'search-form\'>
-						<input type="text" name="">
-					</form>
 				</div>';
 			}
 			elseif(isset($_SESSION['login'])) {
@@ -163,9 +160,6 @@
 								<a href="logout.php">Logout</a>
 							</div>
 						</div>
-						<form class=\'search-form\'>
-							<input type="text" name="">
-						</form>
 					</div>';
 			}
 			else {

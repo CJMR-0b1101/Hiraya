@@ -5,7 +5,27 @@
 </head>
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
-
+<style>
+.button-style{
+  font-size: 15px;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #747F42;
+  /* color:#A5CC82; */
+  color: black;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button-style:hover {
+  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+}
+</style>
 
 <body class="main-body">
     <div class="div-body">
@@ -88,7 +108,7 @@
                             echo '<script> window.location="edit_profile.php"; </script>';
                     ?>
                     <form action="" method="post">
-                        <button name='edit_info' class='btn-submit'>Edit profile</button>
+                        <br><button name='edit_info' class='button-style'>Edit profile</button>
                     </form>
                 </div>
             </div>
@@ -140,7 +160,7 @@
                     ?>
                     <form action="create_blog.php" method="post">
                         <br>
-                        <center><input class="profile-submit" type="submit" value="Create a Blog"></center>
+                        <center><input class="button-style" type="submit" value="Create a Blog"></center>
                     </form>
                 </div>
             </div>

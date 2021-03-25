@@ -9,6 +9,30 @@
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 
+<style>
+.button-style{
+  font-size: 15px;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #747F42;
+  /* color:#A5CC82; */
+  color: black;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button-style:hover {
+  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+}
+input[type=text], input[type=password] {
+    width: 50%;
+}
+</style>
 
 <body class="main-body">
     <div class="div-body">
@@ -69,11 +93,11 @@
                     <h3><?php echo $user['username']; ?></h3></center>
                     <form method="post" enctype="multipart/form-data">
                         <br>
-                        <label for="">Select photo:</label>
+                        <label for="">Browse:</label>
                         <br>
                         <input class="btn-upload" type="file" name="profilepic">
                         <br>
-                        <center><input class="btn-submit" type="submit" name="upload" value="Upload Photo"></center>
+                        <center><input class="button-style" type="submit" name="upload" value="Upload Photo"></center>
                     </form>
                     <!-- DISPLAY FILE UPLOAD STATUS MESSAGE -->
                     <?php echo $file_upload_msg; ?>
@@ -192,8 +216,8 @@
                         <p><input type="text" name="email" placeHolder='Email' value='<?php echo $email ?>'></p>
                         <p><input type="text" name="location" placeHolder='Location' value='<?php echo $location ?>'></p>
 
-                        <button name='save' type="submit">Save changes</button>
-                        <button name='cancel' type="submit">Cancel</button>
+                        <button class='button-style' name='save' type="submit">Save changes</button>
+                        <button class='button-style' name='cancel' type="submit">Cancel</button>
 
                         <!-- STATUS MESSAGE -->
                         <?php echo $status_msg; ?>
@@ -249,7 +273,7 @@
                     ?>
                     <form action="create_blog.php" method="post">
                         <br>
-                        <center><input class="profile-submit" type="submit" value="Create a Blog"></center>
+                        <center><input class="button-style" type="submit" value="Create a Blog"></center>
                     </form>
                 </div>
             </div>

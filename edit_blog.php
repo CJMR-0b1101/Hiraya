@@ -3,6 +3,27 @@
 <head>
   <title>Edit Blog</title>
 </head>
+<style>
+.button-style{
+  font-size: 15px;
+  font-family: 'Inconsolata', monospace;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  border: 2px solid #747F42;
+  /* color:#A5CC82; */
+  color: black;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button-style:hover {
+  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+}
+</style>
 
 <!-- MAIN PROGRAM STARTS HERE -->
 <?php
@@ -172,9 +193,9 @@
                 <!-- <img class="div-blog-img" src="blog_images/<?php echo $blog_pic; ?>" alt="Blog-Header-Picture-Here"> -->
                 <div class="div-blog-img" style="background-image: url(blog_images/<?php echo $blog_pic; ?>); background-size: cover;"></div>
                   <br>
-                  <label for="">Select photo:</label>
+                  <label for="">Browse:</label>
                   <br>
-                  <input class="btn-upload" type="file" name="blog_pic">
+                  <input class="button-style" type="file" name="blog_pic">
                   <br><br>
 
                   <!-- BLOG BODY TEXTAREA -->
@@ -184,8 +205,8 @@
                   <?php 
                     echo $status_msg;
                   ?>
-                <input class="btn-submit" type="submit" name="save" value="Save">
-                <input class="btn-submit" type="submit" name="cancel" value="Cancel">   
+                <input class="button-style" type="submit" name="save" value="Save">
+                <input class="button-style" type="submit" name="cancel" value="Cancel">   
 
           </div>
         </div>
@@ -243,7 +264,7 @@
                       // echo "</pre>";
                       
                       for($i = 0; $i < count($empty); $i++) {
-                        echo "<input type='file' name='gallery".$empty[$i][0]."'>";
+                        echo "<input class='button-style' type='file' name='gallery".$empty[$i][0]."'>";
                       }
                     }
 
