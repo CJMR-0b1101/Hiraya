@@ -48,15 +48,25 @@
             $about_me = $row['about_me'];
         }
 
+        // CANCEL BUTTON IS CLICKED
+        if(isset($_POST['cancel'])) {
+          header("location: view_blog.php?blog_id=".$blog_id);
+        }
         // SAVE BUTTON IS CLICKED
         if(isset($_POST['save'])) {
           parseValues($blog_title, $blog_desc, $blog_content, $about_me);
            
           // IF BLOG HEADER IS NOT UPDATED (NO FILE CHOSEN)
-          $blog_pic = empty($_FILES['blog_pic']['name']) ? $row['blog_header'] : $_FILES['blog_pic']['name'];
+          if(!empty($_FILES['blog_pic']['name'])) {
+            $blog_pic = $_FILES['blog_pic']['tmp_name'];
+          }
+          else {
+            $blog_pic = $row['blog_header'];
+          }
+          // $blog_pic = empty($_FILES['blog_pic']['name']) ? $row['blog_header'] : $_FILES['blog_pic']['name'];
           // echo $blog_pic;
 
-          updateBlog($blog_id, $gallery, $status_msg);
+          updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, $gallery, $status_msg);
         }
       }
 
@@ -67,8 +77,29 @@
         $blog_content = $_POST['blog_body'];
         $about_me = $_POST['about_me'];
       }
-      function updateBlog($blog_id, &$gallery, &$status_msg) {
+      function updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, &$gallery, &$status_msg) {
         include 'config.php';
+        
+        // echo "Receieved blog pic: $blog_pic<br>";
+        $currblogpic = $_SESSION['user']['username']."-blog-".$blog_id."-".rand().".jpg";
+        // echo "Randomized: $currblogpic<br>";
+        $path = "blog_images/".$currblogpic;
+
+        if(move_uploaded_file($blog_pic, $path)) {
+          $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
+          blog_content='$blog_content', blog_header='$currblogpic', about_me='$about_me'
+          WHERE blog_id=$blog_id";
+          // echo $sql;
+        }
+        else {
+          $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
+          blog_content='$blog_content', blog_header='$blog_pic', about_me='$about_me'
+          WHERE blog_id=$blog_id";
+          // echo $sql;
+        }
+
+        $updateblog = mysqli_query($conn, $sql);
+
         // QUERY FROM GALLERY TABLE
         $sql = "SELECT picture_id, picture_name FROM gallery WHERE blog_id = $blog_id";
         // echo $sql;
@@ -112,6 +143,7 @@
           }
           $skipcount++;
         }
+        header("location: view_blog.php?blog_id=".$blog_id);
       }
 ?>
 
@@ -152,7 +184,8 @@
                   <?php 
                     echo $status_msg;
                   ?>
-                <input class="btn-submit" type="submit" name="save" value="Save">   
+                <input class="btn-submit" type="submit" name="save" value="Save">
+                <input class="btn-submit" type="submit" name="cancel" value="Cancel">   
 
           </div>
         </div>
