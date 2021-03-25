@@ -13,18 +13,19 @@
 	<style>
 		/* Background */
 			body{
-				background-image: url(https://i.imgur.com/8fthuou.png);
+				background-image: url(https://i.imgur.com/bYsVdHu.png);
 			}
 			h1{
 				margin-top: -10px;
+				color: black;
 			}
 		/* container box */
 			div.container1{
-				width: 30%;
-				margin: 1% 35%;
-				padding: 10px 20px;
+				width: 40%;
+				margin: 10% 30%;
+				padding: 20px 20px;
 				box-sizing: border-box;
-				border: 2px solid #04BFBF;
+				border: none;
 				border-radius: 10px;
 				position: absolute;
 				text-align: center;
@@ -33,6 +34,7 @@
 				font-size: 20px;
 				font-family: 'Inconsolata', monospace; color: #747F42;
 				font-weight: bold;
+				opacity: 0.9;
 			}
 			img.logo{
 				margin-left: auto;
@@ -98,7 +100,7 @@
 	
 	<div class="container1">
 		<img class="logo" src="https://i.imgur.com/is4Qk5D.png">
-		<h1>HIRAYA</h1>
+		<h1>H I R A Y A</h1>
 		<div class="icon"><i class="fas fa-user-circle fa-3x"></div></i><br>
 		<form action="" method="post">
 			<button type="submit" name="guest">I am a guest</button>

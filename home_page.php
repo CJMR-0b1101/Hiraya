@@ -3,6 +3,8 @@
 <head>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 	<title></title>
 </head>
 
@@ -12,16 +14,16 @@
 		<div class="div-body-margin"></div>
 		<div class="slideshow-container">
 			<div class="mySlides fade" id='first_slide'>
-				<img src="images/img1.jpg" id="img_slide">
-				<div class="text">Caption Text</div>
+				<img src="https://i.imgur.com/6CCp3sL.jpg" id="img_slide">
+				<div class="text">BORACAY</div>
 			</div>
 			<div class="mySlides fade">
-				<img src="images/img2.jpg" id="img_slide">
-				<div class="text">Caption Two</div>
+				<img src="https://i.imgur.com/xLjrrsL.jpg" id="img_slide">
+				<div class="text">SIARGAO</div>
 			</div>
 			<div class="mySlides fade">
-				<img src="images/img3.jpg" id="img_slide">
-				<div class="text">Caption Three</div>
+				<img src="https://i.imgur.com/FgdctQq.jpg" id="img_slide">
+				<div class="text">PALAWAN</div>
 			</div>
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -59,11 +61,12 @@
 			  dots[slideIndex-1].className += " active";
 			}
 		</script>
+		<br><hr class="solid">
 		<div class="div-body-margin"></div>
 		<div class="div-content">
 			<div class="div-content-home">
 				<div class="div-content-home-header">
-					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="">See all</a></h1>
+					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="">more</a></h1>
 					
 				</div>
 				<div class="div-content-home-background">

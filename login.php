@@ -6,18 +6,19 @@
 	<style>
 		/* Background */
 			body{
-				background-image: url(https://i.imgur.com/8fthuou.png);
+				background-image: url(https://i.imgur.com/bYsVdHu.png);
 			}
 			h1{
 				margin-top: -10px;
+				color: black;
 			}
 		/* container box */
 			div.container1{
 				width: 30%;
-				margin: 1% 35%;
+				margin: 5% 35%;
 				padding: 10px 20px;
 				box-sizing: border-box;
-				border: 2px solid #04BFBF;
+				border: none;
 				border-radius: 10px;
 				position: absolute;
 				text-align: center;
@@ -35,6 +36,26 @@
 			div.icon{
 				margin-top: -5px;
 				font-size: 20px;
+			}
+
+			a:link {
+			color: #747F42;
+			font-size: 15px;
+			}
+
+			/* visited link */
+			a:visited {
+			color: green;
+			}
+
+			/* mouse over link */
+			a:hover {
+			color: #04BFBF;
+			}
+
+			/* selected link */
+			a:active {
+			color: blue;
 			}
 			/* Input styles and Buttons*/
 				input{
@@ -62,7 +83,7 @@
 		            border-radius: 12px;
 		            border: 2px solid #747F42;
 		            color:#A5CC82;
-		            padding: 15px 32px;
+		            padding: 10px 32px;
 		            text-align: center;
 		            text-decoration: none;
 		            display: inline-block;
@@ -113,7 +134,7 @@
 	
 	<div class="container1">
 		<img class="logo" src="https://i.imgur.com/is4Qk5D.png">
-		<h1>HIRAYA</h1>
+		<h1>H I R A Y A</h1>
 		<div class="icon"><i class="fas fa-user-circle fa-3x"></div></i><br>
 		<form action="" method="post">
 			<input type="text" name="uname" placeholder="Username" required>
@@ -123,7 +144,7 @@
 			<button type="submit" value="login" name="login">Login</button><br>
 		</form>
 		<br>
-		<a href="register.php">Create an account -> </a>
+		<a href="register.php"> Not a member? Register here! </a>
 	</div>
 </body>
 </html>
