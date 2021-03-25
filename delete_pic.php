@@ -26,7 +26,7 @@
     $result = mysqli_query($conn, $sql);
 
     if($result) {
-        header("location: edit_blog1.php?blog_id=$blog_id&user_id=$uid");
+        header("location: edit_blog.php?blog_id=$blog_id&user_id=$uid");
         $_SESSION['curr_del_pic'][] = $pic_id;
     }
     else {
