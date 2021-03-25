@@ -98,6 +98,7 @@
 
 <!-- LOGIN PHP -->
 <?php
+	$status_msg = "";
 	session_start();
 	
 	if(isset($_SESSION['login'])) {
@@ -125,7 +126,7 @@
 			header("location: home_page.php");
 		} 
 		else {
-			echo '<h2 align="center" style="color: red;">Invalid Login Credentials!</h2>';
+			$status_msg = 'Invalid login credentials';
 		}
 	}
 ?>
@@ -137,9 +138,10 @@
 		<h1>H I R A Y A</h1>
 		<div class="icon"><i class="fas fa-user-circle fa-3x"></div></i><br>
 		<form action="" method="post">
-			<input type="text" name="uname" placeholder="Username" required>
+			<?php echo "<h5 style='color: red;'>$status_msg</h5>"; ?>
+			<input type="text" name="uname" placeholder="Username">
 			<br>
-			<input type="password" name="pword" placeholder="Password" required>
+			<input type="password" name="pword" placeholder="Password">
 			<br>
 			<button type="submit" value="login" name="login">Login</button><br>
 		</form>
