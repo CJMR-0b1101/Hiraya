@@ -4,7 +4,7 @@
   <title>Blogs</title>
 </head>
 <style>
-.button-style{
+.button-style, .delete-post-button {
   font-size: 15px;
   font-family: 'Inconsolata', monospace;
   background-color: white;
@@ -21,6 +21,10 @@
 }
 .button-style:hover {
   background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+  color: white;
+}
+.delete-post-button:hover {
+  background-color: red;
   color: white;
 }
 </style>
@@ -112,6 +116,22 @@
             if(isset($_POST['edit'])) {
               echo "<script> window.location='edit_blog.php?blog_id=".$blog_id."&user_id=".$user['user_id']."'</script>";
             }
+
+            // DELETE POST IS CLICKED
+            if(isset($_POST['delete'])) {
+              $sql = "DELETE FROM blogs WHERE blog_id=$blog_id";
+              // echo $sql;
+              $blog_result = mysqli_query($conn, $sql);
+              $sql = "DELETE FROM gallery WHERE blog_id=$blog_id";
+              $gallery_result = mysqli_query($conn, $sql);
+
+              if($blog_result && $gallery_result) {
+                echo "<script> window.location='profile.php'</script>";
+              }
+              else {
+                echo "LMAO";
+              }
+            }
         }
       ?>
     <div class="div-body-margin"></div>
@@ -142,6 +162,7 @@
                 if(!isset($_SESSION['guestlogin'])) {
                   if($blog_uid == $user['user_id'])
                     echo '<input class="button-style" type="submit" name="edit" value="Edit post">';
+                    echo '<input class="delete-post-button" type="submit" name="delete" value="Delete post">';
                 }
               ?>
           </div>
