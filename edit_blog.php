@@ -90,6 +90,9 @@
           updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, $gallery, $status_msg);
         }
       }
+      else {
+          echo '<script> window.location.replace("index.php") </script>';
+      }
 
       function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
         // Get values from text areas
