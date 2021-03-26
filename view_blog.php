@@ -11,8 +11,7 @@
   border: none;
   border-radius: 12px;
   border: 2px solid #747F42;
-  /* color:#A5CC82; */
-  color: black;
+  color: #747F42;
   padding: 7px;
   text-align: center;
   text-decoration: none;
@@ -22,6 +21,7 @@
 }
 .button-style:hover {
   background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+  color: white;
 }
 </style>
 
@@ -29,12 +29,13 @@
   <div class="div-body">
     <?php
         include 'navbar.php';
-        
+        // echo "<pre>";
+        // print_r($_SESSION);
+        // echo "</pre>";
         if(!isset($_SESSION['guestlogin'])) {
           echo'<script> window.location="index.php"; </script>';
         }
         else {
-          echo "GUEST";
           if(!isset($_GET['blog_id'])) {
             header("location: home_page.php");
           }
@@ -69,6 +70,9 @@
         }
 
         if(isset($_SESSION['login'])) {
+            if(isset($_SESSION['guestlogin']))
+              unset($_SESSION['guestlogin']);
+
             $user = $_SESSION['user'];
             $gallery = null;
 

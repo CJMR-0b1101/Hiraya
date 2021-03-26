@@ -4,24 +4,24 @@
   <title>Edit Blog</title>
 </head>
 <style>
-.button-style{
-  font-size: 15px;
-  font-family: 'Inconsolata', monospace;
-  background-color: white;
-  border: none;
-  border-radius: 12px;
-  border: 2px solid #747F42;
-  /* color:#A5CC82; */
-  color: black;
-  padding: 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button-style:hover {
-  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+  .button-style{
+    font-size: 15px;
+    font-family: 'Inconsolata', monospace;
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    border: 2px solid #747F42;
+    color: #747F42;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button-style:hover {
+    background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+    color: white;
 }
 </style>
 
@@ -40,7 +40,6 @@
         $blog_desc = '';
         $blog_content = '';
         $about_me = '';
-        $status_msg = '';
         $gallery = null;
 
         // IF USER TRIED TO ACCESS EDIT BLOG WITHOUT PERMISSION
@@ -131,6 +130,7 @@
 
       if($result) {
           $gallery = mysqli_fetch_all($result);
+          $status_msg = "<h4 style = 'color:green;'>Blog updated</h4>";
       }
       
       $sql = "SELECT picture_id FROM gallery WHERE picture_name='' AND blog_id=$blog_id";
@@ -138,10 +138,6 @@
 
       if($gallery_result) {
         $empty = mysqli_fetch_all($gallery_result);
-        // echo "<pre>";
-        // print_r($empty);
-        // echo "</pre>";
-
       }
       
       $skipcount = 1;
@@ -158,16 +154,16 @@
           // echo $sql."<br>";
           $update = mysqli_query($conn, $sql);
           if($update) {
-            $status_msg = "<h3 style = 'color:green;'>Saved changes.</h3>";
+            $status_msg = "<h4 style = 'color:green;'>Saved changes.</h4>";
           }
           else {
-            $status_msg = "<h3 style = 'color:red;'>Update failed.</h3>";
+            $status_msg = "<h4 style = 'color:red;'>Update failed.</h4>";
           }
           $i++;
         }
         $skipcount++;
       }
-      header("location: view_blog.php?blog_id=".$blog_id);
+      // header("location: view_blog.php?blog_id=".$blog_id);
     }
 ?>
 

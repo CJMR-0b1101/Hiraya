@@ -10,28 +10,27 @@
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 
 <style>
-.button-style{
-  font-size: 15px;
-  font-family: 'Inconsolata', monospace;
-  background-color: white;
-  border: none;
-  border-radius: 12px;
-  border: 2px solid #747F42;
-  /* color:#A5CC82; */
-  color: black;
-  padding: 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button-style:hover {
-  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
-}
-input[type=text], input[type=password] {
-    width: 50%;
-}
+    .button-style{
+        font-size: 15px;
+        font-family: 'Inconsolata', monospace;
+        background-color: white;
+        border: none;
+        border-radius: 12px;
+        border: 2px solid #747F42;
+        color: #747F42;
+        padding: 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button-style:hover {
+        background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+    }
+    input[type=text], input[type=password] {
+        width: 50%;
+    }
 </style>
 
 <body class="main-body">

@@ -123,6 +123,10 @@
 
 			$_SESSION['login'] = true;
 			$_SESSION['user'] = $row;
+
+			if(isset($_SESSION['guestlogin']))
+				unset($_SESSION['guestlogin']);
+
 			header("location: home_page.php");
 		} 
 		else {

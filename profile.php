@@ -6,36 +6,33 @@
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 <style>
-
-.div-profile-picture{
-    float:center;
-}
-.div-body{
-max-width: 300px;
-margin-left: 50px;
-text-align: center;
-  
-}
-
-.button-style{
-  font-size: 15px;
-  font-family: 'Inconsolata', monospace;
-  background-color: white;
-  border: none;
-  border-radius: 12px;
-  border: 2px solid #747F42;
-  /* color:#A5CC82; */
-  color: black;
-  padding: 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button-style:hover {
-  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
-}
+    .div-profile-picture {
+        float:center;
+    }
+    .div-body {
+        max-width: 300px;
+        margin-left: 50px;
+        text-align: center;
+    }
+    .button-style {
+        font-size: 15px;
+        font-family: 'Inconsolata', monospace;
+        background-color: white;
+        border: none;
+        border-radius: 12px;
+        border: 2px solid #747F42;
+        color: #747F42;
+        padding: 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .button-style:hover {
+        background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+        color: white;
+    }
 </style>
 
 <body class="main-body">

@@ -26,6 +26,9 @@
 			$_SESSION['login'] = True;
 			$_SESSION['user'] = $row;
 			
+			if(isset($_SESSION['guestlogin']))
+				unset($_SESSION['guestlogin']);
+			
 			header("location: home_page.php");
 		} 
 		else {

@@ -4,25 +4,25 @@
   <title>Blogs</title>
 </head>
 <style>
-.button-style{
-  font-size: 15px;
-  font-family: 'Inconsolata', monospace;
-  background-color: white;
-  border: none;
-  border-radius: 12px;
-  border: 2px solid #747F42;
-  /* color:#A5CC82; */
-  color: black;
-  padding: 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-cursor: pointer;
-}
-.button-style:hover {
-  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
-}
+  .button-style{
+    font-size: 15px;
+    font-family: 'Inconsolata', monospace;
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    border: 2px solid #747F42;
+    color: #747F42;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button-style:hover {
+    background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+    color: white;
+  }
 </style>
 <!-- MAIN PROGRAM STARTS HERE -->
 <?php
