@@ -89,86 +89,86 @@
 
           updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, $gallery, $status_msg);
         }
+    }
+    else {
+        echo '<script> window.location.replace("index.php") </script>';
+    }
+
+    function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
+      // Get values from text areas
+      $blog_title = $_POST['blog_title'];
+      $blog_desc = $_POST['blog_desc'];
+      $blog_content = $_POST['blog_body'];
+      $about_me = $_POST['about_me'];
+    }
+    function updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, &$gallery, &$status_msg) {
+      include 'config.php';
+      
+      // echo "Receieved blog pic: $blog_pic<br>";
+      $currblogpic = $_SESSION['user']['username']."-blog-".$blog_id."-".rand().".jpg";
+      // echo "Randomized: $currblogpic<br>";
+      $path = "blog_images/".$currblogpic;
+
+      if(move_uploaded_file($blog_pic, $path)) {
+        $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
+        blog_content='$blog_content', blog_header='$currblogpic', about_me='$about_me'
+        WHERE blog_id=$blog_id";
+        // echo $sql;
       }
       else {
-          echo '<script> window.location.replace("index.php") </script>';
-      }
-
-      function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
-        // Get values from text areas
-        $blog_title = $_POST['blog_title'];
-        $blog_desc = $_POST['blog_desc'];
-        $blog_content = $_POST['blog_body'];
-        $about_me = $_POST['about_me'];
-      }
-      function updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, &$gallery, &$status_msg) {
-        include 'config.php';
-        
-        // echo "Receieved blog pic: $blog_pic<br>";
-        $currblogpic = $_SESSION['user']['username']."-blog-".$blog_id."-".rand().".jpg";
-        // echo "Randomized: $currblogpic<br>";
-        $path = "blog_images/".$currblogpic;
-
-        if(move_uploaded_file($blog_pic, $path)) {
-          $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
-          blog_content='$blog_content', blog_header='$currblogpic', about_me='$about_me'
-          WHERE blog_id=$blog_id";
-          // echo $sql;
-        }
-        else {
-          $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
-          blog_content='$blog_content', blog_header='$blog_pic', about_me='$about_me'
-          WHERE blog_id=$blog_id";
-          // echo $sql;
-        }
-
-        $updateblog = mysqli_query($conn, $sql);
-
-        // QUERY FROM GALLERY TABLE
-        $sql = "SELECT picture_id, picture_name FROM gallery WHERE blog_id = $blog_id";
+        $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
+        blog_content='$blog_content', blog_header='$blog_pic', about_me='$about_me'
+        WHERE blog_id=$blog_id";
         // echo $sql;
-        $result = mysqli_query($conn, $sql);
-
-        if($result) {
-            $gallery = mysqli_fetch_all($result);
-        }
-        
-        $sql = "SELECT picture_id FROM gallery WHERE picture_name='' AND blog_id=$blog_id";
-        $gallery_result = mysqli_query($conn, $sql);
-
-        if($gallery_result) {
-          $empty = mysqli_fetch_all($gallery_result);
-          // echo "<pre>";
-          // print_r($empty);
-          // echo "</pre>";
-
-        }
-        
-        $skipcount = 1;
-        $i = 0;
-        foreach($_FILES as $file) {
-          if($skipcount != 1 && !empty($file['name'])) {
-            $pic = $_SESSION['user']['username'].rand().'.jpg';
-            $gallery_path = "blog_images/".$pic;
-            // echo $file['tmp_name']."<br>";
-            move_uploaded_file($file['tmp_name'], $gallery_path);
-
-            // UPDATE GALLERY
-            $sql = "UPDATE gallery SET picture_name = '$pic' WHERE picture_id=".$empty[$i][0];
-            // echo $sql."<br>";
-            $update = mysqli_query($conn, $sql);
-            if($update) {
-              $status_msg = "<h3 style = 'color:green;'>Saved changes.</h3>";
-            }
-            else {
-              $status_msg = "<h3 style = 'color:red;'>Update failed.</h3>";
-            }
-            $i++;
-          }
-          $skipcount++;
-        }
-        header("location: view_blog.php?blog_id=".$blog_id);
       }
+
+      $updateblog = mysqli_query($conn, $sql);
+
+      // QUERY FROM GALLERY TABLE
+      $sql = "SELECT picture_id, picture_name FROM gallery WHERE blog_id = $blog_id";
+      // echo $sql;
+      $result = mysqli_query($conn, $sql);
+
+      if($result) {
+          $gallery = mysqli_fetch_all($result);
+      }
+      
+      $sql = "SELECT picture_id FROM gallery WHERE picture_name='' AND blog_id=$blog_id";
+      $gallery_result = mysqli_query($conn, $sql);
+
+      if($gallery_result) {
+        $empty = mysqli_fetch_all($gallery_result);
+        // echo "<pre>";
+        // print_r($empty);
+        // echo "</pre>";
+
+      }
+      
+      $skipcount = 1;
+      $i = 0;
+      foreach($_FILES as $file) {
+        if($skipcount != 1 && !empty($file['name'])) {
+          $pic = $_SESSION['user']['username'].rand().'.jpg';
+          $gallery_path = "blog_images/".$pic;
+          // echo $file['tmp_name']."<br>";
+          move_uploaded_file($file['tmp_name'], $gallery_path);
+
+          // UPDATE GALLERY
+          $sql = "UPDATE gallery SET picture_name = '$pic' WHERE picture_id=".$empty[$i][0];
+          // echo $sql."<br>";
+          $update = mysqli_query($conn, $sql);
+          if($update) {
+            $status_msg = "<h3 style = 'color:green;'>Saved changes.</h3>";
+          }
+          else {
+            $status_msg = "<h3 style = 'color:red;'>Update failed.</h3>";
+          }
+          $i++;
+        }
+        $skipcount++;
+      }
+      header("location: view_blog.php?blog_id=".$blog_id);
+    }
 ?>
 
 <body class="main-body">

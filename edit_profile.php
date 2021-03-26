@@ -77,6 +77,9 @@ input[type=text], input[type=password] {
                     $filename = $user['profile_picture'];
                 }
             }
+            else {
+                echo '<script> window.location.replace("index.php") </script>';
+            }
         ?>
 
         <!-- PROFILE PICTURE SECTION -->

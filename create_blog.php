@@ -74,6 +74,9 @@ cursor: pointer;
         createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, $status_msg);
     }
   }
+  else {
+      echo '<script> window.location.replace("index.php") </script>';
+  }
 
   // FUNCTIONS
   function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
