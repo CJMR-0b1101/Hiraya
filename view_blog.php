@@ -27,9 +27,46 @@
 
 <body class="main-body">
   <div class="div-body">
-    <?php  ?>
     <?php
         include 'navbar.php';
+        
+        if(!isset($_SESSION['guestlogin'])) {
+          echo'<script> window.location="index.php"; </script>';
+        }
+        else {
+          echo "GUEST";
+          if(!isset($_GET['blog_id'])) {
+            header("location: home_page.php");
+          }
+          $blog_id = $_GET['blog_id'];
+
+          // FETCH DATA FROM DB (BLOG TABLE)
+          include 'config.php';
+
+          $sql = "SELECT * FROM blogs WHERE blog_id = $blog_id";
+          // echo $sql;
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result) == 1) {
+              $row = mysqli_fetch_array($result);
+              $blog_title = $row['blog_title'];
+              $blog_desc = $row['blog_description'];
+              $blog_content = $row['blog_content'];
+              $blog_header = $row['blog_header'];
+              $about_me = $row['about_me'];
+              $blog_uid = $row['user_id'];
+          }
+          else {
+              header("location: home_page.php");
+          }
+
+          // FETCH DATA FROM gallery TABLE
+          $sql = "SELECT * FROM gallery WHERE blog_id = $blog_id";
+          $result = mysqli_query($conn, $sql);
+
+          if(mysqli_num_rows($result)) {
+            $gallery = mysqli_fetch_all($result);
+          }
+        }
 
         if(isset($_SESSION['login'])) {
             $user = $_SESSION['user'];
@@ -72,7 +109,7 @@
               echo "<script> window.location='edit_blog.php?blog_id=".$blog_id."&user_id=".$user['user_id']."'</script>";
             }
         }
-        ?>
+      ?>
     <div class="div-body-margin"></div>
     <form action="" method="post" enctype="multipart/form-data">
       <div class="div-blog-header">
@@ -98,8 +135,10 @@
                   <textarea readonly class="blog-body-txt" name="blog_body" id="" cols="139" rows="5" ><?php echo $blog_content?></textarea>
                   <br>
               <?php
-                if($blog_uid == $user['user_id'])
-                  echo '<input class="button-style" type="submit" name="edit" value="Edit post">';
+                if(!isset($_SESSION['guestlogin'])) {
+                  if($blog_uid == $user['user_id'])
+                    echo '<input class="button-style" type="submit" name="edit" value="Edit post">';
+                }
               ?>
           </div>
         </div>

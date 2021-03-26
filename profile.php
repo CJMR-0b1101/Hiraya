@@ -92,6 +92,7 @@ text-align: center;
 
         <!-- PROFILE PICTURE SECTION -->
         <div class="div-body-margin"></div>
+        
         <div class="div-content">
             <div class="div-profile-content-left">
                 <div class="div-profile-picture">

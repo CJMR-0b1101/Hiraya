@@ -6,7 +6,7 @@
      *             - no special characters aside from UNDERSCORE
      *             - can contain NUMBERS
      *             - NO WHITE SPACES
-     * 2. First name - ALPHABET ONLY (whiespaces are valid)
+     * 2. First name - ALPHABET ONLY (whitespaces are valid)
      * 3. Last name - ALPHABET ONLY (whitespaces are valid)
      * 4. Password - length is 8 or more characters
      *             - atleast 1 uppercase, 1 lowercase, 1 number, 1 special character
@@ -29,38 +29,35 @@
      *                      : 123 to 126
     */
 
-    function isValidUsername($uname) {
+    function isValidUsername($uname, &$status_msg) {
         $unameLength = strlen($uname);
 
-        // echo $uname."<br>";
-
         if($unameLength < 8 || $unameLength > 30) {
-            echo "Username should contain 8 to 30 characters";
+            $status_msg = "Username should contain 8 to 30 characters";
             return False;
         }
 
         for($i = 0; $i < $unameLength; $i++) {
             $currChar = ord($uname[$i]);
 
-            // echo $uname[$i]."<br>".$currChar."<br>";
             if($i == 0) {
                 if(($currChar >= 65 && $currChar <= 90) || ($currChar >= 97 && $currChar <= 122)) {
                     continue;
                 }
                 else {
-                    echo "First character should be ALPHABET<br>";
+                    $status_msg = "First character should be ALPHABET";
                     return False;
                 }
             }
             else {
                 if($currChar == 32) {
-                    echo "Username cannot contain WHITESPACES<br>";
+                    $status_msg = "Username cannot contain WHITESPACES";
                     return False;
                 }
                 elseif(($currChar >= 33 && $currChar <= 47) || ($currChar >= 58 && $currChar <= 64) || 
                 ($currChar >= 91 && $currChar <= 94) || ($currChar >= 123 && $currChar <= 126) ||
                 ($currChar >= 65 && $currChar == 96)) {
-                    echo "Username cannot contain SPECIAL CHARACTERS<br>";
+                    $status_msg = "Username cannot contain SPECIAL CHARACTERS";
                     return False;
                 }
                 elseif(($currChar >= 65 && $currChar <= 90) || ($currChar >= 97 && $currChar <= 122) || ($currChar <= 95)) {
@@ -70,49 +67,48 @@
         }
         return True;
     }
-    function isValidName($name) {
+    function isValidName($name, &$status_msg) {
         $nameLength = strlen($name);
-
-        // echo $name."<br>";
+        
+        if($nameLength == 0) {
+            $status_msg = "First name/Last name should not be empty";
+            return False;
+        }
 
         for($i = 0; $i < $nameLength; $i++) {
             $currChar = ord($name[$i]);
 
-            // echo $name[$i]."<br>".$currChar."<br>";
             if(($currChar >= 65 && $currChar <= 90) || ($currChar >= 97 && $currChar <= 122) || $currChar == 32) {
                 continue;
             }
             else {
-                echo "Name should only contain ALPHABET characters<br>";
+                $status_msg = "Name should only contain ALPHABET characters";
                 return False;
             }
         }
         return True;
     }
-    function isValidPassword($psw) {
+    function isValidPassword($psw, &$status_msg) {
         $pwLength = strlen($psw);
         $uppercaseCount = 0;
         $lowercaseCount = 0;
         $numberCount = 0;
         $specialCharCount = 0;
 
-        // echo $psw."<br>";
-
         if($pwLength < 8) {
-            echo "Password should contain 8 or more characters<br>";
+            $status_msg = "Password should contain 8 or more characters";
             return False;
         }
         else {
             for($i = 0; $i < $pwLength; $i++) {
                 $currChar = ord($psw[$i]);
 
-                // echo $psw[$i]."<br>".$currChar."<br>";
                 if($currChar == 60 || $currChar == 62) {
-                    echo 'Password cannot contain "<" or ">" symbol<br>';
+                    $status_msg = 'Password cannot contain "<" or ">" symbol';
                     return False;
                 }
                 elseif($currChar == 32) {
-                    echo "Password cannot contain WHITESPACES<br>";
+                    $status_msg = "Password cannot contain WHITESPACES";
                     return False;
                 }
                 elseif($currChar >= 65 && $currChar <= 90) {
@@ -130,23 +126,21 @@
                     $specialCharCount++;
                 }
             }
-            
-            // echo "$uppercaseCount<br>$lowercaseCount<br>$numberCount<br>$specialCharCount<br>";
 
             if($uppercaseCount < 1) {
-                echo "Password should contain atleast 1 uppercase character<br>";
+                $status_msg = "Password should contain atleast 1 uppercase character";
                 return False;
             }
             elseif($lowercaseCount < 1) {
-                echo "Password should contain atleast 1 lowercase character<br>";
+                $status_msg = "Password should contain atleast 1 lowercase character";
                 return False;
             }
             elseif($numberCount < 1) {
-                echo "Password should contain atleast 1 number<br>";
+                $status_msg = "Password should contain atleast 1 number";
                 return False;
             }
             elseif($specialCharCount < 1) {
-                echo "Password should contain atleast 1 special character<br>";
+                $status_msg = "Password should contain atleast 1 special character";
                 return False;
             }
             else
@@ -160,9 +154,4 @@
         }
         return is_numeric($age);
     }
-    // Sample data:
-    // $un = "Samantha123";
-    // $fn = "Samantha";
-    // $ln = "Athnamas";
-    // $pw = "P@ssword1";
 ?>
