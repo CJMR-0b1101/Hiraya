@@ -6,6 +6,17 @@
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 <style>
+
+.div-profile-picture{
+    float:center;
+}
+.div-body{
+max-width: 300px;
+margin-left: 50px;
+text-align: center;
+  
+}
+
 .button-style{
   font-size: 15px;
   font-family: 'Inconsolata', monospace;
@@ -28,9 +39,10 @@
 </style>
 
 <body class="main-body">
+<?php include 'navbar.php'?>
     <div class="div-body">
         <?php
-            include 'navbar.php';
+            
             if(isset($_SESSION['login'])) {
                 $user = $_SESSION['user'];
                 $file_upload_msg = "";
