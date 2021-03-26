@@ -11,6 +11,7 @@
   <div class="div-body">
     <?php include 'navbar.php'; ?>
     <div class="div-body-margin"></div>
+    <br>
     <div class="div-content">
       <div class="div-content-location">
         <img class="location-img" src="images/img1.jpg">

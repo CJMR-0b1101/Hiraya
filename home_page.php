@@ -12,6 +12,7 @@
 	<div class="div-body">
 		<?php include 'navbar.php'; ?>
 		<div class="div-body-margin"></div>
+		<br>
 		<div class="slideshow-container">
 			<div class="mySlides fade" id='first_slide'>
 				<img src="https://i.imgur.com/6CCp3sL.jpg" id="img_slide">
