@@ -27,6 +27,7 @@
     }
     .button-style:hover {
         background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+        color: white;
     }
     input[type=text], input[type=password] {
         width: 50%;
