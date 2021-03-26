@@ -22,7 +22,29 @@
   .button-style:hover {
     background-image: url(https://i.imgur.com/hi3eFOb.jpg);
     color: white;
-}
+  }
+  .remove-button {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid #747F42;
+    color: #747F42;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  .remove-link {
+    font-size: 15px;
+    text-decoration: none;
+    color: #747F42;
+  }
+  .remove-button:hover, .remove-link:hover {
+    background-color: red;
+    color: white;
+  }
 </style>
 
 <!-- MAIN PROGRAM STARTS HERE -->
@@ -74,7 +96,7 @@
         }
         // SAVE BUTTON IS CLICKED
         if(isset($_POST['save'])) {
-          parseValues($blog_title, $blog_desc, $blog_content, $about_me);
+          parseAndFixValues($blog_title, $blog_desc, $blog_content, $about_me);
            
           // IF BLOG HEADER IS NOT UPDATED (NO FILE CHOSEN)
           if(!empty($_FILES['blog_pic']['name'])) {
@@ -87,12 +109,21 @@
           // echo $blog_pic;
 
           updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, $gallery, $status_msg);
+          parseValues($blog_title, $blog_desc, $blog_content, $about_me);
         }
     }
     else {
         echo '<script> window.location.replace("index.php") </script>';
     }
 
+    function parseAndFixValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
+      // Get values from text areas
+      include 'input_validation.php';
+      $blog_title = fixString($_POST['blog_title']);
+      $blog_desc = fixString($_POST['blog_desc']);
+      $blog_content = fixString($_POST['blog_body']);
+      $about_me = fixString($_POST['about_me']);
+    }
     function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
       // Get values from text areas
       $blog_title = $_POST['blog_title'];
@@ -100,7 +131,7 @@
       $blog_content = $_POST['blog_body'];
       $about_me = $_POST['about_me'];
     }
-    function updateBlog($blog_id, $blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, &$gallery, &$status_msg) {
+    function updateBlog($blog_id, &$blog_pic, $blog_title, $blog_desc, $blog_content, $about_me, &$gallery, &$status_msg) {
       include 'config.php';
       
       // echo "Receieved blog pic: $blog_pic<br>";
@@ -112,6 +143,7 @@
         $sql = "UPDATE blogs SET blog_title='$blog_title', blog_description='$blog_desc',
         blog_content='$blog_content', blog_header='$currblogpic', about_me='$about_me'
         WHERE blog_id=$blog_id";
+        $blog_pic = $currblogpic;
         // echo $sql;
       }
       else {
@@ -122,6 +154,12 @@
       }
 
       $updateblog = mysqli_query($conn, $sql);
+      if($updateblog) {
+        $status_msg = "<h4 style = 'color:green;'>Blog updated</h4>";
+      }
+      else {
+        $status_msg = "<h4 style = 'color:red;'>Error in updating blog</h4>";
+      }
 
       // QUERY FROM GALLERY TABLE
       $sql = "SELECT picture_id, picture_name FROM gallery WHERE blog_id = $blog_id";
@@ -130,7 +168,7 @@
 
       if($result) {
           $gallery = mysqli_fetch_all($result);
-          $status_msg = "<h4 style = 'color:green;'>Blog updated</h4>";
+          // $status_msg = "<h4 style = 'color:green;'>Blog updated</h4>";
       }
       
       $sql = "SELECT picture_id FROM gallery WHERE picture_name='' AND blog_id=$blog_id";
@@ -157,13 +195,12 @@
             $status_msg = "<h4 style = 'color:green;'>Saved changes.</h4>";
           }
           else {
-            $status_msg = "<h4 style = 'color:red;'>Update failed.</h4>";
+            $status_msg = "<h4 style = 'color:red;'>Gallery update failed.</h4>";
           }
           $i++;
         }
         $skipcount++;
       }
-      // header("location: view_blog.php?blog_id=".$blog_id);
     }
 ?>
 
@@ -246,8 +283,10 @@
                         $currPicId = $rows[$i][0];
 
                         if(!empty($currfile)) {
-                          echo  "<a href='blog_images/".$currfile."'><img style='width: 100px; object-fit: cover;' src='blog_images/".$currfile."'  /></a>";
-                          echo "<a style='padding-left: 50px; 'href='delete_pic.php?pic_id=".$currPicId."&blog_id=".$blog_id."&user_id=".$user['user_id']."'>Remove image</a><hr>";
+                          echo  "<a href='blog_images/".$currfile."'><img style='object-fit: cover;' src='blog_images/".$currfile."'  /></a>";
+                          echo "<button class='remove-button' type='button'><a class='remove-link' href='delete_pic.php?pic_id=".$currPicId."&blog_id=".$blog_id."&user_id=".$user['user_id']."'>Remove</a></button>";
+                          echo "<hr>";
+                          // echo "<a href='delete_pic.php?pic_id=".$currPicId."&blog_id=".$blog_id."&user_id=".$user['user_id']."'>Remove image</a><hr>";
                         }
                     }
 

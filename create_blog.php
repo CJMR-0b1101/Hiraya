@@ -56,7 +56,7 @@
     }
     
     if(isset($_POST['create'])) {
-        parseValues($blog_title, $blog_desc, $blog_content, $about_me);
+        parseAndFixValues($blog_title, $blog_desc, $blog_content, $about_me);
       
         $blog_pic = $username."-blog-".$blog_id."-".rand().".jpg";
         $path = "blog_images/".$blog_pic;
@@ -68,10 +68,9 @@
         else {
             $status_msg = "<h3 style = 'color:red;'>Error in uploading file.</h3>";
         }
-      
-
         // INSERT TO DB
         createBlog($uid, $blog_title, $blog_desc, $blog_content, $blog_pic, $about_me, $blog_id, $status_msg);
+        parseValues($blog_title, $blog_desc, $blog_content, $about_me);
     }
   }
   else {
@@ -79,6 +78,14 @@
   }
 
   // FUNCTIONS
+  function parseAndFixValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
+    // Get values from text areas
+    include 'input_validation.php';
+    $blog_title = fixString($_POST['blog_title']);
+    $blog_desc = fixString($_POST['blog_desc']);
+    $blog_content = fixString($_POST['blog_body']);
+    $about_me = fixString($_POST['about_me']);
+  }
   function parseValues(&$blog_title, &$blog_desc, &$blog_content, &$about_me) {
     // Get values from text areas
     $blog_title = $_POST['blog_title'];
@@ -93,9 +100,9 @@
     $sql = "INSERT INTO blogs(user_id, blog_title, blog_description, blog_content, blog_header, about_me)
     VALUES($uid, '$blog_title', '$blog_desc', '$blog_content', '$blog_pic', '$about_me')";     
     $result = mysqli_query($conn, $sql);
+    // echo $sql;
 
     if($result) {
-      $status_msg = "Blog created.";
       
       // INSERT 4 EMPTY FILES TO GALLERY TABLE
       for($i = 0; $i < 4; $i++) {
@@ -103,10 +110,10 @@
         VALUES($blog_id, $uid, '')";
         $gallery_result = mysqli_query($conn, $sql);
         if($gallery_result) {
-          $status_msg = "<h2 style = 'color:green;'>Blog created.</h2>"; 
+          $status_msg = "<h3 style = 'color:green;'>Blog created.<br>Redirecting to post in 3 seconds...</h3>"; 
         }
         else {
-          $status_msg = "<h2 style = 'color:red;'>Error in inserting gallery.</h2>"; 
+          $status_msg = "<h3 style = 'color:red;'>Error in inserting gallery.</h3>"; 
         }
       }
 
@@ -134,21 +141,11 @@
             $update_result = mysqli_query($conn, $sql);
         } 
 
-      redirectConfirmation($blog_id, $uid);
+      header("Refresh:2.5; url=view_blog.php?blog_id=$blog_id", True, 303);
     }
     else {
-        $status_msg = "<h2 style = 'color:red;'>Error in inserting blog.</h2>"; 
+        $status_msg = "<h3 style = 'color:red;'>Error in inserting blog.</h3>"; 
     }
-  }
-  function redirectConfirmation($blog_id, $uid) {
-    echo 
-      '<script>
-        var r = confirm("Blog created. View post?");
-        if(r == true)
-          window.location.replace("view_blog.php?blog_id='.$blog_id.'");
-        else
-          window.location.replace("edit_blog.php?blog_id='.$blog_id.'&user_id='.$uid.'")
-      </script>';
   }
 ?>
 

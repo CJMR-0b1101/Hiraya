@@ -154,4 +154,7 @@
         }
         return is_numeric($age);
     }
+    function fixString($str) {
+        return str_replace("'", "''", $str);
+    }
 ?>
