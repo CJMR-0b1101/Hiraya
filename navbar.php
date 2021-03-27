@@ -142,6 +142,9 @@
 					<a href="diy_page.php">MINDANAO</a>
 				</div>
 			</div>
+			<div class="dropdown">
+				<button class='dropbtn'><a href="all_blogs.php">BLOGS</a></button>
+			</div>
 		</div>
 		<?php
 			@session_start();
