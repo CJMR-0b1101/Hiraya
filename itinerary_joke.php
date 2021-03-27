@@ -14,15 +14,19 @@
     h1{
         margin-top: 20px;
         margin-right: 10px;
+        margin-bottom: -20px;
         background-color: none;
+
     }
     
     /* Float four columns side by side */
         .column {
             margin-left: 30px;
+            margin-top: 5px;
             float: left;
             width: 45%;
             padding: 0 100px;
+
         }
 
         /* Remove extra left and right margins, due to padding in columns */
@@ -63,24 +67,24 @@
 
     /* Style the tab */
         .tab {
-        
-        margin-top: 100px;
+        padding-top:50px;
+        padding-right: 500px;
        
         }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
-  background-color: inherit;
-  border: none;
-  border-radius: 30px;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  transition: 0.3s;
-  height: 50px;
-  min-width: 150px;
-  margin-left: 10px;
-  font-size: large;
+    background-color: inherit;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    height: 50px;
+    min-width: 150px;
+    margin-left: 10px;
+    font-size: large;
 }
 
 /* Change background color of buttons on hover */
@@ -107,11 +111,13 @@
 
 <?php include 'navbar.php'; ?>
 
+
+
+<body class="main-body">
 <div class="tab">
         <center>
           <button class="tablinks" onclick="openTab(event, 'first-opt')">3 Days & 2 nights</button>
           <button class="tablinks" onclick="openTab(event, 'sec-opt')">5 days & 4 nights</button>
-          <button class="tablinks" onclick="openTab(event, 'third-opt')">7 days & 6 nights</button>
         </center>
       </div>
       <script>
@@ -136,14 +142,12 @@
           evt.currentTarget.className += " active";
         } 
       </script>
-
-<body class="main-body">
     <div id="first-opt" class="tabcontent">
         <h1><center>ITINERARY</center></h1>
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Boracay</b></h4> </div>
                     </div>
@@ -151,7 +155,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
                     </div>
@@ -159,7 +163,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
                     </div>
@@ -167,7 +171,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Bohol</b></h4> </div>
                     </div>
@@ -175,20 +179,13 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Siargao</b></h4> </div>
                     </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Manila</b></h4> </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
     <div id="sec-opt" class="tabcontent">
@@ -196,7 +193,7 @@
         <div class="row">
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Boracay</b></h4> </div>
                     </div>
@@ -204,7 +201,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
                     </div>
@@ -212,7 +209,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
                     </div>
@@ -220,7 +217,7 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Bohol</b></h4> </div>
                     </div>
@@ -228,75 +225,16 @@
             </div>
             <div class="column">
                 <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
                     <div class="container">
                         <div class="location-name"><h4><b>Siargao</b></h4> </div>
                     </div>
                 </div>
             </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Manila</b></h4> </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
-    <div id="third-opt" class="tabcontent">
-        <h1><center>ITINERARY</center></h1>
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Boracay</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Bohol</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Siargao</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <div class="location-name"><h4><b>Manila</b></h4> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
 
 
