@@ -7,15 +7,23 @@
   <title></title>
 </head>
 
+<style>
+	.main-body{
+		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+    
+	}
+</style>
+
 <body class="main-body">
+<?php include 'navbar.php'; ?>
   <div class="div-body">
-    <?php include 'navbar.php'; ?>
+    
     <div class="div-body-margin"></div>
     <br>
     <div class="div-content">
       <div class="div-content-location">
         <img class="location-img" src="images/img1.jpg">
-        <div class="div-content-location-text"><h1>NAME OF LOCATION</h1></div>
+        <div class="div-content-location-text"><h1>BORACAY</h1></div>
       </div>
       
       <div class="tab">
@@ -55,7 +63,7 @@
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
               <img src="images/img1.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <h1><div class="text">Go Beach Hopping</div></h1>
             </div>
             <div class="mySlides fade">
               <img src="images/img2.jpg" id="img_slide">
@@ -74,7 +82,26 @@
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
               <img src="images/img1.jpg" id="img_slide">
+              <div class="text">Go on a Pub Crawl</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="images/img2.jpg" id="img_slide">
               <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="images/img3.jpg" id="img_slide">
+              <div class="text">Caption Text</div>
+            </div>
+
+            <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
+            <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
+          </div>
+        </div>
+        <div class="location-travel-slideshow">
+          <div class="slideshow-container slider" id="div2">
+            <div class="mySlides fade">
+              <img src="images/img1.jpg" id="img_slide">
+              <div class="text">•	Water Activities</div>
             </div>
             <div class="mySlides fade">
               <img src="images/img2.jpg" id="img_slide">

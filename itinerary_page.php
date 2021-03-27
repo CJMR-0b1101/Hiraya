@@ -5,12 +5,14 @@
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<title></title>
 </head>
-
+<style>
+	*{
+		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+	}
+</style>
+<?php include 'navbar.php'; ?>
 <body class="main-body">
-	<div class="div-body">
-		<?php include 'navbar.php'; ?>
 		<div class="div-body-margin"></div>
-		<div class="div-content">
 			<div class="div-content-background">
 				<h1><center>ITINERARY</center></h1>
 				<div class="div-content-image-container">
@@ -70,9 +72,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
 		
-	</div>
+		
+	
 
 </body>
 </html>

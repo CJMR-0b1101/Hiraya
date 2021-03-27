@@ -124,7 +124,7 @@
 				</div>
 			</div>
 			<div class="dropdown">
-				<button class="dropbtn"><a href="itinerary_page.php">ITINERARY</a></button>
+				<button class="dropbtn"><a href="itinerary_joke.php">ITINERARY</a></button>
 				<div class="dropdown-content">
 					<a href="diy_page.php">BORACAY</a>
 					<a href="diy_page.php">MANILA</a>
