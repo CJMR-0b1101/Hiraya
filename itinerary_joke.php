@@ -8,31 +8,48 @@
 <style>
 	.main-body{
 		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+        box-sizing: border-box;
 	}
 
     h1{
-        margin-top: 100px;
+        margin-top: 20px;
         margin-right: 10px;
         background-color: none;
     }
-    .grid-container {
-        display: grid;
-        grid-column-gap: 5px;
-        grid-template-columns: auto auto auto;
-        padding: 5px;
-        width: 100%;
-        background-color: red;  
-    }
+    
+    /* Float four columns side by side */
+        .column {
+            margin-left: 30px;
+            float: left;
+            width: 45%;
+            padding: 0 100px;
+        }
 
+        /* Remove extra left and right margins, due to padding in columns */
+        .row {margin: 0 250px;}
+
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        /* Responsive columns - one column layout (vertical) on small screens */
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        }
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 40%;
         margin-top: 50px;
         border-radius: 5px;
-        padding: 20px;
+        padding: 16px;
         font-size: 30px;
         text-align: center;
+        
     }
 
     .card:hover {
@@ -44,35 +61,244 @@
         height: auto;
     }
 
-    
+    /* Style the tab */
+        .tab {
+        
+        margin-top: 100px;
+       
+        }
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.3s;
+  height: 50px;
+  min-width: 150px;
+  margin-left: 10px;
+  font-size: large;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  border: solid;
+  border-radius: 30px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: pink;
+  border: solid;
+  border-radius: 30px;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+} 
    
 </style>
 
 <?php include 'navbar.php'; ?>
+
+<div class="tab">
+        <center>
+          <button class="tablinks" onclick="openTab(event, 'first-opt')">3 Days & 2 nights</button>
+          <button class="tablinks" onclick="openTab(event, 'sec-opt')">5 days & 4 nights</button>
+          <button class="tablinks" onclick="openTab(event, 'third-opt')">7 days & 6 nights</button>
+        </center>
+      </div>
+      <script>
+        function openTab(evt, tabName) {
+          // Declare all variables
+          var i, tabcontent, tablinks;
+
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        } 
+      </script>
+
 <body class="main-body">
-    <h1><center>ITINERARY</center></h1>
-    <div class="grid-container">
-        
-            <div class="card">
-                <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <div class="location-name"><h4><b>John Doe</b></h4> </div>
-                    
+    <div id="first-opt" class="tabcontent">
+        <h1><center>ITINERARY</center></h1>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Boracay</b></h4> </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <div class="location-name"><h4><b>John Doe</b></h4> </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <div class="location-name"><h4><b>John Doe</b></h4> </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
+                    </div>
                 </div>
             </div>
-        
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Bohol</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Siargao</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Manila</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="sec-opt" class="tabcontent">
+        <h1><center>ITINERARY</center></h1>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Boracay</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Bohol</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Siargao</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Manila</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="third-opt" class="tabcontent">
+        <h1><center>ITINERARY</center></h1>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Boracay</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Coron, Palawan</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>El nido, Palawan</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Bohol</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Siargao</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+                    <div class="container">
+                        <div class="location-name"><h4><b>Manila</b></h4> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
