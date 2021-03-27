@@ -370,42 +370,50 @@ img{
 
 /* PROFILE */
 .div-profile-content-left {
-  margin-top: 50px;
-  width: 30%;
-  float: left;
+  margin-top: 60px;
+  width: 50%;
+  margin-left: -150px;
 }
 
 .div-profile-picture {
-  border: 1px solid black;
-  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80%;
   padding: 10px;
+  background-color: white;
+  
 }
 
 .div-profile-picture img {
-  width: 60%;
+  max-width: 100%;
+  height: auto;
   margin-top: 20px;
 }
 
 .div-profile-info {
-  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
+  width: 80%;
 }
 
 .div-profile-content-right {
   width: 69%;
   float: right;
+  margin-right: -250px;
+  margin-top: -500px;
 }
 
 .div-profile-itinerary {
   width: 100%;
-  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
+  margin-left: -200px;
 }
 
 .div-profile-blog {
   width: 100%;
-  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
+  margin-left: -200px;
 }
 
 .btn-submit {
@@ -441,8 +449,9 @@ img{
 .div-blog-img {
   background-color: #aaa;
   width: 100%;
+  height: 250%;
   padding: 20px;
-  height: 500px;
+  
 }
 
 /* Add a card effect for articles */
@@ -461,8 +470,9 @@ img{
 .div-blog-footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+
 }
 
 .blog-header-txt {
