@@ -38,6 +38,10 @@
         background-image: url(https://i.imgur.com/hi3eFOb.jpg);
         color: white;
     }
+    .button-style:focus {
+        outline: none;
+        box-shadow: 0px 0px 2px #0066ff;
+    }
     input[type=text], input[type=password] {
         width: 50%;
     }
