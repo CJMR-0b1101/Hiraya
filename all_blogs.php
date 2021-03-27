@@ -17,23 +17,25 @@
         background: #f1f1f1;
         border-radius: 12px;
     }
-    form.example input[type=text]:focus {
+    form.example input[type=text]:focus,
+    form.example button:focus {
         outline: none;
         box-shadow: 0px 0px 2px #0066ff;
     }
     form.example button {
         float: left;
-        width: 20%;
+        width: 10%;
         padding: 10px;
-        background: #2196F3;
+        background: #70CCDD;
         color: white;
         font-size: 17px;
         border: 1px solid grey;
         border-left: none;
+        border-radius: 10px;
         cursor: pointer;
     }
     form.example button:hover {
-        background: #0b7dda;
+        background-image: url(https://i.imgur.com/hi3eFOb.jpg);
     }
     form.example::after {
         content: "";
@@ -88,6 +90,9 @@
                         if($result) {
                             $rows = mysqli_fetch_all($result);
                             $len = count($rows);
+
+                            if($len == 0)
+                                $status_msg = "<h3>No blogs yet</h3>";
                         }
                         else {
                             echo "All blogs not fetched";
