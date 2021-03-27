@@ -10,6 +10,15 @@
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 
 <style>
+    .main-body{
+        float:center;
+        background-image: url(https://i.imgur.com/bYsVdHu.png);
+    }
+    .div-body {
+        max-width: 300px;
+        margin-left: 50px;
+        text-align: center;
+    }
     .button-style{
         font-size: 15px;
         font-family: 'Inconsolata', monospace;
@@ -35,9 +44,9 @@
 </style>
 
 <body class="main-body">
+<?php include 'navbar.php'?>
     <div class="div-body">
         <?php
-            include 'navbar.php';
             if(isset($_SESSION['login'])) {
                 $user = $_SESSION['user'];
                 $file_upload_msg = "";
@@ -83,7 +92,7 @@
         ?>
 
         <!-- PROFILE PICTURE SECTION -->
-        <div class="div-body-margin"></div>
+        
         <div class="div-content">
             <div class="div-profile-content-left">
                 <div class="div-profile-picture">
@@ -105,7 +114,7 @@
                     <!-- DISPLAY FILE UPLOAD STATUS MESSAGE -->
                     <?php echo $file_upload_msg; ?>
                 </div>
-                <div class="div-body-margin"></div>
+                
 
                 <!-- DISPLAY USER INFORMATION -->
                 <div class="div-profile-info">
@@ -228,58 +237,7 @@
                 </div>
             </div>
 
-            <div class="div-profile-content-right">
-                <!-- ITINERARY OF USER -->
-                <div class="div-profile-itinerary">
-                    <h3>My Plans</h3>
-                    <p>
-                        In this section, the user's itinerary/plans
-                        will be fetched from the database soon. 
-                    </p>
-                </div>
-                <div class="div-body-margin"></div>
-
-                <!-- FETCH USER'S BLOGS FROM DATABASE -->
-                <div class="div-profile-blog">
-                    <h3>My Blogs</h3>
-                    <?php
-                        include 'config.php';
-                        $sql = "SELECT blog_id, blog_title, blog_description FROM blogs
-                        WHERE user_id = $user[user_id]";
-                        // echo $sql;
-                        $results = mysqli_query($conn, $sql);
-                        
-                        if(mysqli_num_rows($results) != 0) {
-                            $row = mysqli_fetch_all($results);
-                            // echo "<pre>";
-                            // print_r($row);
-                            // echo "</pre>";
-                            $row_length = count($row);
-                            
-                            // [$i][0] = blog_id
-                            for($i = 0; $i < $row_length; $i++) {
-                                for($j = 0; $j < 3; $j++) {
-                                    if($j == 0) {
-                                        $blog_id_array[$i] = $row[$i][$j];
-                                    }
-                                    elseif($j == 1)
-                                        echo "<a href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a><br>";
-                                    else
-                                        echo "Description: ".$row[$i][$j].'<br>';
-                                }
-                                echo "<br>";
-                            }
-                        }
-                        else {
-                            echo "You don't have blogs yet.";
-                        }
-                    ?>
-                    <form action="create_blog.php" method="post">
-                        <br>
-                        <center><input class="button-style" type="submit" value="Create a Blog"></center>
-                    </form>
-                </div>
-            </div>
+          
         </div>
     </div>
 </body>

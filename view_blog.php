@@ -4,6 +4,10 @@
   <title>Blogs</title>
 </head>
 <style>
+  .main-body{
+        float:center;
+        background-image: url(https://i.imgur.com/bYsVdHu.png);
+    }
 .button-style, .delete-post-button {
   font-size: 15px;
   font-family: 'Inconsolata', monospace;
@@ -200,7 +204,7 @@
     </form>
 
     <div class="div-blog-footer">
-      <h2>Footer</h2>
+    <h2>All rights reserve. Hiraya 2021</h2>
     </div>
   </div>
 </body>

@@ -6,9 +6,14 @@
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 <style>
-    .div-profile-picture {
+    .main-body{
         float:center;
+        background-image: url(https://i.imgur.com/bYsVdHu.png);
     }
+    .div-profile-picture {
+        float: center;
+    }
+    
     .div-body {
         max-width: 300px;
         margin-left: 50px;
@@ -89,10 +94,10 @@
                 echo '<script> window.location.replace("index.php") </script>';
             }
         ?>
-
+        <br>
+        <br>
+        <hr class="solid">
         <!-- PROFILE PICTURE SECTION -->
-        <div class="div-body-margin"></div>
-        
         <div class="div-content">
             <div class="div-profile-content-left">
                 <div class="div-profile-picture">
@@ -102,9 +107,10 @@
                             $filename = $user['profile_picture'];
                     ?>
                     <center><img src="images/<?php echo $filename; ?>" alt="Profile-Picture-Here">
-                    <h3><?php echo $user['username']; ?></h3></center>
+                    <h1><?php echo $user['username']; ?></h1></center>
                 </div>
-                <div class="div-body-margin"></div>
+                <br>
+                
 
                 <!-- DISPLAY USER INFORMATION -->
                 <div class="div-profile-info">
@@ -125,6 +131,7 @@
                     </form>
                 </div>
             </div>
+            <br>
             <div class="div-profile-content-right">
                 <!-- ITINERARY OF USER -->
                 <div class="div-profile-itinerary">
