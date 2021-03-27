@@ -160,9 +160,10 @@
                   <br>
               <?php
                 if(!isset($_SESSION['guestlogin'])) {
-                  if($blog_uid == $user['user_id'])
+                  if($blog_uid == $user['user_id']) {
                     echo '<input class="button-style" type="submit" name="edit" value="Edit post">';
                     echo '<input class="delete-post-button" type="submit" name="delete" value="Delete post">';
+                  }
                 }
               ?>
           </div>

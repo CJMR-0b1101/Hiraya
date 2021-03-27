@@ -5,7 +5,7 @@
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
-	<title></title>
+	<title>Hiraya</title>
 </head>
 
 <body class="main-body">
@@ -67,49 +67,65 @@
 		<div class="div-content">
 			<div class="div-content-home">
 				<div class="div-content-home-header">
-					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="">more</a></h1>
-					
+					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="all_blogs.php ">more</a></h1>
+				<?php
+					include 'config.php';
+
+					$sql = "SELECT blog_id, blog_title, blog_description FROM blogs ORDER BY blog_id DESC LIMIT 5";
+					$result = mysqli_query($conn, $sql);
+
+					if($result) {
+						$rows = mysqli_fetch_all($result);
+
+						// echo "<pre>";
+						// print_r($rows);
+						// echo "</pre>";
+					}
+					else {
+						echo "NOT FETCHED";
+					}
+				?>
 				</div>
 				<div class="div-content-home-background">
 					<div class="div-content-home-list">
 						<div class="div-content-home-list-content">
 							<div class="div-content-home-list-content-header">
-								<a href="#">TITLE 1</a>
+								<a href="<?php echo 'view_blog.php?blog_id='.$rows[0][0];?>"><?php echo $rows[0][1]?></a>
 							</div>
 							<div class="div-content-home-list-content-content">
-								<p>Welcome to HIRAYA!</p>
+								<p><?php echo $rows[0][2]; ?></p>
 							</div>
 						</div>
 						<div class="div-content-home-list-content">
 							<div class="div-content-home-list-content-header">
-								<a href="#">TITLE 2</a>
+								<a href="<?php echo 'view_blog.php?blog_id='.$rows[1][0];?>"><?php echo $rows[1][1]?></a>
 							</div>
 							<div class="div-content-home-list-content-content">
-								<p>Welcome to HIRAYA!</p>
+								<p><?php echo $rows[1][2]; ?></p>
 							</div>
 						</div>
 						<div class="div-content-home-list-content">
 							<div class="div-content-home-list-content-header">
-								<a href="#">TITLE 3</a>
+								<a href="<?php echo 'view_blog.php?blog_id='.$rows[2][0];?>"><?php echo $rows[2][1]?></a>
 							</div>
 							<div class="div-content-home-list-content-content">
-								<p>Welcome to HIRAYA!</p>
+								<p><?php echo $rows[2][2]; ?></p>
 							</div>
 						</div>
 						<div class="div-content-home-list-content">
 							<div class="div-content-home-list-content-header">
-								<a href="#">TITLE 4</a>
+								<a href="<?php echo 'view_blog.php?blog_id='.$rows[3][0];?>"><?php echo $rows[3][1]?></a>
 							</div>
 							<div class="div-content-home-list-content-content">
-								<p>Welcome to HIRAYA!</p>
+								<p><?php echo $rows[3][2]; ?></p>
 							</div>
 						</div>
 						<div class="div-content-home-list-content">
 							<div class="div-content-home-list-content-header">
-								<a href="#">TITLE 5</a>
+								<a href="<?php echo 'view_blog.php?blog_id='.$rows[4][0];?>"><?php echo $rows[4][1]?></a>
 							</div>
 							<div class="div-content-home-list-content-content">
-								<p>Welcome to HIRAYA!</p>
+								<p><?php echo $rows[4][2]; ?></p>
 							</div>
 						</div>
 					</div>

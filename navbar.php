@@ -57,8 +57,8 @@
         include 'input_validation.php';
 		include 'config.php';
 
-		if(isValidName($firstname) && isValidName($lastname) && isValidUsername($username) 
-		&& (isValidPassword($password))) {
+		if(isValidName($firstname, $status_msg) && isValidName($lastname, $status_msg) && isValidUsername($username, $status_msg) 
+		&& (isValidPassword($password, $status_msg))) {
 			if($password != $cpassword) {
 				echo "Password does not match<br>";
 				return;
@@ -190,7 +190,7 @@
 						<button class="submit-login" type="submit" value="login" name="login">Login</button>
 						<br>
 					</form>
-					<span>New here? <a id="btn-register">Create an account</a></span>
+					<span><a id="btn-register">Not a member? Register here!</a></span>
 				</div>
 			</div>
 		</div>

@@ -39,60 +39,62 @@
 			}
 
 			a:link {
-			color: #747F42;
-			font-size: 15px;
+				color: #747F42;
+				font-size: 15px;
 			}
 
-			/* visited link */
+		/* visited link */
 			a:visited {
-			color: green;
+				color: green;
 			}
 
-			/* mouse over link */
+		/* mouse over link */
 			a:hover {
-			color: #04BFBF;
+				color: #04BFBF;
 			}
 
-			/* selected link */
+		/* selected link */
 			a:active {
-			color: blue;
+				color: blue;
 			}
-			/* Input styles and Buttons*/
-				input{
-					width: 50%;
-					padding: 10px 20px;
-				    margin: 8px 0;
-				    margin-top: 2px;
-				    box-sizing: border-box;
-				    border: 2px solid #747F42;
-				    border-radius: 10px;
-				}
-				 input[type=text]:focus {
-			  		background-color: #04BFBF;
-			  		border-radius: 10px;
-				}
-				input[type=int]:focus {
-			  		background-color: #04BFBF;
-			  		border-radius: 10px;
-				}
-				button{
-					font-size: 15px;
-					font-family: 'Inconsolata', monospace;
-		          	background-color: white;
-		            border: none;
-		            border-radius: 12px;
-		            border: 2px solid #747F42;
-		            color:#A5CC82;
-		            padding: 10px 32px;
-		            text-align: center;
-		            text-decoration: none;
-		            display: inline-block;
-		            margin: 4px 2px;
-		            cursor: pointer;
-				}
-				button:hover {
-				  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
-				}
+		/* Input styles and Buttons*/
+			input{
+				width: 50%;
+				padding: 10px 20px;
+				margin: 8px 0;
+				margin-top: 2px;
+				box-sizing: border-box;
+				border: 2px solid #747F42;
+				border-radius: 10px;
+			}
+			input:focus {
+				background-color: #04BFBF;
+				outline: none;
+				box-shadow: 0px 0px 2px #0066ff;
+			}
+			button{
+				font-size: 15px;
+				font-family: 'Inconsolata', monospace;
+				background-color: white;
+				border: none;
+				border-radius: 12px;
+				border: 2px solid #747F42;
+				color:#747F42;
+				padding: 10px 32px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				margin: 4px 2px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+				color: white;
+			}
+			button:focus {
+				outline: none;
+				box-shadow: 0px 0px 2px #0066ff;
+			}
 	</style>
 </head>
 

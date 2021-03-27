@@ -70,7 +70,7 @@
 		            border: none;
 		            border-radius: 12px;
 		            border: 2px solid #747F42;
-		            color:#A5CC82;
+		            color:#747F42;
 		            padding: 15px 32px;
 		            text-align: center;
 		            text-decoration: none;
@@ -80,6 +80,11 @@
 				}
 				button:hover {
 				  background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+				  color: white;
+				}
+				button:focus {
+					outline: none;
+					box-shadow: 0px 0px 2px #0066ff;
 				}
 	</style>
 </head>

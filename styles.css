@@ -464,7 +464,9 @@ img{
   background: #ddd;
   margin-top: 20px;
 }
-
+textarea:focus {
+  outline: none;
+}
 .blog-header-txt {
   resize: none;
   font-size: 50px;
@@ -624,14 +626,10 @@ img{
   border-radius: 10px;
 }
 
-.input-login-register[type=text]:focus {
+.input-login-register:focus {
   background-color: #04BFBF;
-  border-radius: 10px;
-}
-
-.input-login-register[type=int]:focus {
-  background-color: #04BFBF;
-  border-radius: 10px;
+  outline: none;
+  box-shadow: 0px 0px 2px #0066ff;
 }
 
 .modal-content {
@@ -670,7 +668,7 @@ img{
   border: none;
   border-radius: 12px;
   border: 2px solid #747F42;
-  color:#A5CC82;
+  color:#747F42;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -679,8 +677,13 @@ img{
   cursor: pointer;
 }
 
-.submit-login, .submit-register:hover {
+.submit-login:hover, .submit-register:hover {
   background-image: url(https://i.imgur.com/hi3eFOb.jpg);
+  color: white;
+}
+.submit-login:focus, .submit-register:focus {
+  outline: none;
+  box-shadow: 0px 0px 2px #0066ff;
 }
 
 span a {
