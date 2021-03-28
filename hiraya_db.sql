@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2021 at 08:25 PM
+-- Generation Time: Mar 28, 2021 at 07:10 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -170,6 +170,18 @@ INSERT INTO `gallery` (`picture_id`, `blog_id`, `user_id`, `picture_name`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `itinerary`
+--
+
+CREATE TABLE `itinerary` (
+  `itinerary_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `locations`
 --
 
@@ -245,6 +257,12 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`picture_id`);
 
 --
+-- Indexes for table `itinerary`
+--
+ALTER TABLE `itinerary`
+  ADD PRIMARY KEY (`itinerary_id`);
+
+--
 -- Indexes for table `locations`
 --
 ALTER TABLE `locations`
@@ -271,6 +289,12 @@ ALTER TABLE `blogs`
 --
 ALTER TABLE `gallery`
   MODIFY `picture_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+
+--
+-- AUTO_INCREMENT for table `itinerary`
+--
+ALTER TABLE `itinerary`
+  MODIFY `itinerary_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `locations`
