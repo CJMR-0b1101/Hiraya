@@ -41,6 +41,7 @@
   <div class="div-body">
     <?php
         include 'navbar.php';
+        include 'config.php';
         // echo "<pre>";
         // print_r($_SESSION);
         // echo "</pre>";
@@ -54,8 +55,6 @@
           $blog_id = $_GET['blog_id'];
 
           // FETCH DATA FROM DB (BLOG TABLE)
-          include 'config.php';
-
           $sql = "SELECT * FROM blogs WHERE blog_id = $blog_id";
           // echo $sql;
           $result = mysqli_query($conn, $sql);
@@ -67,6 +66,7 @@
               $blog_header = $row['blog_header'];
               $about_me = $row['about_me'];
               $blog_uid = $row['user_id'];
+              $blog_author = fetchAuthor($blog_uid);
           }
           else {
               header("location: home_page.php");
@@ -94,8 +94,6 @@
             $blog_id = $_GET['blog_id'];
 
             // FETCH DATA FROM DB (BLOG TABLE)
-            include 'config.php';
-
             $sql = "SELECT * FROM blogs WHERE blog_id = $blog_id";
             // echo $sql;
             $result = mysqli_query($conn, $sql);
@@ -107,6 +105,7 @@
                 $blog_header = $row['blog_header'];
                 $about_me = $row['about_me'];
                 $blog_uid = $row['user_id'];
+                $blog_author = fetchAuthor($blog_uid);
             }
             else {
                 header("location: home_page.php");
@@ -141,6 +140,14 @@
               }
             }
         }
+
+        function fetchAuthor($uid) {
+          include 'config.php';
+          $sql = "SELECT CONCAT(first_name, ' ', last_name) as full_name FROM users WHERE user_id = $uid";
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_array($result);
+          return $row['full_name'];
+        }
       ?>
     <div class="div-body-margin"></div>
     <form action="" method="post" enctype="multipart/form-data">
@@ -150,7 +157,7 @@
           <textarea readonly class="blog-header-txt" name="blog_title" id="" cols="30" rows="1"><?php echo $blog_title?></textarea>
           <br>
       </div>
-      <div class="div-body-margin"></div>
+      <div class="blog-body-margin"><center><?php echo 'by: '.$blog_author; ?></center></div>
       <div class="div-blog-row">
         <div class="div-blog-left">
             <div class="div-blog-card">
