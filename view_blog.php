@@ -31,6 +31,10 @@
   background-color: red;
   color: white;
 }
+.button-style:focus, .delete-post-button:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #0066ff;
+}
 </style>
 
 <body class="main-body">

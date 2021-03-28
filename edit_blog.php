@@ -49,6 +49,10 @@
     background-color: red;
     color: white;
   }
+  .button-style:focus, .remove-button:hover {
+      outline: none;
+      box-shadow: 0px 0px 2px #0066ff;
+  }
 </style>
 
 <!-- MAIN PROGRAM STARTS HERE -->
@@ -219,7 +223,7 @@
           <textarea class="blog-header-txt" name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required><?php echo $blog_title?></textarea>
           <br>
       </div>
-      <div class="div-body-margin"></div>
+      <div class="blog-body-margin"><center><?php echo $status_msg; ?></center></div>
       <div class="div-blog-row">
         <div class="div-blog-left">
             <div class="div-blog-card">
@@ -242,9 +246,9 @@
                   <textarea class="blog-body-txt" name="blog_body" id="" cols="139" rows="5" 
                   placeholder="Your blog content here" required><?php echo $blog_content?></textarea>
                   <br>
-                  <?php 
+                  <!-- <?php 
                     echo $status_msg;
-                  ?>
+                  ?> -->
                 <input class="button-style" type="submit" name="save" value="Save">
                 <input class="button-style" type="submit" name="cancel" value="Cancel">   
 

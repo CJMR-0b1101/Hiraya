@@ -27,6 +27,10 @@
     background-image: url(https://i.imgur.com/hi3eFOb.jpg);
     color: white;
   }
+  .button-style:focus {
+      outline: none;
+      box-shadow: 0px 0px 2px #0066ff;
+  }
 </style>
 <!-- MAIN PROGRAM STARTS HERE -->
 <?php
@@ -58,7 +62,7 @@
       $blog_id = $row[0];
       $_SESSION['blog_id'] = $blog_id;
     }
-    
+
     if(isset($_POST['create'])) {
         parseAndFixValues($blog_title, $blog_desc, $blog_content, $about_me);
       
@@ -164,7 +168,7 @@
           <textarea class="blog-header-txt" name="blog_title" id="" cols="30" rows="1" placeholder="Your blog title here" required><?php echo $blog_title?></textarea>
           <br>
       </div>
-      <div class="div-body-margin"></div>
+      <div class="blog-body-margin"><center><?php echo $status_msg; ?></center></div>
       <div class="div-blog-row">
         <div class="div-blog-left">
             <div class="div-blog-card">
@@ -186,10 +190,11 @@
                   <textarea class="blog-body-txt" name="blog_body" id="" cols="139" rows="5" 
                   placeholder="Your blog content here" required><?php echo $blog_content?></textarea>
                   <br>
-                  <?php 
+                  <!-- <?php 
                     echo $status_msg;
-                  ?>
-                <input class="button-style  " type="submit" name="create" value="Create post">   
+                  ?> -->
+                <input class="button-style  " type="submit" name="create" value="Create post">
+                <input class="button-style" type="button" name="cancel" value="Cancel" onClick="window.location.href='profile.php'">  
 
           </div>
         </div>

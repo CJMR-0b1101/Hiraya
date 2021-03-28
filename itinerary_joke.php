@@ -53,7 +53,7 @@
         padding: 16px;
         font-size: 30px;
         text-align: center;
-        
+        cursor: pointer;
     }
 
     .card:hover {
@@ -106,7 +106,6 @@
   display: none;
   padding: 6px 12px;
 } 
-   
 </style>
 
 <?php include 'navbar.php'; ?>
@@ -146,10 +145,17 @@
         <h1><center>ITINERARY</center></h1>
         <div class="row">
             <div class="column">
+<<<<<<< HEAD
                 <div class="card">
                     <a href="home_page.php"><img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%"></a>
+=======
+                <div class="card" onclick="location.href='view_itinerary.php';">
+                    <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">
+>>>>>>> 6832d9f5f9469d79c6fd5a33ada7c6aedfc5f041
                     <div class="container">
-                        <div class="location-name"><h4><b>Boracay</b></h4> </div>
+                        <div class="location-name">
+                            <h4><b>Boracay</b></h4>
+                        </div>
                     </div>
                 </div>
             </div>
