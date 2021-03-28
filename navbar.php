@@ -125,22 +125,6 @@
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn"><a href="itinerary_joke.php">ITINERARY</a></button>
-				<div class="dropdown-content">
-					<a href="diy_page.php">BORACAY</a>
-					<a href="diy_page.php">MANILA</a>
-					<a href="diy_page.php">BOHOL</a>
-					<a href="diy_page.php">PUERTO PRINSESA</a>
-					<a href="diy_page.php">EL NIDO PALAWAN</a>
-					<a href="diy_page.php">CEBU</a>
-					<a href="diy_page.php">CORON PALAWAN</a>
-					<a href="diy_page.php">BAGUIO</a>
-					<a href="diy_page.php">SIARGAO</a>
-					<a href="diy_page.php">PUERTO GALLERA</a>
-					<a href="diy_page.php">DAVAO</a>
-					<a href="diy_page.php">SAGADA</a>
-					<a href="diy_page.php">VIGAN</a>
-					<a href="diy_page.php">MINDANAO</a>
-				</div>
 			</div>
 			<div class="dropdown">
 				<button class='dropbtn'><a href="all_blogs.php">BLOGS</a></button>

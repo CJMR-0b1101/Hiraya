@@ -2,6 +2,8 @@
 <html>
 <head>
 	<link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,9 +15,11 @@
         background-image: url(https://i.imgur.com/bYsVdHu.png);
     }
     h1{
-        
+        color: #A0A603;
+        font-family: 'Noto Sans TC', sans-serif;
     }
     form.example input[type=text] {
+        margin-left: 20px;
         padding: 10px;
         font-size: 17px;
         border: 1px solid grey;
@@ -49,6 +53,18 @@
         clear: both;
         display: table;
     }
+    .div-content-home-background{
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 20px;
+    }
+    .div-content-home-list-content{
+        color: white;
+    }
+
+    .link_title{
+        color: red;
+    }
 </style>
 <body class="main-body">
 	<div class="div-body">
@@ -60,7 +76,7 @@
 		<div class="div-content">
 			<div class="div-content-home">
 				<div class="div-content-home-header">
-					<h1>ALL BLOGS</h1>
+					<center><h1>ALL BLOGS</h1></center>
 
 				<?php
                     $len = 0;
@@ -122,8 +138,9 @@
 
                         for($i = 0; $i < $len; $i++) {
                             echo '<div class="div-content-home-list-content">';
-                            echo '  <div class="div-content-home-list-content-header">';
-                            echo '      <a href="view_blog.php?blog_id='.$rows[$i][0].'">'.$rows[$i][1].'</a>';
+                            
+                            echo '<i class="fas fa-clipboard-check"></i>',' <div class="div-content-home-list-content-header">';
+                            echo '      <a class="link_title" href="view_blog.php?blog_id='.$rows[$i][0].'">'.$rows[$i][1].'</a>';
                             echo '  </div>';
                             echo '  <div class="div-content-home-list-content-content">';
                             echo '      <p>'.$rows[$i][2].'</p>';

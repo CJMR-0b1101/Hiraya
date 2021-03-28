@@ -48,6 +48,7 @@
         }
     .card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        background-color: rgba(0,76,80,0.5);
         margin-top: 50px;
         border-radius: 5px;
         padding: 16px;
@@ -109,39 +110,7 @@
 </style>
 
 <?php include 'navbar.php'; ?>
-
-
-
 <body class="main-body">
-<div class="tab">
-        <center>
-          <button class="tablinks" onclick="openTab(event, 'first-opt')">3 Days & 2 nights</button>
-          <button class="tablinks" onclick="openTab(event, 'sec-opt')">5 days & 4 nights</button>
-        </center>
-      </div>
-      <script>
-        function openTab(evt, tabName) {
-          // Declare all variables
-          var i, tabcontent, tablinks;
-
-          // Get all elements with class="tabcontent" and hide them
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-
-          // Get all elements with class="tablinks" and remove the class "active"
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-
-          // Show the current tab, and add an "active" class to the button that opened the tab
-          document.getElementById(tabName).style.display = "block";
-          evt.currentTarget.className += " active";
-        } 
-      </script>
-    <div id="first-opt" class="tabcontent">
         <h1><center>ITINERARY</center></h1>
         <div class="row">
             <div class="column">

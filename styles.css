@@ -109,7 +109,7 @@ img{
 
 /* HOME CONTENT */
 .div-content-background {
-  background-color: white;
+  background-color: #00c2cb;
   padding: 10px;
 }
 
@@ -117,7 +117,6 @@ img{
   height: 50px;
   color: black;
   margin-bottom: 10px;
-  margin-left: 10px;
   font-family: 'Noto Sans TC', sans-serif;
   font-size:medium;
 }
@@ -134,16 +133,20 @@ img{
 
 .div-content-home-background {
   padding: 1px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .div-content-home-list {
   list-style: none;
   background: none;
   width: 100%;
+  background-color: #00c2cb;
+  color: #c9e265;
 }
 
 .div-content-home-list-content {
-  border-bottom: 1px solid black;
+  
   margin-bottom: 5px;
   padding: 5px;
 
@@ -152,7 +155,7 @@ img{
 .div-content-home-list-content-header a {
   text-decoration: none;
   font-weight: bolder;
-  color: #025959;
+  color: White;
   font-size: large;
   font-family: 'Noto Sans TC', sans-serif;
 }
@@ -482,11 +485,10 @@ img{
 
 /* Footer */
 .div-blog-footer {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-
 }
 textarea:focus {
   outline: none;
@@ -495,20 +497,27 @@ textarea:focus {
   resize: none;
   font-size: 50px;
   text-align: center;
-  border: none;
+  border-bottom: 1px;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2);
 }
 
 .blog-body-txt, .blog-about-txt {
-  resize: none;
+  resize: auto;
   width: 100%;
   padding: 5px;
+  height: 100px;
+  border-radius: 10px;
 }
 
 .blog-desc-txt {
   resize: none;
-  height: 60px;
+  height: 90px;
   width: 100%;
   padding: 5px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 800px) {

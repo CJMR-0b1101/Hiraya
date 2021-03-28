@@ -7,9 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 	<title>Hiraya</title>
 </head>
-
+<style>
+	h1{
+		color:#c9e265;
+	}
+	</style>
 <body class="main-body">
-	<div class="div-body">
+	
 		<?php include 'navbar.php'; ?>
 		<div class="div-body-margin"></div>
 		<br>
@@ -63,72 +67,71 @@
 			}
 		</script>
 		<br><hr class="solid">
-		<div class="div-body-margin"></div>
-		<div class="div-content">
-			<div class="div-content-home">
-				<div class="div-content-home-header">
-					<h1>LATEST BLOGS<a class="div-content-home-header-blog" href="all_blogs.php ">more</a></h1>
+			<div class="div-content-home-header">
+					<center><h1>L A T E S T  B L O G S</h1></center>
 				<?php
 					include 'config.php';
 
 					$sql = "SELECT blog_id, blog_title, blog_description FROM blogs ORDER BY blog_id DESC LIMIT 5";
 					$result = mysqli_query($conn, $sql);
 
-					if($result) {
-						$rows = mysqli_fetch_all($result);
+				if($result) {
+					$rows = mysqli_fetch_all($result);
 
-						// echo "<pre>";
-						// print_r($rows);
-						// echo "</pre>";
-					}
-					else {
-						echo "NOT FETCHED";
-					}
-				?>
-				</div>
-				<div class="div-content-home-background">
-					<div class="div-content-home-list">
-						<div class="div-content-home-list-content">
-							<div class="div-content-home-list-content-header">
-								<a href="<?php echo 'view_blog.php?blog_id='.$rows[0][0];?>"><?php echo $rows[0][1]?></a>
-							</div>
-							<div class="div-content-home-list-content-content">
-								<p><?php echo $rows[0][2]; ?></p>
-							</div>
-						</div>
-						<div class="div-content-home-list-content">
-							<div class="div-content-home-list-content-header">
-								<a href="<?php echo 'view_blog.php?blog_id='.$rows[1][0];?>"><?php echo $rows[1][1]?></a>
-							</div>
-							<div class="div-content-home-list-content-content">
-								<p><?php echo $rows[1][2]; ?></p>
-							</div>
-						</div>
-						<div class="div-content-home-list-content">
-							<div class="div-content-home-list-content-header">
-								<a href="<?php echo 'view_blog.php?blog_id='.$rows[2][0];?>"><?php echo $rows[2][1]?></a>
-							</div>
-							<div class="div-content-home-list-content-content">
-								<p><?php echo $rows[2][2]; ?></p>
-							</div>
-						</div>
-						<div class="div-content-home-list-content">
-							<div class="div-content-home-list-content-header">
-								<a href="<?php echo 'view_blog.php?blog_id='.$rows[3][0];?>"><?php echo $rows[3][1]?></a>
-							</div>
-							<div class="div-content-home-list-content-content">
-								<p><?php echo $rows[3][2]; ?></p>
-							</div>
-						</div>
-						<div class="div-content-home-list-content">
-							<div class="div-content-home-list-content-header">
-								<a href="<?php echo 'view_blog.php?blog_id='.$rows[4][0];?>"><?php echo $rows[4][1]?></a>
-							</div>
-							<div class="div-content-home-list-content-content">
-								<p><?php echo $rows[4][2]; ?></p>
-							</div>
-						</div>
+					// echo "<pre>";
+					// print_r($rows);
+					// echo "</pre>";
+				}
+			else {
+				echo "NOT FETCHED";
+			}
+		?>
+		</div>
+		<div class="div-content-home-background">
+			<div class="div-content-home-list">
+				<div class="div-content-home-list-content">
+					<div class="div-content-home-list-content-header">
+						<i class="fas fa-clipboard-check"></i>
+						<a href="<?php echo 'view_blog.php?blog_id='.$rows[0][0];?>"><?php echo $rows[0][1]?></a>
 					</div>
+					<div class="div-content-home-list-content-content">
+						<p><?php echo $rows[0][2]; ?></p>
+					</div>
+				</div>
+				<div class="div-content-home-list-content">
+					<div class="div-content-home-list-content-header">
+						<i class="fas fa-clipboard-check"></i>
+						<a href="<?php echo 'view_blog.php?blog_id='.$rows[1][0];?>"><?php echo $rows[1][1]?></a>
+					</div>
+					<div class="div-content-home-list-content-content">
+						<p><?php echo $rows[1][2]; ?></p>
+					</div>
+				</div>
+				<div class="div-content-home-list-content">
+					<div class="div-content-home-list-content-header">
+						<i class="fas fa-clipboard-check"></i>
+						<a href="<?php echo 'view_blog.php?blog_id='.$rows[2][0];?>"><?php echo $rows[2][1]?></a>
+					</div>
+					<div class="div-content-home-list-content-content">
+						<p><?php echo $rows[2][2]; ?></p>
+					</div>
+				</div>
+				<div class="div-content-home-list-content">
+					<div class="div-content-home-list-content-header">
+						<i class="fas fa-clipboard-check"></i>
+						<a href="<?php echo 'view_blog.php?blog_id='.$rows[3][0];?>"><?php echo $rows[3][1]?></a>
+					</div>
+					<div class="div-content-home-list-content-content">
+						<p><?php echo $rows[3][2]; ?></p>
+					</div>
+				</div>
+				<div class="div-content-home-list-content">
+					<div class="div-content-home-list-content-header">
+						<i class="fas fa-clipboard-check"></i>
+						<a href="<?php echo 'view_blog.php?blog_id='.$rows[4][0];?>"><?php echo $rows[4][1]?></a>
+					</div>
+					<div class="div-content-home-list-content-content">
+					<p><?php echo $rows[4][2]; ?></p>
 				</div>
 			</div>
 		</div>

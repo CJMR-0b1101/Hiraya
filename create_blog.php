@@ -8,6 +8,10 @@
         float:center;
         background-image: url(https://i.imgur.com/bYsVdHu.png);
     }
+
+  .blog-header-txt{
+    
+  }
   .button-style{
     font-size: 15px;
     font-family: 'Inconsolata', monospace;
@@ -181,7 +185,7 @@
                 <!-- BLOG IMAGE HEADER -->
                 <div class="div-blog-img" style="background-image: url(blog_images/<?php echo $blog_pic; ?>); background-size: cover;"></div>
                   <br>
-                  <label for="">Browse:</label>
+                  
                   <br>
                   <input class="button-style" type="file" name="blog_pic" required>
                   <br><br>
