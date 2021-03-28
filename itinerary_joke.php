@@ -12,7 +12,7 @@
 	}
 
     h1{
-        margin-top: 20px;
+        margin-top: 50px;
         margin-bottom: -20px;
         background-color: none;
 
@@ -25,7 +25,6 @@
             float: left;
             width: 45%;
             padding: 0 100px;
-
         }
 
         /* Remove extra left and right margins, due to padding in columns */

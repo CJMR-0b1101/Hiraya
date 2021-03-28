@@ -6,13 +6,19 @@
 	<title></title>
 </head>
 <style>
+	.main-body{
+		background-image: url(https://i.imgur.com/bYsVdHu.png);
+	}
 	.image{
 		margin-top: 50px;
 		margin-bottom: 50px;
 		max-width: 100%;  
 		height: auto; 
 	}
-
+	.div-contents{
+		margin-top: 100px;
+		margin-bottom: 20px;
+	}
 	/* BUTTON STYLE */
 		.like-container {
     	width: max-content;
@@ -36,24 +42,37 @@
 			outline: none;
 			box-shadow: 0px 0px 2px red;
 		}
+		#first_div {
+  		display: block;
+		}
+
+		.myDivs {
+  		display: none;
+		}
 </style>
 
 <body class="main-body">
-	<div class="div-body">
-		<?php include 'navbar.php'; ?>
-		<div class="div-body-margin"></div>
+<?php include 'navbar.php'; ?>
 		<div class="div-content">
-			<div class="div-content-background">
+			<div class="div-itinerary-background">
 				<div class="diy-progress-container">
 					<div class="diy-progress" id="progress"></div>
 					<div class="progress-circle active">1</div>
 					<div class="progress-circle">2</div>
 					<div class="progress-circle">3</div>
 				</div>
+				<!-- ADD CONTENTS HERE  -->
+				<center>
+				<div class="div-contents">
+					<div class="myDivs" id="first_div"><img src="images/img1.jpg"> CONTENT 1 </div>
+					<div class="myDivs"><img src="images/img2.jpg"> CONTENT 2 </div>
+					<div class="myDivs"><img src="images/img3.jpg"> CONTENT 3 </div>
+				</div>
+				</center>
 
-				<div class="image"> <img src="https://i.imgur.com/iPF3pTD.png"> </div>
 				<div class="add_button"> 
 				<!-- ADD BUTTON  -->
+				<center>
 					<?php
 						$like_class = "unlike-button";
 						$user_id = $_GET['user_id'];
@@ -134,18 +153,18 @@
 						}
 						}
 					?> </div>
-
-				<button class="progress-btn" id="progress-prev" disabled>Prev</button>
-				<button class="progress-btn" id="progress-next">Next</button>
+				</center>
+				<center><button class="progress-btn" id="progress-prev" disabled>Prev</button>
+				<button class="progress-btn" id="progress-next">Next</button></center>
 			</div>
-		</div>
-	</div>
+	
 
 	<script>
 	  const progress = document.getElementById("progress");
 	  const prev = document.getElementById("progress-prev");
 	  const next = document.getElementById("progress-next");
 	  const circles = document.querySelectorAll(".progress-circle");
+	  var divs = document.getElementsByClassName("myDivs");
 
 	  let currentActive = 1;
 
@@ -185,9 +204,20 @@
 	  		prev.disabled = false;
 	  		next.disabled = false;
 	  	}
+		if (currentActive == 1){
+            divs[0].style.display = "block";
+            divs[1].style.display = "none";
+            divs[2].style.display = "none";
+        }else if (currentActive == 2){
+            divs[0].style.display = "none";
+            divs[1].style.display = "block";
+            divs[2].style.display = "none";
+        }else if (currentActive == 3){
+            divs[0].style.display = "none";
+            divs[1].style.display = "none";
+            divs[2].style.display = "block";
+        }
 	  }
-
-
 	</script>
 
 </body>

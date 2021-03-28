@@ -76,7 +76,7 @@
 		<div class="div-content">
 			<div class="div-content-home">
 				<div class="div-content-home-header">
-					<center><h1>ALL BLOGS</h1></center>
+					<center><h1>A L L   B L O G S</h1></center>
 
 				<?php
                     $len = 0;

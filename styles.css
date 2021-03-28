@@ -112,6 +112,10 @@ img{
   background-color: #00c2cb;
   padding: 10px;
 }
+.div-itinerary-background {
+  
+  padding: 10px;
+}
 
 .div-content-home-header {
   height: 50px;
@@ -533,10 +537,9 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
   position: relative;
-  margin: 30px 0;
+  margin: 30px auto;
   max-width: 100%;
   width: 400px;
-  left: 300px;
 }
 
 .diy-progress-container::before {
@@ -588,7 +591,7 @@ textarea:focus {
   border: 0;
   cursor: pointer;
   padding: 8px 30px;
-  margin: 5px;
+  margin: 10px 50px;
   font-size: 14px;
 }
 
