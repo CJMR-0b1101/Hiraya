@@ -6,17 +6,20 @@
 	<title></title>
 </head>
 <style>
-	*{
+	.main-body{
 		background-image: url(https://i.imgur.com/bYsVdHu.png);
+	}
+	h1{
+		margin-right: 10px;
+		margin-top: 50px;
 	}
 </style>
 <?php include 'navbar.php'; ?>
 <body class="main-body">
-
 	<div class="div-body">
 		<div class="div-body-margin"></div>
 		<div class="div-content">
-			<div class="div-content-background">
+			
 				<h1><center>DESTINATIONS</center></h1>
 				<div class="div-content-image-container">
 					<div class="div-content-image-container-left">
@@ -53,27 +56,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="div-content-image-container">
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-					<div class="div-content-image-container-content">
-						<a href="location_page.php"><img src="images/img1.jpg"></a>
-					</div>
-				</div>
+				</div>	
 			</div>
 		</div>
 		
