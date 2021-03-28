@@ -45,7 +45,7 @@
         // echo "<pre>";
         // print_r($_SESSION);
         // echo "</pre>";
-        if(!isset($_SESSION['guestlogin'])) {
+        if(!isset($_SESSION['guestlogin']) && !isset($_SESSION['login'])) {
           echo'<script> window.location="index.php"; </script>';
         }
         else {

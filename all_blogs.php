@@ -138,8 +138,8 @@
 
                         for($i = 0; $i < $len; $i++) {
                             echo '<div class="div-content-home-list-content">';
-                            
-                            echo '<i class="fas fa-clipboard-check"></i>',' <div class="div-content-home-list-content-header">';
+                            echo '  <div class="div-content-home-list-content-header">';
+                            echo '      <i class="fas fa-clipboard-check"></i>';
                             echo '      <a class="link_title" href="view_blog.php?blog_id='.$rows[$i][0].'">'.$rows[$i][1].'</a>';
                             echo '  </div>';
                             echo '  <div class="div-content-home-list-content-content">';

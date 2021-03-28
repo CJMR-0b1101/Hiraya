@@ -140,10 +140,26 @@
                 <!-- ITINERARY OF USER -->
                 <div class="div-profile-itinerary">
                     <h3>My Plans</h3>
-                    <p>
-                        In this section, the user's itinerary/plans
-                        will be fetched from the database soon. 
-                    </p>
+                    <?php
+                        include 'config.php';
+                        $sql = "SELECT * FROM itinerary WHERE user_id = $user[user_id]";
+                        $plan_result = mysqli_query($conn, $sql);
+                        $rows = mysqli_fetch_all($plan_result);
+                        $len = count($rows);
+                        if($len == 0) {
+                            echo "<p>You don't have plans yet</p>";
+                        }
+                        else {
+                            for($i = 0; $i < $len; $i++) {
+                                $sql = "SELECT location_name FROM locations WHERE location_id=".$rows[$i][2];
+                                $location_result = mysqli_query($conn, $sql);
+                                $fetch = mysqli_fetch_array($location_result);
+                                $location_name = $fetch['location_name'];
+
+                                echo "<a href='view_itinerary.php?location_id=".$rows[$i][2]."&user_id=".$rows[$i][1]."'>Location: ".$location_name."</a><br>";
+                            }
+                        }
+                    ?>
                 </div>
                 <div class="div-body-margin"></div>
 
@@ -151,7 +167,6 @@
                 <div class="div-profile-blog">
                     <h3>My Blogs</h3>
                     <?php
-                        include 'config.php';
                         $sql = "SELECT blog_id, blog_title, blog_description FROM blogs
                         WHERE user_id = $user[user_id]";
                         // echo $sql;

@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
-	<title></title>
+	<title>View Itinerary</title>
 </head>
 <style>
 	.main-body{
@@ -62,11 +62,18 @@
 					<div class="progress-circle">3</div>
 				</div>
 				<!-- ADD CONTENTS HERE  -->
+				<?php
+					include 'config.php';
+					$location_id = $_GET['location_id'];
+					$sql = "SELECT day_1, day_2, day_3 FROM locations WHERE location_id = $location_id";
+					$result = mysqli_query($conn, $sql);
+					$row = mysqli_fetch_array($result);
+				?>
 				<center>
 				<div class="div-contents">
-					<div class="myDivs" id="first_div"><img src="images/img1.jpg"> CONTENT 1 </div>
-					<div class="myDivs"><img src="images/img2.jpg"> CONTENT 2 </div>
-					<div class="myDivs"><img src="images/img3.jpg"> CONTENT 3 </div>
+					<div class="myDivs" id="first_div"><img style="width: 40%; height: 40%;" src="<?php echo $row['day_1']; ?>"></div>
+					<div class="myDivs"><img style="width: 40%; height: 40%;" src="<?php echo $row['day_2']; ?>"></div>
+					<div class="myDivs"><img style="width: 40%; height: 40%;" src="<?php echo $row['day_3']; ?>"></div>
 				</div>
 				</center>
 
@@ -74,86 +81,88 @@
 				<!-- ADD BUTTON  -->
 				<center>
 					<?php
+						if(!isset($_SESSION['guestlogin']) && !isset($_SESSION['login'])) {
+							echo'<script> window.location="index.php"; </script>';
+						}
 						$like_class = "unlike-button";
 						$user_id = $_GET['user_id'];
-						$location_id = $_GET['location_id'];
 						$status_msg = "";
-						echo "UID: $user_id";
-						echo "<br>Loc ID: $location_id";
-
-						include 'config.php';
-
+						// echo "UID: $user_id";
+						// echo "<br>Loc ID: $location_id";
 						// FETCH CURRENT ITINERARY OF USER
 						$sql = "SELECT * FROM itinerary WHERE user_id = $user_id AND location_id = $location_id";
 						// echo "<br>SQL: ".$sql;
 						$query_result = mysqli_query($conn, $sql);
-						
-						if(isset($_POST['unlike'])) {
-						// IF NO EXISTING RECORD, INSERT
-						if(!mysqli_num_rows($query_result) == 1) {
-							$sql = "INSERT INTO itinerary(user_id, location_id) VALUES($user_id, $location_id)";
-							// echo "<br>".$sql;
-							$insert_result = mysqli_query($conn, $sql);
 
-							if($insert_result) {
-							$like_class = "like-button";
-							$status_msg = "Added to My Plans";
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-										<button class="'.$like_class.'" type="submit" name="like">♥</button>
-										<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
+						if(isset($_SESSION['login'])) {
+							if(isset($_POST['unlike'])) {
+								// IF NO EXISTING RECORD, INSERT
+								if(!mysqli_num_rows($query_result) == 1) {
+									$sql = "INSERT INTO itinerary(user_id, location_id) VALUES($user_id, $location_id)";
+									// echo "<br>".$sql;
+									$insert_result = mysqli_query($conn, $sql);
+
+									if($insert_result) {
+										$like_class = "like-button";
+										$status_msg = "Added to My Plans";
+										echo '<div class="like-container">';
+										echo '  <form action="" method="post">
+													<button class="'.$like_class.'" type="submit" name="like">♥</button>
+													<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+												</form>';
+										echo '</div>';
+									}
+								}
+								// IF THERE'S A RECORD, DELETE
+								else {
+									$sql = "DELETE FROM itinerary WHERE user_id = $user_id AND location_id = $location_id";
+									// echo "<br>".$sql;
+									$delete_result = mysqli_query($conn, $sql);
+
+									if($delete_result) {
+										$like_class = "unlike-button";
+										$status_msg = "";
+										echo '<div class="like-container">';
+										echo '  <form action="" method="post">
+													<button class="'.$like_class.'" type="submit" name="like">♥</button>
+													<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+												</form>';
+										echo '</div>';
+									}
+								}
+
+								unset($_POST['like']);
+								if(!isset($_POST['like'])) {
+									echo '<meta http-equiv="refresh" content="0">';
+								}
+							}
+							else {
+								if(mysqli_num_rows($query_result) == 1) {
+									$like_class = "like-button";
+									$status_msg = "Added to My Plans";
+
+									echo '<div class="like-container">';
+									echo '  <form action="" method="post">
+											<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
+											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+											</form>';
+									echo '</div>';
+								}
+								else {
+									$status_msg = "";
+									
+									echo '<div class="like-container">';
+									echo '  <form action="" method="post">
+											<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
+											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+											</form>';
+									echo '</div>';
+								}
 							}
 						}
-						// IF THERE'S A RECORD, DELETE
-						else {
-							$sql = "DELETE FROM itinerary WHERE user_id = $user_id AND location_id = $location_id";
-							// echo "<br>".$sql;
-							$delete_result = mysqli_query($conn, $sql);
-
-							if($delete_result) {
-							$like_class = "unlike-button";
-							$status_msg = "";
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-										<button class="'.$like_class.'" type="submit" name="like">♥</button>
-										<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
-							}
-						}
-
-						unset($_POST['like']);
-						if(!isset($_POST['like'])) {
-							header("Refresh:0");
-						}
-						}
-						else {
-						if(mysqli_num_rows($query_result) == 1) {
-							$like_class = "like-button";
-							$status_msg = "Added to My Plans";
-
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-									<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
-									<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
-						}
-						else {
-							$status_msg = "";
-							
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-									<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
-									<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
-						}
-						}
-					?> </div>
+					?> 
 				</center>
+				</div>
 				<center><button class="progress-btn" id="progress-prev" disabled>Prev</button>
 				<button class="progress-btn" id="progress-next">Next</button></center>
 			</div>

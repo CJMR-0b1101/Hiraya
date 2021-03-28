@@ -124,7 +124,7 @@
 				</div>
 			</div>
 			<div class="dropdown">
-				<button class="dropbtn"><a href="itinerary_joke.php">ITINERARY</a></button>
+				<button class="dropbtn"><a href="itinerary.php">ITINERARY</a></button>
 			</div>
 			<div class="dropdown">
 				<button class='dropbtn'><a href="all_blogs.php">BLOGS</a></button>
@@ -138,7 +138,7 @@
 				</div>';
 			}
 			elseif(isset($_SESSION['login'])) {
-				$_SESSION['guestlogin'] = False;
+				unset($_SESSION['guestlogin']);
 				$user = $_SESSION['user'];
 
 				echo '<div class="div-nav-bar-right">
