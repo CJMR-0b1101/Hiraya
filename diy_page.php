@@ -70,45 +70,47 @@
 						$query_result = mysqli_query($conn, $sql);
 						
 						if(isset($_POST['unlike'])) {
-						// IF NO EXISTING RECORD, INSERT
-						if(!mysqli_num_rows($query_result) == 1) {
-							$sql = "INSERT INTO itinerary(user_id, location_id) VALUES($user_id, $location_id)";
-							// echo "<br>".$sql;
-							$insert_result = mysqli_query($conn, $sql);
+							// IF NO EXISTING RECORD, INSERT
+							if(!mysqli_num_rows($query_result) == 1) {
+								$sql = "INSERT INTO itinerary(user_id, location_id) VALUES($user_id, $location_id)";
+								// echo "<br>".$sql;
+								$insert_result = mysqli_query($conn, $sql);
 
-							if($insert_result) {
-							$like_class = "like-button";
-							$status_msg = "Added to My Plans";
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-										<button class="'.$like_class.'" type="submit" name="like">♥</button>
-										<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
+								if($insert_result) {
+								$like_class = "like-button";
+								$status_msg = "Added to My Plans";
+								echo '<div class="like-container">';
+								echo '  <form action="" method="post">
+											<button class="'.$like_class.'" type="submit" name="like">♥</button>
+											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+										</form>';
+								echo '</div>';
+								}
 							}
-						}
-						// IF THERE'S A RECORD, DELETE
-						else {
-							$sql = "DELETE FROM itinerary WHERE user_id = $user_id AND location_id = $location_id";
-							// echo "<br>".$sql;
-							$delete_result = mysqli_query($conn, $sql);
+							// IF THERE'S A RECORD, DELETE
+							else {
+								$sql = "DELETE FROM itinerary WHERE user_id = $user_id AND location_id = $location_id";
+								// echo "<br>".$sql;
+								$delete_result = mysqli_query($conn, $sql);
 
-							if($delete_result) {
-							$like_class = "unlike-button";
-							$status_msg = "";
-							echo '<div class="like-container">';
-							echo '  <form action="" method="post">
-										<button class="'.$like_class.'" type="submit" name="like">♥</button>
-										<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
-									</form>';
-							echo '</div>';
+								if($delete_result) {
+								$like_class = "unlike-button";
+								$status_msg = "";
+								echo '<div class="like-container">';
+								echo '  <form action="" method="post">
+											<button class="'.$like_class.'" type="submit" name="like">♥</button>
+											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+										</form>';
+								echo '</div>';
+								}
 							}
-						}
 
-						unset($_POST['like']);
-						if(!isset($_POST['like'])) {
-							header("Refresh:0");
-						}
+							unset($_POST['like']);
+							if(!isset($_POST['like'])) {
+								// header("Refresh:0");
+								echo '<meta http-equiv="refresh" content="0">';
+								// echo '<script>window.location.reload();</script>';
+							}
 						}
 						else {
 						if(mysqli_num_rows($query_result) == 1) {
