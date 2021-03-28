@@ -167,7 +167,9 @@
                 <br><br>
 
                 <!-- BLOG IMAGE HEADER -->
-                <div class="div-blog-img" style="background-image: url(blog_images/<?php echo $blog_header; ?>); background-size: cover;"></div>
+                <div class="div-blog-img">
+                  <img class="blog-img" src="<?php echo 'blog_images/'.$blog_header; ?>" alt="">
+                </div>
                   <br><br>
 
                   <!-- BLOG BODY TEXTAREA -->
