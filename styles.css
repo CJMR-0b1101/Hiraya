@@ -464,13 +464,15 @@ img{
 
 /* Fake image */
 .div-blog-img {
-  background-color: #aaa;
   width: 100%;
-  height: 250%;
-  padding: 20px;
-  
+  height: 500px;
 }
 
+.blog-img {
+  margin-left: 6px;
+  width: 100%;
+  height: 100%;
+}
 /* Add a card effect for articles */
 .div-blog-card {
    padding: 20px;
