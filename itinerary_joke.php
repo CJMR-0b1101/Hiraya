@@ -13,7 +13,6 @@
 
     h1{
         margin-top: 20px;
-        margin-right: 10px;
         margin-bottom: -20px;
         background-color: none;
 
@@ -204,9 +203,5 @@
             
         </div>
     </div>
-   
-
-
-
 </body>
 </html>
