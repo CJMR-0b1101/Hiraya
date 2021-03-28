@@ -8,6 +8,13 @@
 	<title>All blogs</title>
 </head>
 <style>
+    .main-body{
+        float:center;
+        background-image: url(https://i.imgur.com/bYsVdHu.png);
+    }
+    h1{
+        
+    }
     form.example input[type=text] {
         padding: 10px;
         font-size: 17px;
