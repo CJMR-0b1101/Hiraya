@@ -15,7 +15,7 @@
         background-image: url(https://i.imgur.com/bYsVdHu.png);
     }
     h1{
-        color: #A0A603;
+        color: #c9e265;
         font-family: 'Noto Sans TC', sans-serif;
     }
     form.example input[type=text] {

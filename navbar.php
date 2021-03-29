@@ -107,20 +107,12 @@
 			<div class="dropdown">
 				<button class="dropbtn"><a href="destination_page.php">DESTINATION</a></button>
 				<div class="dropdown-content">
-					<a href="location_page.php">BORACAY</a>
-					<a href="location_page.php">MANILA</a>
-					<a href="location_page.php">BOHOL</a>
-					<a href="location_page.php">PUERTO PRINSESA</a>
-					<a href="location_page.php">EL NIDO PALAWAN</a>
-					<a href="location_page.php">CEBU</a>
-					<a href="location_page.php">CORON PALAWAN</a>
-					<a href="location_page.php">BAGUIO</a>
-					<a href="location_page.php">SIARGAO</a>
-					<a href="location_page.php">PUERTO GALLERA</a>
-					<a href="location_page.php">DAVAO</a>
-					<a href="location_page.php">SAGADA</a>
-					<a href="location_page.php">VIGAN</a>
-					<a href="location_page.php">MINDANAO</a>
+					<a href="view_destination1.php">BORACAY</a>
+					<a href="view_destination2.php">BOHOL</a>
+					<a href="view_destination3.php">EL NIDO, PALAWAN</a>
+					<a href="view_destination4.php">CORON, PALAWAN</a>
+					<a href="view_destination5.php">BAGUIO</a>
+					<a href="view_destination6.php">SIARGAO</a>
 				</div>
 			</div>
 			<div class="dropdown">
