@@ -23,7 +23,7 @@
     <br>
     <div class="div-content">
       <div class="div-content-location">
-        <img class="location-img" src="https://i.imgur.com/ZlE9V0z.jpg?1">
+        <img class="location-img" src="https://i.imgur.com/0xW1kiz.png">
         <div class="text"><h1>BAGUIO</h1></div>
       </div>
       
@@ -63,16 +63,16 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/b8DRTlL.jpg" id="img_slide">
-              <h1><div class="text">Caption Text</div></h1>
+              <img src="https://i.imgur.com/4Oki4Ss.jpg" id="img_slide">
+              <h1><div class="text">Boating at Burnham Park</div></h1>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/bLuP3Cq.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/6PHfS89.jpg" id="img_slide">
+              <div class="text">Explore Camp John Hay</div>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/XKCOkjP.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/daILk0x.jpg" id="img_slide">
+              <div class="text">Head to Mines View Park</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -84,16 +84,16 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/26PscWg.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/8sG5Y6h.jpg" id="img_slide">
+              <div class="text">Spend at The Mansion</div>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/K9LbB9E.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/jT5Xy4M.jpg" id="img_slide">
+              <div class="text">Unwind at the Baguio Botanical Garden</div>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/FQR5BAs.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/ULMq9qg.jpg" id="img_slide">
+              <div class="text">Visit the Baguio Cathedral</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -103,16 +103,16 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div3">
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/cuk3Coo.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/fObWvAS.jpg" id="img_slide">
+              <div class="text">Visit Strawberry Farms in La Trinidad</div>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/nufS4xf.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/Z8uNY5u.jpg" id="img_slide">
+              <div class="text">Discover Tam-Awan Village</div>
             </div>
             <div class="mySlides fade">
-              <img src="https://i.imgur.com/W1BrckD.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/S69wLU9.jpg" id="img_slide">
+              <div class="text">Go Bargain-Hunting at Baguio Night Market</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -208,31 +208,31 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://campjohnhay.ph/">
+              <a target="_blank" href="https://campjohnhay.ph/">
                 <img class="location-station-img" src="https://i.imgur.com/wlZcjoT.png">
                  <div class="location-station-text"><center><h1>THE MANOR AT CAMP JOHN HAY</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.sierrapinesbaguio.com/">
+              <a target="_blank" href="https://www.sierrapinesbaguio.com/">
                 <img class="location-station-img" src="https://i.imgur.com/Rh1W8Fm.png">
                  <div class="location-station-text"><center><h1>GRAND SIERRA PINES HOTEL</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.campjohnhayhotels.ph/">
+              <a target="_blank" href="https://www.campjohnhayhotels.ph/">
                 <img class="location-station-img" src="https://i.imgur.com/s3q8gEe.png">
                  <div class="location-station-text"><center><h1>THE FOREST LODGE AT CAMP JOHN HAY</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://lemonethotel.ph/">
+              <a target="_blank" href="https://lemonethotel.ph/">
                 <img class="location-station-img" src="https://i.imgur.com/QiCUo81.png">
                  <div class="location-station-text"><center><h1>LE MONET HOTEL</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.azalea.com.ph/">
+              <a target="_blank" href="https://www.azalea.com.ph/">
                 <img class="location-station-img" src="https://i.imgur.com/tHaKvsK.png">
                  <div class="location-station-text"><center><h1>AZALEA RESIDENCES BAGUIO</h1></center></div>
               </a>
@@ -260,63 +260,51 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/rLDtlfh.png">
+              <a target="_blank" href="https://www.facebook.com/Good-Taste-Restaurant-FB-Page-338269456209160/">
+                <img class="location-station-img" src="https://i.imgur.com/G7Sp7vY.jpg">
                  <div class="location-station-text"><center><h1>Good Taste Café & Restaurant</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/C7fsGdR.png">
+              <a target="_blank" href="https://www.facebook.com/chefscookhouse/">
+                <img class="location-station-img" src="https://i.imgur.com/aFnOWhY.png">
                  <div class="location-station-text"><center><h1>Foggy Mountain Cookhouse</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/qoNJFGU.png">
+              <a target="_blank" href="https://www.facebook.com/LemonandOlivesPH/">
+                <img class="location-station-img" src="https://i.imgur.com/B97Tizu.jpg">
                  <div class="location-station-text"><center><h1>Lemon and Olives Greek Taverna</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/Vyl783X.png">
+              <a target="_blank" href="https://www.amarelacucina.com">
+                <img class="location-station-img" src="https://i.imgur.com/JAsc2va.jpg">
                  <div class="location-station-text"><center><h1>Amare La Cucina</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/vCPLtCs.png">
+              <a target="_blank" href="https://www.facebook.com/cafebytheruinsph/">
+                <img class="location-station-img" src="https://i.imgur.com/jXITeNa.jpg">
                  <div class="location-station-text"><center><h1>Cafe by the Ruins</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/rLDtlfh.png">
+              <a target="_blank" href="https://www.facebook.com/OhMyGulayArtistCafeBaguio/">
+                <img class="location-station-img" src="https://i.imgur.com/Fxtavo4.jpg">
                  <div class="location-station-text"><center><h1>Oh My Gulay</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/C7fsGdR.png">
+              <a target="_blank" href="https://hillstationbaguio.com">
+                <img class="location-station-img" src="https://i.imgur.com/qQhPM5p.jpg">
                  <div class="location-station-text"><center><h1>Hill Station</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/qoNJFGU.png">
-                 <div class="location-station-text"><center><h1>Grümpy Joe</h1></center></div>
-              </a>
-            </div>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/Vyl783X.png">
+              <a target="_blank" href="thebarn.ph">
+                <img class="location-station-img" src="https://i.imgur.com/BidArf2.jpg">
                  <div class="location-station-text"><center><h1>The Barn</h1></center></div>
-              </a>
-            </div>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="https://i.imgur.com/vCPLtCs.png">
-                 <div class="location-station-text"><center><h1>Chef’s Home</h1></center></div>
               </a>
             </div>
         </div>
