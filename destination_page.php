@@ -47,14 +47,14 @@
             }
         }
     .card {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        box-shadow: 2px 2px 4px 0 rgba(0,0,0,0.2);
         margin-top: 50px;
         border-radius: 5px;
         cursor: pointer;
     }
 
     .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 
     .img{

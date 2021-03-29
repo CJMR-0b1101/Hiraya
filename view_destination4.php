@@ -64,15 +64,15 @@
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
               <img src="https://i.imgur.com/b8DRTlL.jpg" id="img_slide">
-              <h1><div class="text">Caption Text</div></h1>
+              <h1><div class="text">Lake Hopping</div></h1>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/bLuP3Cq.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">CYC Beach</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/XKCOkjP.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Pamalican Island</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -85,34 +85,15 @@
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
               <img src="https://i.imgur.com/26PscWg.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Shipwreck Diving</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/K9LbB9E.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Seafood Galore</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/FQR5BAs.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
-            </div>
-
-            <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
-            <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
-          </div>
-        </div>
-        <div class="location-travel-slideshow">
-          <div class="slideshow-container slider" id="div3">
-            <div class="mySlides fade">
-              <img src="https://i.imgur.com/cuk3Coo.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides fade">
-              <img src="https://i.imgur.com/nufS4xf.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides fade">
-              <img src="https://i.imgur.com/W1BrckD.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Water Activities </div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -167,16 +148,19 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO CORON PALAWAN</h2>
+        <center><h2>HOW TO GET TO CORON PALAWAN</h2>
         <p>
         	Plane:
           <br>
-          You have to fly from Manila to Busuanga airport, Palawan. You can take Cebu Pacific Air, Zest Air or PAL Express. From Busuanga aiport, you take a jeepney for about one hour to reach Coron Town. The ride cost about P150 per person.
+          You have to fly from Manila to Busuanga airport, Palawan. You can take Cebu Pacific Air, Zest Air or PAL Express. 
+          <br>From Busuanga aiport, you take a jeepney for about one hour to reach Coron Town. 
+          <br>The ride cost about P150 per person.
           <br>
           Ferry Boat:
           <br>
-          From Manila you can take the SuperFerry. It goes once a week to Puerto Princesa and stops off at Coron on the way. Departures are every Friday at 4:15pm and you arrive in Coron the day after at 5:30 am (about 12 hours). You can get back to Manila by the same way.
-		</p>
+          From Manila you can take the SuperFerry. It goes once a week to Puerto Princesa and stops off at Coron on the way. 
+          <br>Departures are every Friday at 4:15pm and you arrive in Coron the day after at 5:30 am (about 12 hours). You can get back to Manila by the same way.
+		</p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -218,15 +202,14 @@
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
+        <center><h2>PROFILE</h2>
         <p>
           Language: Pilipino and Cuyonon, Palawan’s native dialect, are the main languages spoken.  A majority of the population can also converse in English.  Bisaya (or Cebuano) is also spoken by a small segment.
           <br>
           Currency:  The main currency is the Philippine Peso.  US Dollars may be exchanged but at a slightly lower rate than in Manila.  A few establishments already accept credit cards.  DARAYONAN accepts credit card payments for Mastercard and VISA cards.  Debit payments through selected ATM cards is also available.
           <br>
-          Coron is a small, rapidly developing town on the island of Busuanga where most people stay when they visit the Calamianes Group of islands in northern Palawan. It’s not to be confused with Coron Island which is near the town and where most of the island hopping takes place. You can easily walk across the main area in about ten minutes. There’s not much to do in town itself so it’s basically a jumping point for all activities. It’s directly accessible by about an hour plane ride from Manila, Philippines.
-
-      </p>
+          Coron is a small, rapidly developing town on the island of Busuanga where most people stay when they visit the Calamianes Group of islands in northern Palawan. 
+      </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">

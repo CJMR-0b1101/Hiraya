@@ -23,8 +23,8 @@
     <br>
     <div class="div-content">
       <div class="div-content-location">
-        <img class="location-img" src="https://i.imgur.com/Xt5pRgg.jpg">
-        <div class="text"></div>
+        <img class="location-img" src="https://i.imgur.com/pbnkVLY.jpg">
+        <div class="text">El Nido, Palawan</div>
       </div>
       
       <div class="tab">
@@ -64,15 +64,15 @@
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
               <img src="https://i.imgur.com/jHVACjt.jpg" id="img_slide">
-              <h1><div class="text">Caption Text</div></h1>
+              <h1><div class="text">Seven Commandos Beach </div></h1>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/zHc9SjO.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Las Cabanas Beach</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/FRWLy4H.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Scuba Diving</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -85,15 +85,15 @@
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
               <img src="https://i.imgur.com/pbnkVLY.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Windsurfing</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/FgdctQq.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Snorkeling</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/uIVZuNR.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Secret Beach</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -104,15 +104,15 @@
           <div class="slideshow-container slider" id="div3">
             <div class="mySlides fade">
               <img src="https://i.imgur.com/e9JV14M.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Snake Island</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/xqOtWK1.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Nagkalit-Kalit Waterfalls</div>
             </div>
             <div class="mySlides fade">
               <img src="https://i.imgur.com/9EB1cKx.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <div class="text">Small Lagoon</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -167,12 +167,12 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO EL NIDO?</h2>
+        <center><h2>HOW TO GET TO EL NIDO?</h2>
         <p>
         	AirSwift is the only airline that flies from Manila directly to Lio Airport in El Nido. They operate up to four flights per day.
         	<br>
         	Vans are the most popular option among travelers for land travel to El Nido because it’s slightly faster than the bus with a travel time of 5-6 hours. The vans only leave once it’s full of passengers. The only stop is halfway for restroom and snack breaks. It’s advisable to book these in advance so they can pick you up straight from the airport. You can also hire a private van if you’re traveling as a group for a more convenient trip.  
-		</p>
+		</p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -202,17 +202,17 @@
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
+      <center> <h2>PROFILE</h2>
         <p>
         	Languages: English and Tagalog
         	<br>
-			Dialect: Cuyonon, Hiligaynon, Visayan dialect, Bicolano
+			  Dialect: Cuyonon, Hiligaynon, Visayan dialect, Bicolano
 			<br>
  			<h2>About El Nido:</h2>
- 			<br>
- 			El Nido Resorts has received numerous international awards as testament to its green practices and commitment to sustainable tourism, including the prestigious ASEAN Green Hotel Standard in 2010 and the Wild Asia Responsible Tourism Award in 2009. More recently, El Nido Resorts was a winner in the Sustainable Hotel Award – Sustainable Destination Category, the PATA Gold Award – Environmental Education Programme in 2011, and the World Travel and Tourism Council’s Tourism for Tomorrow Awards – Community Benefit Award this year.
+ 			El Nido Resorts has received numerous international awards as testament to its green practices and commitment to sustainable tourism, <br>
+      including the prestigious ASEAN Green Hotel Standard in 2010 and the Wild Asia Responsible Tourism Award in 2009.
 
-      </p>
+      </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">

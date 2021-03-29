@@ -102,7 +102,7 @@
         ?>
         <br>
         <br>
-        <hr class="solid">
+        
         <!-- PROFILE PICTURE SECTION -->
         <div class="div-content">
             <div class="div-profile-content-left">
