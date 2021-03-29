@@ -114,7 +114,7 @@
                     echo'<script> window.location="index.php"; </script>';
                 }
                 elseif(isset($_SESSION['guestlogin'])) {
-                    $sql = "SELECT * FROM locations WHERE day_1 IS NOT NULL";
+                    $sql = "SELECT * FROM locations WHERE image_file IS NOT NULL";
                     // $sql = "SELECT * FROM locations";
                     $result = mysqli_query($conn, $sql);
                     $rows = mysqli_fetch_all($result);
@@ -136,12 +136,12 @@
 
                 if(isset($_SESSION['login'])) {
                     $user_id = $_SESSION['user']['user_id'];
-                    $sql = "SELECT * FROM locations WHERE day_1 IS NOT NULL";
+                    $sql = "SELECT * FROM locations WHERE image_file IS NOT NULL";
                     // $sql = "SELECT * FROM locations";
                     $result = mysqli_query($conn, $sql);
                     $rows = mysqli_fetch_all($result);
                     $len = count($rows);
-    
+                    
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'location_page.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
