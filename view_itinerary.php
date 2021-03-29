@@ -29,6 +29,7 @@
 			cursor: pointer;
 			width: 55px;
 			border-radius: 50px;
+			background-color: #c9e265;;
 		}
 		.like-button {
 			margin-top: 10px;
@@ -37,6 +38,7 @@
 			cursor: pointer;
 			width: 55px;
 			border-radius: 50px;
+			background-color: #c9e265;;
 		}
 		.unlike-button:focus, .like-button:focus {
 			outline: none;
@@ -108,7 +110,7 @@
 										echo '<div class="like-container">';
 										echo '  <form action="" method="post">
 													<button class="'.$like_class.'" type="submit" name="like">♥</button>
-													<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+													<i style="margin-left: 5px; font-size: 20px; color: white;">'.$status_msg.'</i>
 												</form>';
 										echo '</div>';
 									}
@@ -125,7 +127,7 @@
 										echo '<div class="like-container">';
 										echo '  <form action="" method="post">
 													<button class="'.$like_class.'" type="submit" name="like">♥</button>
-													<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+													<i style="margin-left: 5px; font-size: 20px; color: white;">'.$status_msg.'</i>
 												</form>';
 										echo '</div>';
 									}
@@ -144,7 +146,7 @@
 									echo '<div class="like-container">';
 									echo '  <form action="" method="post">
 											<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
-											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+											<i style="margin-left: 5px; font-size: 20px; color: white;">'.$status_msg.'</i>
 											</form>';
 									echo '</div>';
 								}
@@ -154,7 +156,7 @@
 									echo '<div class="like-container">';
 									echo '  <form action="" method="post">
 											<button class="'.$like_class.'" type="submit" name="unlike">♥</button>
-											<i style="margin-left: 5px; font-size: 20px;">'.$status_msg.'</i>
+											<i style="margin-left: 5px; font-size: 20px; color: white;">'.$status_msg.'</i>
 											</form>';
 									echo '</div>';
 								}

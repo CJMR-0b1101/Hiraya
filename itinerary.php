@@ -155,10 +155,10 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id=0\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 200px; height: 100px;">';
                         echo '      <div class="container">';
                         echo '          <div class="location-name">';
-                        echo '              <h4><b>'.$rows[$i][1].'</b></h4>';
+                        echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
                         echo '          </div>';
                         echo '      </div>';
                         echo '  </div>';
@@ -176,10 +176,10 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 200px; height: 100px;">';
                         echo '      <div class="container">';
                         echo '          <div class="location-name">';
-                        echo '              <h4><b>'.$rows[$i][1].'</b></h4>';
+                        echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
                         echo '          </div>';
                         echo '      </div>';
                         echo '  </div>';
@@ -207,7 +207,7 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id=0\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 200px; height: 100px;">';
                         echo '      <div class="container">';
                         echo '          <div class="location-name">';
                         echo '              <h4><b>'.$rows[$i][1].'</b></h4>';
@@ -228,7 +228,7 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 200px; height: 100px;">';
                         echo '      <div class="container">';
                         echo '          <div class="location-name">';
                         echo '              <h4><b>'.$rows[$i][1].'</b></h4>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2021 at 06:42 PM
+-- Generation Time: Mar 29, 2021 at 08:13 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -197,28 +197,29 @@ CREATE TABLE `locations` (
   `location_name` varchar(100) NOT NULL,
   `day_1` varchar(100) DEFAULT NULL,
   `day_2` varchar(100) DEFAULT NULL,
-  `day_3` varchar(100) DEFAULT NULL
+  `day_3` varchar(100) DEFAULT NULL,
+  `image_file` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`location_id`, `location_name`, `day_1`, `day_2`, `day_3`) VALUES
-(1, 'Boracay', 'https://i.imgur.com/iPF3pTD.png', 'https://i.imgur.com/SVLfbYY.png', 'https://i.imgur.com/09IakRQ.png'),
-(2, 'Manila', NULL, NULL, NULL),
-(3, 'Bohol', 'https://i.imgur.com/wYb9qjG.png', 'https://i.imgur.com/FYyD4Z0.png', 'https://i.imgur.com/o0fgGKN.png'),
-(4, 'Puerto Prinsesa', NULL, NULL, NULL),
-(5, 'El Nido, Palawan', 'https://i.imgur.com/EJNeRkT.png', 'https://i.imgur.com/xu2rswN.png', 'https://i.imgur.com/DiIkV0p.png'),
-(6, 'Cebu', NULL, NULL, NULL),
-(7, 'Coron, Palawan', 'https://i.imgur.com/HjD1kRk.png', 'https://i.imgur.com/SeeMtIx.png', 'https://i.imgur.com/09IakRQ.png'),
-(8, 'Baguio', NULL, NULL, NULL),
-(9, 'Siargao', 'https://i.imgur.com/xoZsG4s.png', 'https://i.imgur.com/eIbfMSa.png', 'https://i.imgur.com/22Z2rRv.png'),
-(10, 'Puerto Gallera', NULL, NULL, NULL),
-(11, 'Davao', NULL, NULL, NULL),
-(12, 'Sagada', NULL, NULL, NULL),
-(13, 'Vigan', NULL, NULL, NULL),
-(14, 'Mindanao', NULL, NULL, NULL);
+INSERT INTO `locations` (`location_id`, `location_name`, `day_1`, `day_2`, `day_3`, `image_file`) VALUES
+(1, 'Boracay', 'https://i.imgur.com/iPF3pTD.png', 'https://i.imgur.com/SVLfbYY.png', 'https://i.imgur.com/09IakRQ.png', 'https://i.imgur.com/Rhj9xM3.jpg'),
+(2, 'Manila', NULL, NULL, NULL, NULL),
+(3, 'Bohol', 'https://i.imgur.com/wYb9qjG.png', 'https://i.imgur.com/FYyD4Z0.png', 'https://i.imgur.com/o0fgGKN.png', 'https://i.imgur.com/RTVMLH7.jpg'),
+(4, 'Puerto Prinsesa', NULL, NULL, NULL, NULL),
+(5, 'El Nido', 'https://i.imgur.com/EJNeRkT.png', 'https://i.imgur.com/xu2rswN.png', 'https://i.imgur.com/DiIkV0p.png', 'https://i.imgur.com/pbnkVLY.jpg'),
+(6, 'Cebu', NULL, NULL, NULL, NULL),
+(7, 'Coron', 'https://i.imgur.com/HjD1kRk.png', 'https://i.imgur.com/SeeMtIx.png', 'https://i.imgur.com/09IakRQ.png', 'https://i.imgur.com/K9LbB9E.jpg'),
+(8, 'Baguio', NULL, NULL, NULL, NULL),
+(9, 'Siargao', 'https://i.imgur.com/xoZsG4s.png', 'https://i.imgur.com/eIbfMSa.png', 'https://i.imgur.com/22Z2rRv.png', 'https://i.imgur.com/xLjrrsL.jpg'),
+(10, 'Puerto Gallera', NULL, NULL, NULL, NULL),
+(11, 'Davao', NULL, NULL, NULL, NULL),
+(12, 'Sagada', NULL, NULL, NULL, NULL),
+(13, 'Vigan', NULL, NULL, NULL, NULL),
+(14, 'Mindanao', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -304,7 +305,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `itinerary`
 --
 ALTER TABLE `itinerary`
-  MODIFY `itinerary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `itinerary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `locations`
