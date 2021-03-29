@@ -47,11 +47,7 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         margin-top: 50px;
         border-radius: 5px;
-        padding: 16px;
-        font-size: 30px;
-        text-align: center;
         cursor: pointer;
-        background-color: #00c2cb;
     }
 
     .card:hover {
@@ -127,12 +123,12 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'location_page.php?location_id='.$rows[$i][0].'&user_id=0\';">';
-                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 210px; height: 100px;">';
-                        echo '      <div class="container">';
-                        echo '          <div class="location-name">';
-                        echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        echo '          </div>';
-                        echo '      </div>';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
+                        // echo '      <div class="container">';
+                        // echo '          <div class="location-name">';
+                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
+                        // echo '          </div>';
+                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
@@ -149,12 +145,12 @@
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'location_page.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
-                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 210px; height: 100px;">';
-                        echo '      <div class="container">';
-                        echo '          <div class="location-name">';
-                        echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        echo '          </div>';
-                        echo '      </div>';
+                        echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
+                        // echo '      <div class="container">';
+                        // echo '          <div class="location-name">';
+                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
+                        // echo '          </div>';
+                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
