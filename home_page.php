@@ -4,12 +4,16 @@
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 	<title>Hiraya</title>
 </head>
 <style>
 	h1{
 		color:#c9e265;
+	}
+	div.text{
+		font-family: 'Poppins', sans-serif;
+		font-size: 30px;
 	}
 	</style>
 <body class="main-body">
@@ -20,15 +24,15 @@
 		<div class="slideshow-container">
 			<div class="mySlides fade" id='first_slide'>
 				<img src="https://i.imgur.com/6CCp3sL.jpg" id="img_slide">
-				<div class="text">BORACAY</div>
+				<div class="text">B O R A C A Y</div>
 			</div>
 			<div class="mySlides fade">
 				<img src="https://i.imgur.com/xLjrrsL.jpg" id="img_slide">
-				<div class="text">SIARGAO</div>
+				<div class="text">S I A R G A O</div>
 			</div>
 			<div class="mySlides fade">
 				<img src="https://i.imgur.com/FgdctQq.jpg" id="img_slide">
-				<div class="text">PALAWAN</div>
+				<div class="text">P A L A W A N</div>
 			</div>
 			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>

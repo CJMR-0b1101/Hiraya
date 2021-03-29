@@ -2,10 +2,15 @@
 <html>
 <head>
 	<link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<title>Itinerary</title>
 </head>
 <style>
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
 	.main-body{
 		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
         box-sizing: border-box;
@@ -14,6 +19,7 @@
     h1{
         background-color: none;
         color: #c9e265;
+        font-family: 'Noto Sans TC', sans-serif;
     }
     
     /* Float four columns side by side */
@@ -134,7 +140,7 @@
 
 <body class="main-body">
     <div id="first-opt" class="tabcontent">
-        <h1><center>ITINERARY</center></h1>
+        <h1><center>I T I N E R A R Y</center></h1>
         <div class="row">
             <?php
                 include 'config.php';
@@ -186,7 +192,7 @@
         </div>
     </div>
     <div id="sec-opt" class="tabcontent">
-        <h1><center>ITINERARY</center></h1>
+        <h1><center>I T I N E R A R Y</center></h1>
         <div class="row">
             <?php
                 include 'config.php';

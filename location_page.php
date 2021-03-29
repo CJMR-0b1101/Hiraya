@@ -9,7 +9,7 @@
 
 <style>
 	.main-body{
-		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+		background-image: url(https://i.imgur.com/bYsVdHu.png) no-repeat ;
     
 	}
 </style>

@@ -2,6 +2,8 @@
 <html>
 <head>
 	<link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<title>Itinerary</title>
 </head>
@@ -9,6 +11,7 @@
 	.main-body{
 		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
         box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
 	}
 
     h1{
@@ -105,7 +108,7 @@
 
 <body class="main-body">
     
-        <center><h1>DESTINATIONS</h1></center>
+        <center><h1>D E S T I N A T I O N S</h1></center>
         <div class="row">
             <?php
                 include 'config.php';

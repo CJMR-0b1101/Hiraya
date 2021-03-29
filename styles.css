@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 .main-body {
   background-image: url(https://i.imgur.com/atdbjCR.jpg);
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .div-body {
@@ -35,7 +35,7 @@ img{
   padding: 10px;
   color: black;
   height: 50px;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Poppins', sans-serif;
   
 }
 
