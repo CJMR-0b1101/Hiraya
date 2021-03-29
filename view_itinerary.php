@@ -16,7 +16,7 @@
 		height: auto; 
 	}
 	.div-contents{
-		margin-top: 100px;
+		margin-top: 60px;
 		margin-bottom: 20px;
 	}
 	/* BUTTON STYLE */

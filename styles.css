@@ -350,7 +350,7 @@ img{
 
  /* Style the tab */
 .tab {
-  overflow: hidden;
+  
   margin: 10px;
 }
 
@@ -378,7 +378,7 @@ img{
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: pink;
+  background-color:  #c9e265;
   border: solid;
   border-radius: 30px;
 }
@@ -428,6 +428,7 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-left: -200px;
+  margin-top: 20px;
 }
 
 .div-profile-blog {
@@ -556,7 +557,7 @@ textarea:focus {
 }
 
 .diy-progress {
-  background-color: green;
+  background-color: #c9e265;
   position: absolute;
   top: 50%;
   left: 0;
@@ -580,13 +581,13 @@ textarea:focus {
 }
 
 .progress-circle.active {
-  border-color: green;
-  background-color: green;
+  border-color: #c9e265;
+  background-color:  #c9e265;
   color: white;
 }
 
 .progress-btn {
-  background-color: purple;
+  background-color: #00c2cb;
   color: white;
   border-radius: 6px;
   border: 0;

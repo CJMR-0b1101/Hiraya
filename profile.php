@@ -13,7 +13,9 @@
     .div-profile-picture {
         float: center;
     }
-    
+    h3{
+        font-size: 20px;
+    }
     .div-body {
         max-width: 300px;
         margin-left: 50px;
@@ -139,7 +141,7 @@
             <div class="div-profile-content-right">
                 <!-- ITINERARY OF USER -->
                 <div class="div-profile-itinerary">
-                    <h3>My Plans</h3>
+                    <h1>My Plans</h1>
                     <?php
                         include 'config.php';
                         $sql = "SELECT * FROM itinerary WHERE user_id = $user[user_id]";
@@ -165,7 +167,7 @@
 
                 <!-- FETCH USER'S BLOGS FROM DATABASE -->
                 <div class="div-profile-blog">
-                    <h3>My Blogs</h3>
+                    <h1>My Blogs</h1>
                     <?php
                         $sql = "SELECT blog_id, blog_title, blog_description FROM blogs
                         WHERE user_id = $user[user_id]";

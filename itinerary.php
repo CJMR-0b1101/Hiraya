@@ -12,9 +12,8 @@
 	}
 
     h1{
-        margin-top: 20px;
-        margin-right: 10px;
         background-color: none;
+        color: #c9e265;
     }
     
     /* Float four columns side by side */
@@ -39,7 +38,7 @@
         @media screen and (max-width: 600px) {
             .column {
                 width: 100%;
-                display: block;
+                display: block;s
                 margin-bottom: 20px;
             }
         }
@@ -51,6 +50,7 @@
         font-size: 30px;
         text-align: center;
         cursor: pointer;
+        background-color: #00c2cb;
     }
 
     .card:hover {
@@ -63,11 +63,10 @@
     }
 
     /* Style the tab */
-        .tab {
-        
-        margin-top: 100px;
-       
-        }
+    .tab {
+        margin-top: 300px;
+        margin-left: 20px;
+    }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
@@ -107,10 +106,11 @@
 
 <?php include 'navbar.php'; ?>
     <div class="tab">
+        <br>
+        <br>
         <center>
           <button class="tablinks" onclick="openTab(event, 'first-opt')">3 Days & 2 nights</button>
           <button class="tablinks" onclick="openTab(event, 'sec-opt')">5 days & 4 nights</button>
-          <button class="tablinks" onclick="openTab(event, 'third-opt')">7 days & 6 nights</button>
         </center>
       </div>
       <script>
@@ -241,57 +241,7 @@
             ?>
         </div>
     </div>
-    <div id="third-opt" class="tabcontent">
-        <h1><center>ITINERARY</center></h1>
-        <div class="row">
-            <?php
-                include 'config.php';
-                
-                if(!isset($_SESSION['guestlogin']) && !isset($_SESSION['login'])) {
-                    echo'<script> window.location="index.php"; </script>';
-                }
-                elseif(isset($_SESSION['guestlogin'])) {
-                    $sql = "SELECT * FROM locations WHERE day_1 IS NOT NULL";
-                    $result = mysqli_query($conn, $sql);
-                    $rows = mysqli_fetch_all($result);
-                    $len = count($rows);
-                    
-                    for($i = 0; $i < $len; $i++) {
-                        echo '<div class="column">';
-                        echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id=0\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
-                        echo '      <div class="container">';
-                        echo '          <div class="location-name">';
-                        echo '              <h4><b>'.$rows[$i][1].'</b></h4>';
-                        echo '          </div>';
-                        echo '      </div>';
-                        echo '  </div>';
-                        echo '</div>';
-                    }
-                }
-
-                if(isset($_SESSION['login'])) {
-                    $user_id = $_SESSION['user']['user_id'];
-                    $sql = "SELECT * FROM locations WHERE day_1 IS NOT NULL";
-                    $result = mysqli_query($conn, $sql);
-                    $rows = mysqli_fetch_all($result);
-                    $len = count($rows);
-    
-                    for($i = 0; $i < $len; $i++) {
-                        echo '<div class="column">';
-                        echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
-                        echo '      <img src="https://i.imgur.com/SkgKiVt.jpg" alt="Avatar" style="width:100%">';
-                        echo '      <div class="container">';
-                        echo '          <div class="location-name">';
-                        echo '              <h4><b>'.$rows[$i][1].'</b></h4>';
-                        echo '          </div>';
-                        echo '      </div>';
-                        echo '  </div>';
-                        echo '</div>';
-                    }
-                }
-            ?>   
-        </div>
+   
     </div>
 </body>
 </html>

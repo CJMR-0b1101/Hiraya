@@ -31,7 +31,7 @@
           <button class="tablinks" onclick="openTab(event, 'Travel')">Travel Spots</button>
           <button class="tablinks" onclick="openTab(event, 'Transportation')">Transportation Guide</button>
           <button class="tablinks" onclick="openTab(event, 'Hotel')">Hotels</button>
-          <button class="tablinks" onclick="openTab(event, 'Dialect')">Dialect</button>
+          <button class="tablinks" onclick="openTab(event, 'Dialect')">Profile</button>
           <button class="tablinks" onclick="openTab(event, 'Restaurant')">Restaurants</button>
         </center>
       </div>
@@ -166,53 +166,113 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO LOCATIONNAME</h2>
-        <p>SOME CONTENTS MISSING</p>
-        <h2>HOW TO GET AROUND LOCATIONNAME</h2>
-        <p>SOME CONTENTS MISSING</p>
+        <h2>HOW TO GET TO BORACAY</h2>
+        <p><h2>From Kalibo Airport to Caticlan jetty port (2 hours)</h2><br>
+            •	local bus (120)<br>
+            •	non packaged tourist bus (200)<br>
+            •	packaged bus/ van<br></p>
+        <p><h2>Manila to Caticlan Airport(1 hour)</h2<br>
+        From Caticlan Aiport to Caticlan Jetty Port (5-10 mins)<br>
+            •	tricycle (50-75)</p>
+        <p>Cacticlan Jetty Port to Boracay Island (10-15 mins)<br>
+            •	Terminal Fee (PHP100)<br>
+            •	Environmental Fee (P75)<br>
+            •	Boat Fare (PHP25-30 for pumpboats; PHP100 for Oyster Ferry)<br>
+            </p>
       </div>
 
       <div id="Hotel" class="tabcontent">
-        <h2>WHERE TO STAY IN LOCATIONNAME</h2>
-        <center><img class="location-hotel-map-img" src="images/img1.jpg"></center>
+        <center><h2>WHERE TO STAY IN LOCATIONNAME</h2></center>
+       
         <div class="location-station">
           <center>
-            <h1>STATION #</h1>
+            <h1>STATION #1</h1>
             <div class="location-station-content">
               <a href="#">
                 <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>NAME OF HOTEL</h1></center></div>
+                 <div class="location-station-text"><center><h1>HENNAN PRIME BEACH RESORT</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
               <a href="#">
                 <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>NAME OF HOTEL</h1></center></div>
+                 <div class="location-station-text"><center><h1>TWO SEASONS BORACAY RESORT</h1></center></div>
+              </a>
+            </div>
+            <br>
+            <h1>STATION #2</h1>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>THE DISTRICT BORACAY</h1></center></div>
+              </a>
+            </div>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>LE SOLEIL DE BORACAY HOTEL</h1></center></div>
+              </a>
+            </div>
+            <br>
+            <h1>STATION #3</h1>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>DISCOVERY SHORES</h1></center></div>
+              </a>
+            </div>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>THE LIND BORACAY</h1></center></div>
+              </a>
+            </div>
+            <br>
+            <h1>STATION #0</h1>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>SHANGRI-LA BORACAY RESORT</h1></center></div>
+              </a>
+            </div>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>CRIMSON RESORT AND SPA</h1></center></div>
               </a>
             </div>
         </div>
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>DIALECT</h2>
-        <p>This is for Dialect</p>
+        <h2>PROFILE</h2>
+        <p>Languages: English and Tagalog<br>
+          Dialect : Ati and Aklanon<br>
+          Currency: Philippine Peso (PHP)<br>
+          Location: Central Philippines, in the province of Aklan – a part of Panay Island. Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
+      </p>
       </div>
 
       <div id="Restaurant" class="tabcontent">
-        <h2>WHERE TO EAT IN LOCATIONNAME</h2>
+        <center><h2>WHERE TO EAT IN BORACAY</h2></center>
         <div class="location-station">
           <center>
-            <h1>STATION #</h1>
             <div class="location-station-content">
               <a href="#">
                 <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>NAME OF RESTAURANT</h1></center></div>
+                 <div class="location-station-text"><center><h1>Sands</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
               <a href="#">
                 <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>NAME OF RESTAURANT</h1></center></div>
+                 <div class="location-station-text"><center><h1>Indigo Restaurant</h1></center></div>
+              </a>
+            </div>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="images/img1.jpg">
+                 <div class="location-station-text"><center><h1>Dos Mestizos Boracay</h1></center></div>
               </a>
             </div>
         </div>
