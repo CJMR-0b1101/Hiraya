@@ -4,17 +4,18 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
-  <title></title>
+  <title>El Nido, Palawan</title>
 </head>
 
 <style>
-	.main-body{
-		background-image: url(https://i.imgur.com/bYsVdHu.png) no-repeat ;
-    
-	}
+  div.text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: white;
+  }
 </style>
 
-<body class="main-body">
+<body>
 <?php include 'navbar.php'; ?>
   <div class="div-body">
     
@@ -22,8 +23,8 @@
     <br>
     <div class="div-content">
       <div class="div-content-location">
-        <img class="location-img" src="images/img1.jpg">
-        <div class="div-content-location-text"><h1>BORACAY</h1></div>
+        <img class="location-img" src="https://i.imgur.com/Xt5pRgg.jpg">
+        <div class="text"></div>
       </div>
       
       <div class="tab">
@@ -62,15 +63,15 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
-              <h1><div class="text">Go Beach Hopping</div></h1>
+              <img src="https://i.imgur.com/jHVACjt.jpg" id="img_slide">
+              <h1><div class="text">Caption Text</div></h1>
             </div>
             <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
+              <img src="https://i.imgur.com/zHc9SjO.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
+              <img src="https://i.imgur.com/FRWLy4H.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
 
@@ -83,15 +84,15 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
-              <div class="text">Go on a Pub Crawl</div>
-            </div>
-            <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
+              <img src="https://i.imgur.com/pbnkVLY.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
+              <img src="https://i.imgur.com/FgdctQq.jpg" id="img_slide">
+              <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="https://i.imgur.com/uIVZuNR.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
 
@@ -100,17 +101,17 @@
           </div>
         </div>
         <div class="location-travel-slideshow">
-          <div class="slideshow-container slider" id="div2">
+          <div class="slideshow-container slider" id="div3">
             <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
-              <div class="text">•	Water Activities</div>
-            </div>
-            <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
+              <img src="https://i.imgur.com/e9JV14M.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
+              <img src="https://i.imgur.com/xqOtWK1.jpg" id="img_slide">
+              <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="https://i.imgur.com/9EB1cKx.jpg" id="img_slide">
               <div class="text">Caption Text</div>
             </div>
 
@@ -166,79 +167,35 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO BORACAY</h2>
-        <p><h2>From Kalibo Airport to Caticlan jetty port (2 hours)</h2><br>
-            •	local bus (120)<br>
-            •	non packaged tourist bus (200)<br>
-            •	packaged bus/ van<br></p>
-        <p><h2>Manila to Caticlan Airport(1 hour)</h2<br>
-        From Caticlan Aiport to Caticlan Jetty Port (5-10 mins)<br>
-            •	tricycle (50-75)</p>
-        <p>Cacticlan Jetty Port to Boracay Island (10-15 mins)<br>
-            •	Terminal Fee (PHP100)<br>
-            •	Environmental Fee (P75)<br>
-            •	Boat Fare (PHP25-30 for pumpboats; PHP100 for Oyster Ferry)<br>
-            </p>
+        <h2>HOW TO GET TO EL NIDO?</h2>
+        <p>
+        	AirSwift is the only airline that flies from Manila directly to Lio Airport in El Nido. They operate up to four flights per day.
+        	<br>
+        	Vans are the most popular option among travelers for land travel to El Nido because it’s slightly faster than the bus with a travel time of 5-6 hours. The vans only leave once it’s full of passengers. The only stop is halfway for restroom and snack breaks. It’s advisable to book these in advance so they can pick you up straight from the airport. You can also hire a private van if you’re traveling as a group for a more convenient trip.  
+		</p>
       </div>
 
       <div id="Hotel" class="tabcontent">
-        <center><h2>WHERE TO STAY IN LOCATIONNAME</h2></center>
+        <center><h2>WHERE TO STAY IN EL NIDO</h2></center>
        
         <div class="location-station">
           <center>
-            <h1>STATION #1</h1>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>HENNAN PRIME BEACH RESORT</h1></center></div>
+              <a href="https://mbcelnido.com/">
+                <img class="location-station-img" src="https://i.imgur.com/eoBC1ID.png">
+                 <div class="location-station-text"><center><h1>MAREMEGMEG BEACH CLUB</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>TWO SEASONS BORACAY RESORT</h1></center></div>
-              </a>
-            </div>
-            <br>
-            <h1>STATION #2</h1>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>THE DISTRICT BORACAY</h1></center></div>
+              <a href="https://vellago.com/">
+                <img class="location-station-img" src="https://i.imgur.com/mB7bcRh.png">
+                 <div class="location-station-text"><center><h1>VELLAGO RESORT</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>LE SOLEIL DE BORACAY HOTEL</h1></center></div>
-              </a>
-            </div>
-            <br>
-            <h1>STATION #3</h1>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>DISCOVERY SHORES</h1></center></div>
-              </a>
-            </div>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>THE LIND BORACAY</h1></center></div>
-              </a>
-            </div>
-            <br>
-            <h1>STATION #0</h1>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>SHANGRI-LA BORACAY RESORT</h1></center></div>
-              </a>
-            </div>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>CRIMSON RESORT AND SPA</h1></center></div>
+              <a href="https://lio.sedahotels.com/">
+                <img class="location-station-img" src="https://i.imgur.com/UYOGnVx.png">
+                 <div class="location-station-text"><center><h1>SEDA LIO</h1></center></div>
               </a>
             </div>
         </div>
@@ -246,33 +203,44 @@
       
       <div id="Dialect" class="tabcontent">
         <h2>PROFILE</h2>
-        <p>Languages: English and Tagalog<br>
-          Dialect : Ati and Aklanon<br>
-          Currency: Philippine Peso (PHP)<br>
-          Location: Central Philippines, in the province of Aklan – a part of Panay Island. Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
+        <p>
+        	Languages: English and Tagalog
+        	<br>
+			Dialect: Cuyonon, Hiligaynon, Visayan dialect, Bicolano
+			<br>
+ 			<h2>About El Nido:</h2>
+ 			<br>
+ 			El Nido Resorts has received numerous international awards as testament to its green practices and commitment to sustainable tourism, including the prestigious ASEAN Green Hotel Standard in 2010 and the Wild Asia Responsible Tourism Award in 2009. More recently, El Nido Resorts was a winner in the Sustainable Hotel Award – Sustainable Destination Category, the PATA Gold Award – Environmental Education Programme in 2011, and the World Travel and Tourism Council’s Tourism for Tomorrow Awards – Community Benefit Award this year.
+
       </p>
       </div>
 
       <div id="Restaurant" class="tabcontent">
-        <center><h2>WHERE TO EAT IN BORACAY</h2></center>
+        <center><h2>WHERE TO EAT IN EL NIDO</h2></center>
         <div class="location-station">
           <center>
             <div class="location-station-content">
               <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>Sands</h1></center></div>
+                <img class="location-station-img" src="https://i.imgur.com/e10zYyJ.png">
+                 <div class="location-station-text"><center><h1>The Nesting Table</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
               <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>Indigo Restaurant</h1></center></div>
+                <img class="location-station-img" src="https://i.imgur.com/DQFCrVR.png">
+                 <div class="location-station-text"><center><h1>Bella Vita El Nido</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
               <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>Dos Mestizos Boracay</h1></center></div>
+                <img class="location-station-img" src="https://i.imgur.com/FuBNr7m.png">
+                 <div class="location-station-text"><center><h1>Tambok’s</h1></center></div>
+              </a>
+            </div>
+            <div class="location-station-content">
+              <a href="#">
+                <img class="location-station-img" src="https://i.imgur.com/B6mu4bU.png">
+                 <div class="location-station-text"><center><h1>Taste El Nido – The Vegan Café PH</h1></center></div>
               </a>
             </div>
         </div>

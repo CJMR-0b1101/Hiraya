@@ -306,8 +306,7 @@ img{
 .location-img {
   width: 100%;
   height: 300px;
-  object-fit: none;
-  object-position: 0px 30%;
+  object-fit: cover;
 }
 
 .div-content-location-text {
@@ -337,8 +336,7 @@ img{
 .location-station-img {
   width: 100%;
   height: 300px;
-  object-fit: none;
-  object-position: 0px 30%;
+  object-fit: cover;
 }
 
 .location-station-text {
@@ -770,8 +768,7 @@ span a:hover {
 #img_slide {
   width: 100%;
   height: 600px;
-  object-fit: none;
-  object-position: 20%;
+  object-fit: cover;
 }
 
 .prev, .next {

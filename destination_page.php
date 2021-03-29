@@ -117,21 +117,15 @@
                     echo'<script> window.location="index.php"; </script>';
                 }
                 elseif(isset($_SESSION['guestlogin'])) {
-                    $sql = "SELECT * FROM locations WHERE image_file IS NOT NULL";
-                    // $sql = "SELECT * FROM locations";
+                    $sql = "SELECT * FROM locations";
                     $result = mysqli_query($conn, $sql);
                     $rows = mysqli_fetch_all($result);
                     $len = count($rows);
 
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
-                        echo '  <div class="card" onclick="location.href=\'location_page.php?location_id='.$rows[$i][0].'&user_id=0\';">';
+                        echo '  <div class="card" onclick="location.href=\'view_destination'.($i+1).'.php\'">';
                         echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
-                        // echo '      <div class="container">';
-                        // echo '          <div class="location-name">';
-                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        // echo '          </div>';
-                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
@@ -139,21 +133,15 @@
 
                 if(isset($_SESSION['login'])) {
                     $user_id = $_SESSION['user']['user_id'];
-                    $sql = "SELECT * FROM locations WHERE image_file IS NOT NULL";
-                    // $sql = "SELECT * FROM locations";
+                    $sql = "SELECT * FROM locations";
                     $result = mysqli_query($conn, $sql);
                     $rows = mysqli_fetch_all($result);
                     $len = count($rows);
                     
                     for($i = 0; $i < $len; $i++) {
                         echo '<div class="column">';
-                        echo '  <div class="card" onclick="location.href=\'location_page.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
+                        echo '  <div class="card" onclick="location.href=\'view_destination'.($i+1).'.php\'">';
                         echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
-                        // echo '      <div class="container">';
-                        // echo '          <div class="location-name">';
-                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        // echo '          </div>';
-                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
