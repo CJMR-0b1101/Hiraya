@@ -186,21 +186,21 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://threelittlebirdsresort.com/">
+              <a target="_blank" href="https://threelittlebirdsresort.com/">
                 <img class="location-station-img" src="https://i.imgur.com/ZtQnCWG.png">
                  <div class="location-station-text"><center><h1>Three Little Birds Resort</h1></center></div>
               </a>
             </div>
             <br>
             <div class="location-station-content">
-              <a href="https://panglaosearesort.com/">
+              <a target="_blank" href="https://panglaosearesort.com/">
                 <img class="location-station-img" src="https://i.imgur.com/k54SRug.png">
                  <div class="location-station-text"><center><h1>Panglao Sea Resort – Tangnan</h1></center></div>
               </a>
             </div>
             <br>
             <div class="location-station-content">
-              <a href="https://www.booking.com/hotel/ph/sweet-home-boutique.html">
+              <a target="_blank" href="https://www.booking.com/hotel/ph/sweet-home-boutique.html">
                 <img class="location-station-img" src="https://i.imgur.com/PAsG57L.png">
                  <div class="location-station-text"><center><h1>Sweet Home Boutique Hotel</h1></center></div>
               </a>
@@ -224,19 +224,19 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://www.facebook.com/payagrestaurantofficialpage/ ">
+              <a target="_blank" href="https://www.facebook.com/payagrestaurantofficialpage/ ">
                 <img class="location-station-img" src="https://i.imgur.com/XZE8kGx.png">
                  <div class="location-station-text"><center><h1>Payag</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://lobocriverwatch.com/ ">
+              <a target="_blank" href="https://lobocriverwatch.com/ ">
                 <img class="location-station-img" src="https://i.imgur.com/BUhjQao.png">
                  <div class="location-station-text"><center><h1>Loboc River Floating Restaurant</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.facebook.com/Tarsier-Paprika-1310740022316731/ ">
+              <a target="_blank" href="https://www.facebook.com/Tarsier-Paprika-1310740022316731/ ">
                 <img class="location-station-img" src="https://i.imgur.com/cCTi4YV.png">
                  <div class="location-station-text"><center><h1>Tarsier Paprika</h1></center></div>
               </a>

@@ -23,7 +23,7 @@
     <br>
     <div class="div-content">
       <div class="div-content-location">
-        <img class="location-img" src="images/img1.jpg">
+        <img class="location-img" src="https://i.imgur.com/M51bxhi.png">
         <div class="text"><h1>BORACAY</h1></div>
       </div>
       
@@ -63,16 +63,16 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div1">
             <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
+              <img src="https://i.imgur.com/yEZaYDN.jpg" id="img_slide">
               <h1><div class="text">Go Beach Hopping</div></h1>
             </div>
             <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/rtcSMQu.jpg" id="img_slide">
+              <div class="text">Cliff Dive at Ariel's Point</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/kSITuyd.jpg" id="img_slide">
+              <div class="text">Go on a Pub Crawl</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -84,35 +84,20 @@
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div2">
             <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
-              <div class="text">Go on a Pub Crawl</div>
+              <img src="https://i.imgur.com/mvyuBl4.jpg" id="img_slide">
+              <div class="text">Puka Beach</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/P4CZeph.jpg" id="img_slide">
+              <div class="text">Water Activities</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
-            </div>
-
-            <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
-            <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
-          </div>
-        </div>
-        <div class="location-travel-slideshow">
-          <div class="slideshow-container slider" id="div2">
-            <div class="mySlides fade">
-              <img src="images/img1.jpg" id="img_slide">
-              <div class="text">•	Water Activities</div>
+              <img src="https://i.imgur.com/ago4ThU.jpg?1" id="img_slide">
+              <div class="text">High-Altitude Activities</div>
             </div>
             <div class="mySlides fade">
-              <img src="images/img2.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
-            </div>
-            <div class="mySlides fade">
-              <img src="images/img3.jpg" id="img_slide">
-              <div class="text">Caption Text</div>
+              <img src="https://i.imgur.com/E4bPZz1.png" id="img_slide">
+              <div class="text">Trek to Mount Luho</div>
             </div>
 
             <a class="prev" onclick="plusDivs(this,-1)">&#10094;</a>
@@ -168,14 +153,14 @@
 
       <div id="Transportation" class="tabcontent">
         <h2>HOW TO GET TO BORACAY</h2>
-        <p><h2>From Kalibo Airport to Caticlan jetty port (2 hours)</h2><br>
+        <p><h3>From Kalibo Airport to Caticlan jetty port (2 hours)</h3><br>
             •	local bus (120)<br>
             •	non packaged tourist bus (200)<br>
             •	packaged bus/ van<br></p>
-        <p><h2>Manila to Caticlan Airport(1 hour)</h2<br>
+        <p><h3>Manila to Caticlan Airport(1 hour)</h3><br>
         From Caticlan Aiport to Caticlan Jetty Port (5-10 mins)<br>
             •	tricycle (50-75)</p>
-        <p>Cacticlan Jetty Port to Boracay Island (10-15 mins)<br>
+        <p><h3>Cacticlan Jetty Port to Boracay Island (10-15 mins)</h3><br>
             •	Terminal Fee (PHP100)<br>
             •	Environmental Fee (P75)<br>
             •	Boat Fare (PHP25-30 for pumpboats; PHP100 for Oyster Ferry)<br>
@@ -183,63 +168,57 @@
       </div>
 
       <div id="Hotel" class="tabcontent">
-        <center><h2>WHERE TO STAY IN LOCATIONNAME</h2></center>
+        <center><h2>WHERE TO STAY IN BORACAY</h2></center>
        
         <div class="location-station">
           <center>
             <h1>STATION #1</h1>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>HENNAN PRIME BEACH RESORT</h1></center></div>
+              <a target="_blank" href="https://www.henann.com/henannprimebeach/stay/room-packages">
+                <img class="location-station-img" src="https://i.imgur.com/S0bp4qh.png">
+                 <div class="location-station-text"><center><h1>Hennan Prime Beach Resort</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>TWO SEASONS BORACAY RESORT</h1></center></div>
+              <a target="_blank" href="https://twoseasonsresorts.com/">
+                <img class="location-station-img" src="https://i.imgur.com/p4aCL1X.png">
+                 <div class="location-station-text"><center><h1>Two Seasons Boracay Resort</h1></center></div>
               </a>
             </div>
             <br>
             <h1>STATION #2</h1>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>THE DISTRICT BORACAY</h1></center></div>
+              <a target="_blank" href="https://thedistrictboracay.com/">
+                <img class="location-station-img" src="https://i.imgur.com/IVRAoGa.jpg">
+                 <div class="location-station-text"><center><h1>The District Boracay</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>LE SOLEIL DE BORACAY HOTEL</h1></center></div>
+              <a target="_blank" href="Boracay">
+                <img class="location-station-img" src="https://i.imgur.com/YctQj3X.png">
+                 <div class="location-station-text"><center><h1>Le Soleil De Boracay Hotel</h1></center></div>
               </a>
             </div>
             <br>
             <h1>STATION #3</h1>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>DISCOVERY SHORES</h1></center></div>
+              <a target="_blank" href="https://www.discoveryshoresboracay.com/">
+                <img class="location-station-img" src="https://i.imgur.com/ochDaFv.png">
+                 <div class="location-station-text"><center><h1>Discovery Shores</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>THE LIND BORACAY</h1></center></div>
+              <a target="_blank" href="https://www.thelindhotels.com/">
+                <img class="location-station-img" src="https://i.imgur.com/wdNsDTn.png">
+                 <div class="location-station-text"><center><h1>The Lind Boracay</h1></center></div>
               </a>
             </div>
             <br>
             <h1>STATION #0</h1>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>SHANGRI-LA BORACAY RESORT</h1></center></div>
-              </a>
-            </div>
-            <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
-                 <div class="location-station-text"><center><h1>CRIMSON RESORT AND SPA</h1></center></div>
+              <a target="_blank" href="https://www.shangri-la.com/en/boracay/boracayresort/">
+                <img class="location-station-img" src="https://i.imgur.com/Pd4cUc6.png">
+                 <div class="location-station-text"><center><h1>Shangri-la Boracay Resort</h1></center></div>
               </a>
             </div>
         </div>
@@ -250,7 +229,8 @@
         <p>Languages: English and Tagalog<br>
           Dialect : Ati and Aklanon<br>
           Currency: Philippine Peso (PHP)<br>
-          Location: Central Philippines, in the province of Aklan – a part of Panay Island. Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
+          Location: Central Philippines, in the province of Aklan – a part of Panay Island.
+          <br>Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
       </p>
       </div>
 
@@ -259,20 +239,20 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
+              <a target="_blank" href="https://www.discoveryshoresboracay.com/bars-restaurants/sands-restaurant/">
+                <img class="location-station-img" src="https://i.imgur.com/h5FMLea.jpg">
                  <div class="location-station-text"><center><h1>Sands</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
+              <a target="_blank" href="https://www.discoveryshoresboracay.com/bars-restaurants/indigo-restaurant/">
+                <img class="location-station-img" src="https://i.imgur.com/8o7ROIP.jpg">
                  <div class="location-station-text"><center><h1>Indigo Restaurant</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
-                <img class="location-station-img" src="images/img1.jpg">
+              <a target="_blank" href="http://dosmestizos.com/">
+                <img class="location-station-img" src="https://i.imgur.com/a2fBTIa.jpg">
                  <div class="location-station-text"><center><h1>Dos Mestizos Boracay</h1></center></div>
               </a>
             </div>

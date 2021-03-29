@@ -169,11 +169,11 @@
       <div id="Transportation" class="tabcontent">
         <h2>HOW TO GET TO CORON PALAWAN</h2>
         <p>
-        	Plane:
+        	<h2>Plane</h2>
           <br>
           You have to fly from Manila to Busuanga airport, Palawan. You can take Cebu Pacific Air, Zest Air or PAL Express. From Busuanga aiport, you take a jeepney for about one hour to reach Coron Town. The ride cost about P150 per person.
           <br>
-          Ferry Boat:
+          <h2>Ferry Boat</h2>
           <br>
           From Manila you can take the SuperFerry. It goes once a week to Puerto Princesa and stops off at Coron on the way. Departures are every Friday at 4:15pm and you arrive in Coron the day after at 5:30 am (about 12 hours). You can get back to Manila by the same way.
 		</p>
