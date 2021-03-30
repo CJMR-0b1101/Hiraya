@@ -45,7 +45,15 @@
     }
     input[type=text], input[type=password] {
         width: 50%;
+        padding: 10px 20px;box-sizing: border-box;
+		border: 2px solid #747F42;
+		border-radius: 10px;
     }
+    input:focus {
+				background-color: #04BFBF;
+				outline: none;
+				box-shadow: 0px 0px 2px #0066ff;
+			}
 </style>
 
 <body class="main-body">
