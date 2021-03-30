@@ -13,7 +13,9 @@
         font-family: 'Poppins', sans-serif;
     }
 	.main-body{
-		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+		background-image: url(https://i.imgur.com/4mExAFS.png);
+		background-position: center bottom;
+        min-height: 1500px;
         box-sizing: border-box;
 	}
 

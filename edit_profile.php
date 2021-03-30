@@ -12,8 +12,8 @@
 
 <style>
     .main-body{
-        float:center;
-        background-image: url(https://i.imgur.com/bYsVdHu.png);
+        background-image: url(https://i.imgur.com/4mExAFS.png);
+		background-position: center bottom;
     }
     .div-body {
         max-width: 300px;

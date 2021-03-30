@@ -8,8 +8,9 @@
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 <style>
     .main-body{
-        float:center;
-        background-image: url(https://i.imgur.com/bYsVdHu.png);
+        background-image: url(https://i.imgur.com/4mExAFS.png);
+		background-position: center bottom;
+        min-height: 1000px; 
     }
     .div-profile-picture {
         float: center;

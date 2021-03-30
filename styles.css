@@ -1,9 +1,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 .main-body {
-  background-image: url(https://i.imgur.com/atdbjCR.jpg);
+  background-image: url(https://i.imgur.com/4mExAFS.png);
+	background-position: center bottom;
   font-family: 'Poppins', sans-serif;
-  background-attachment: scroll;
 }
 
 .div-body {

@@ -14,7 +14,8 @@
 	<style>
 		/* Background */
 			body{
-				background-image: url(https://i.imgur.com/bYsVdHu.png);
+				background-image: url(https://i.imgur.com/4mExAFS.png);
+				background-position: center bottom;
 			}
 			h1{
 				margin-top: -10px;

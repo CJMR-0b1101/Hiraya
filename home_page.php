@@ -11,7 +11,8 @@
 <style>
 	.main-body{
         float:center;
-        background-image: url(https://i.imgur.com/bYsVdHu.png);
+        background-image: url(https://i.imgur.com/4mExAFS.png);
+		background-position: center bottom;
     }
 	h1{
 		color:#c9e265;

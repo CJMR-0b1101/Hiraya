@@ -10,7 +10,8 @@
 </head>
 <style>
 	.main-body{
-		background-image: url(https://i.imgur.com/bYsVdHu.png) ;
+		background-image: url(https://i.imgur.com/4mExAFS.png);
+		background-position: center bottom;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
 	}
