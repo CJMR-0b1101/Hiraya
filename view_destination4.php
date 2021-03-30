@@ -173,31 +173,31 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://twoseasonsresorts.com/coron/">
+              <a target="_blank" href="https://twoseasonsresorts.com/coron/">
                 <img class="location-station-img" src="https://i.imgur.com/Ub4Pq9Q.png">
                  <div class="location-station-text"><center><h1>TWO SEASONS CORON ISLAND RESORT AND SPA</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.clubparadisepalawan.com/">
+              <a target="_blank" href="https://www.clubparadisepalawan.com/">
                 <img class="location-station-img" src="https://i.imgur.com/6kIcOVl.png">
                  <div class="location-station-text"><center><h1>CLUB PARADISE PALAWAN</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://busuangabaylodge.com/">
+              <a target="_blank" href="https://busuangabaylodge.com/">
                 <img class="location-station-img" src="https://i.imgur.com/07xXKgi.png">
                  <div class="location-station-text"><center><h1>BUSUANGA BAY LODGE</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.humaisland.com/">
+              <a target="_blank" href="https://www.humaisland.com/">
                 <img class="location-station-img" src="https://i.imgur.com/7kuHNST.png">
                  <div class="location-station-text"><center><h1>HUMA ISLAND RESORT SPA</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.coronwestownresort.com/">
+              <a target="_blank" href="https://www.coronwestownresort.com/">
                 <img class="location-station-img" src="https://i.imgur.com/9VwKvlx.jpg">
                  <div class="location-station-text"><center><h1>CORON WESTOWN RESORT</h1></center></div>
               </a>
@@ -219,31 +219,31 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://levoyagecoron.com">
                 <img class="location-station-img" src="https://i.imgur.com/rLDtlfh.png">
                  <div class="location-station-text"><center><h1>Le Voyage</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="#">
                 <img class="location-station-img" src="https://i.imgur.com/C7fsGdR.png">
                  <div class="location-station-text"><center><h1>Trattoria Altrove Coron</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.facebook.com/TrattoriaAltrove">
                 <img class="location-station-img" src="https://i.imgur.com/qoNJFGU.png">
                  <div class="location-station-text"><center><h1>Summer Café and Bar</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://bit.ly/31venmb">
                 <img class="location-station-img" src="https://i.imgur.com/Vyl783X.png">
                  <div class="location-station-text"><center><h1>Rosa’s Cantina</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.yelp.com/biz/buzz-express-coron">
                 <img class="location-station-img" src="https://i.imgur.com/vCPLtCs.png">
                  <div class="location-station-text"><center><h1>Buzz Express</h1></center></div>
               </a>

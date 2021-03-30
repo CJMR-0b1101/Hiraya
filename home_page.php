@@ -9,6 +9,10 @@
 	<title>Hiraya</title>
 </head>
 <style>
+	.main-body{
+        float:center;
+        background-image: url(https://i.imgur.com/bYsVdHu.png);
+    }
 	h1{
 		color:#c9e265;
 	}
@@ -20,6 +24,7 @@
 <body class="main-body">
 	
 		<?php include 'navbar.php'; ?>
+		<div class="div-body-margin"></div>
 		<div class="div-body-margin"></div>
 		<br>
 		<div class="slideshow-container">
@@ -82,10 +87,6 @@
 
 				if($result) {
 					$rows = mysqli_fetch_all($result);
-
-					// echo "<pre>";
-					// print_r($rows);
-					// echo "</pre>";
 				}
 			else {
 				echo "NOT FETCHED";

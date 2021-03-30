@@ -72,7 +72,6 @@
 		<?php include 'navbar.php'; ?>
 		<div class="div-body-margin"></div>
 		<br>
-		<br><hr class="solid">
 		<div class="div-body-margin"></div>
 		<div class="div-content">
 			<div class="div-content-home">
@@ -128,6 +127,15 @@
                     <form class="example" action="" method="POST" style="margin: auto; max-width: 500px;">
                         <input type="text" placeholder="Search title of blog.." name="search_input">
                         <button type="submit" name='search'><i class="fa fa-search"></i></button>
+                        <br><br>
+                        <center>
+                        <?php 
+                            if(isset($_POST['search'])) {
+                                echo 'You are searching for <i>"'.$search_str.'"  </i>'; 
+                                echo '<input class="x-button" type="submit" value="x">';
+                            }
+                        ?>
+                        </center>
                     </form>
 
 				</div>

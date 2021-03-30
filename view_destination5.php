@@ -108,6 +108,8 @@
             <a class="next" onclick="plusDivs(this,1)">&#10095;</a>
           </div>
         </div>
+        <br>
+        
         <div class="location-travel-slideshow">
           <div class="slideshow-container slider" id="div3">
             <div class="mySlides fade">
