@@ -32,7 +32,7 @@
     <div class="div-content">
       <div class="div-content-location">
         <img class="location-img" src="https://i.imgur.com/pbnkVLY.jpg">
-        <div class="text">El Nido, Palawan</div>
+        <div class="text">E l  N i d o, P a l a w a n</div>
       </div>
       
       <div class="tab">

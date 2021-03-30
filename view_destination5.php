@@ -32,7 +32,7 @@
     <div class="div-content">
       <div class="div-content-location">
         <img class="location-img" src="https://i.imgur.com/0xW1kiz.png">
-        <div class="text"><h1>BAGUIO</h1></div>
+        <div class="text"><h1>B A G U I O</h1></div>
       </div>
       
       <div class="tab">
