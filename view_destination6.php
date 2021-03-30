@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -167,17 +174,17 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO SIARGAO</h2>
-        <p><h2>From Manila – Fly via Cebu Pacific, PAL or Skyjet directly to Siargao</h2><br>
-            •	From Surigao City – Ride a ferry to Dapa Port in Siargao.(P220-P320)<br>
-            •	From Butuan City – Ride a bus or van to Surigao City. Travel should take 3-4 hours(P220)<br>
-            •	From the bus terminal, ride a minivan or tricycle to Surigao Port (P15.) Then ride a ferry to Dapa Port in Siargao Island.<br></p>
-        <p><h2>From Cebu – Cebu Pacific also has direct flights from Cebu to Siargao. </h2<br>
-        Fares range as low as P825 for the economy seat to P5550 for an executive suite.<br></p>
-        <p>From Davao – Philippine Airlines now has direct flights to Siargao. <br>
-            •	Fare is P570 (non-AC) ; P720 (AC) and travel could last up to 15Hrs. <br>
-            •	In Surigao City, simply hop on a ferry to Dapa Port in Siargao Island.<br>
-            </p>
+      <center><h2>HOW TO GET TO SIARGAO</h2>
+        <p><h4>From Manila – Fly via Cebu Pacific, PAL or Skyjet directly to Siargao</h4>
+        <h4>•	From Surigao City – Ride a ferry to Dapa Port in Siargao.(P220-P320)<h4>
+        <h4>•	From Butuan City – Ride a bus or van to Surigao City. Travel should take 3-4 hours(P220)<h4>
+        <h4>•	From the bus terminal, ride a minivan or tricycle to Surigao Port (P15.) Then ride a ferry to Dapa Port in Siargao Island.<h4></p>
+        <p><h3>•From Cebu – Cebu Pacific also has direct flights from Cebu to Siargao. </h3>
+        <h4>•Fares range as low as P825 for the economy seat to P5550 for an executive suite.</h4></p>
+        <p><h4>•From Davao – Philippine Airlines now has direct flights to Siargao. </h4>
+        <h4>•	Fare is P570 (non-AC) ; P720 (AC) and travel could last up to 15Hrs. </h4>
+        <h4>•	In Surigao City, simply hop on a ferry to Dapa Port in Siargao Island.</h4>
+            </p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -215,10 +222,11 @@
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
-        <p>Languages: English and Tagalog<br>
-            Dialect : Surigaonon, Bisayan Language, Cebuano, Boholano<br>
-      </p>
+        <center><h2>PROFILE</h2>
+        <p><h3>Languages: English and Tagalog</h3>
+        <h3>Dialect : Surigaonon, Bisayan Language, Cebuano, Boholano</h3>
+        <h3>About Siargao: Siargao Island is a tear-drop shaped island in the Philippine Sea situated 800 kilometers southeast of Manila in the province of Surigao del Norte, northeastern Mindanao.</h3>
+      </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">
@@ -248,7 +256,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 

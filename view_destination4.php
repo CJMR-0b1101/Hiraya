@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -150,17 +157,13 @@
       <div id="Transportation" class="tabcontent">
         <center><h2>HOW TO GET TO CORON PALAWAN</h2>
         <p>
-        	<h2>Plane</h2>
-          <br>
-          You have to fly from Manila to Busuanga airport, Palawan. You can take Cebu Pacific Air, Zest Air or PAL Express. 
-          <br>From Busuanga aiport, you take a jeepney for about one hour to reach Coron Town. 
-          <br>The ride cost about P150 per person.
-          <br>
-          <h2>Ferry Boat</h2>
-          <br>
-          From Manila you can take the SuperFerry. It goes once a week to Puerto Princesa and stops off at Coron on the way. 
-          <br>Departures are every Friday at 4:15pm and you arrive in Coron the day after at 5:30 am (about 12 hours). You can get back to Manila by the same way.
-		</p></center>
+        	<h3>Plane</h3>
+          <h4>•You have to fly from Manila to Busuanga airport, Palawan. You can take Cebu Pacific Air, Zest Air or PAL Express. </h4>
+          <h4>•From Busuanga aiport, you take a jeepney for about one hour to reach Coron Town. </h4>
+          <h4>•The ride cost about P150 per person.</h4>
+          <h3>Ferry Boat</h3>
+          <h4>•From Manila you can take the SuperFerry. It goes once a week to Puerto Princesa and stops off at Coron on the way. </h4>
+		    </p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -204,12 +207,10 @@
       <div id="Dialect" class="tabcontent">
         <center><h2>PROFILE</h2>
         <p>
-          Language: Pilipino and Cuyonon, Palawan’s native dialect, are the main languages spoken.  A majority of the population can also converse in English.  Bisaya (or Cebuano) is also spoken by a small segment.
-          <br>
-          Currency:  The main currency is the Philippine Peso.  US Dollars may be exchanged but at a slightly lower rate than in Manila.  A few establishments already accept credit cards.  DARAYONAN accepts credit card payments for Mastercard and VISA cards.  Debit payments through selected ATM cards is also available.
-          <br>
-          Coron is a small, rapidly developing town on the island of Busuanga where most people stay when they visit the Calamianes Group of islands in northern Palawan. 
-      </p></center>
+        <h3>Language: Pilipino and Cuyonon, English.  Bisaya (or Cebuano) </h3>
+        <h3>Currency:  The main currency is the Philippine Peso.  US Dollars may be exchanged but at a slightly lower rate than in Manila. </h3>
+        <h3>About Coron: Coron is a small, rapidly developing town on the island of Busuanga where most people stay when they visit the Calamianes Group of islands in northern Palawan. </h3>
+        </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">
@@ -251,7 +252,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 

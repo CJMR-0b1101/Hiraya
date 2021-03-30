@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -24,7 +31,7 @@
     <div class="div-content">
       <div class="div-content-location">
         <img class="location-img" src="https://i.imgur.com/M51bxhi.png">
-        <div class="text"><h1>BORACAY</h1></div>
+        <div class="text"><h1>B O R A C A Y</h1></div>
       </div>
       
       <div class="tab">
@@ -152,19 +159,19 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO BORACAY</h2>
-        <p><h3>From Kalibo Airport to Caticlan jetty port (2 hours)</h3><br>
-            •	local bus (120)<br>
-            •	non packaged tourist bus (200)<br>
-            •	packaged bus/ van<br></p>
-        <p><h3>Manila to Caticlan Airport(1 hour)</h3><br>
-        From Caticlan Aiport to Caticlan Jetty Port (5-10 mins)<br>
-            •	tricycle (50-75)</p>
-        <p><h3>Cacticlan Jetty Port to Boracay Island (10-15 mins)</h3><br>
-            •	Terminal Fee (PHP100)<br>
-            •	Environmental Fee (P75)<br>
-            •	Boat Fare (PHP25-30 for pumpboats; PHP100 for Oyster Ferry)<br>
-            </p>
+      <center><h2>HOW TO GET TO BORACAY</h2>
+        <p><h3>From Kalibo Airport to Caticlan jetty port (2 hours)</h3>
+          <h4> •	local bus (120)<h4>
+          <h4>•	non packaged tourist bus (200)<h4>
+          <h4>•	packaged bus/ van<h4><br></p>
+        <p><h3>Manila to Caticlan Airport(1 hour)</h3>
+        <h3>From Caticlan Aiport to Caticlan Jetty Port (5-10 mins)</h3>
+          <h4>•	tricycle (50-75)</h4></p><br>
+        <p><h3>Cacticlan Jetty Port to Boracay Island (10-15 mins)</h3>
+          <h4>•	Terminal Fee (PHP100)</h4>
+          <h4>•	Environmental Fee (P75)</h4>
+          <h4> •Boat Fare (PHP25-30 for pumpboats; PHP100 for Oyster Ferry)</h4><br>
+        </p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -225,13 +232,13 @@
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
-        <p>Languages: English and Tagalog<br>
-          Dialect : Ati and Aklanon<br>
-          Currency: Philippine Peso (PHP)<br>
-          Location: Central Philippines, in the province of Aklan – a part of Panay Island.
-          <br>Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
-      </p>
+       <center> <h2>PROFILE</h2>
+        <p><h3>Languages: English and Tagalog</h3>
+        <h3>Dialect : Ati and Aklanon</h3>
+        <h3>Currency: Philippine Peso (PHP)</h3>
+        <h3>Location: Central Philippines, in the province of Aklan – a part of Panay Island.</h3>
+        <h3>Best time to visit: For the best weather, visit between February to May. Drier months mean more tourists, so take the crowd into account.
+      </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">
@@ -261,7 +268,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 

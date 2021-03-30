@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -167,39 +174,29 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO BAGUIO</h2>
+        <center><h2>HOW TO GET TO BAGUIO</h2>
         <p>
-        	From Pasay City
-          <br><br>
-          There are a number of bus companies operating from Pasay to Baguio. The two most popular bus companies are Joy Bus (Genesis Transport) and Victory Liner. Both bus companies offer premier and deluxe-class seats and have routes to the Tarlac–Pangasinan–La Union Expressway (TPLEX), North Luzon Expressway (NLEX), and Subic Clark Tarlac Expressway (SCTEX).
+        <h3>From Pasay City</h3>
+        <h4> •There are a number of bus companies operating from Pasay to Baguio. The two most popular bus companies are Joy Bus (Genesis Transport) and Victory Liner. Both bus companies offer premier and deluxe-class seats and have routes to the Tarlac–Pangasinan–La Union Expressway (TPLEX), North Luzon Expressway (NLEX), and Subic Clark Tarlac Expressway (SCTEX).</h4>
           <br>
-          From Cubao in Quezon City
-          <br><br>
-          Aside from Victory Liner and Genesis Joy Bus, Partas also offers bus rides to Baguio. These bus companies have terminals in Cubao in Quezon City. Victory Liner, Partas, and Genesis also offer premier seats for a more comfortable trip.
+        <h3>From Cubao in Quezon City</h3>
+          <h4> •Aside from Victory Liner and Genesis Joy Bus, Partas also offers bus rides to Baguio. These bus companies have terminals in Cubao in Quezon City. Victory Liner, Partas, and Genesis also offer premier seats for a more comfortable trip.</h4>
           <br>
-          From Avenida in Manila
-          <br><br>
-          Genesis Joy Bus and Philippine Rabbit Bus Lines have buses headed for Baguio at the Avenida Terminal in Manila. Both bus companies offer deluxe and semi-deluxe buses from Avenida to Baguio. These deluxe buses boast comfy couches with spacious legroom.
-          <br><br>
-          From Sampaloc in Manila
-          <br><br>
-          Victory Liner offers regular air-conditioned (AC)  buses headed for Baguio at their Sampaloc terminal in the city of Manila. As of now, first-class deluxe buses are not available yet.
+        <h3>From Avenida in Manila</h3>
+        <h4> •Genesis Joy Bus and Philippine Rabbit Bus Lines have buses headed for Baguio at the Avenida Terminal in Manila. Both bus companies offer deluxe and semi-deluxe buses from Avenida to Baguio.</h4>
+        <br><h3> From Sampaloc in Manila</h3>
+        <h4> •Victory Liner offers regular air-conditioned (AC)  buses headed for Baguio at their Sampaloc terminal in the city of Manila. </h4>
           <br>
-          From Parañaque City
-          <br><br>
-          You can catch a ride to Baguio at the Parañaque Integrated Terminal Exchange (PITX). Solid North Transit’s Baguio routes at PITX offers the first point-to-point (P2P) buses that ply Baguio to Manila. Aside from spacious seats, P2P buses do not have stop-overs and have toilets on board, which ensures you get to Baguio faster.
+          <h3>From Parañaque City</h3>
+          <h4> •You can catch a ride to Baguio sat the Parañaque Integrated Terminal Exchange (PITX). Solid North Transit’s Baguio routes at PITX offers the first point-to-point (P2P) buses that ply Baguio to Manila. </h4>
           <br>
-          By Private and Shared tours
+          <h3>By Private and Shared tours</h3>
+          <h4> •If you want to experience Baguio completely without the hassle of commuting, then joining a shared or private tour is the most convenient way.</h4>
           <br>
-          If you want to experience Baguio completely without the hassle of commuting, then joining a shared or private tour is the most convenient way.
-          There are a lot of Baguio tour operators offering different Baguio tours and activities with free roundtrip transportation. You just have to look for the right one that fits your budget and schedule.
-          <br>
-          By Car
-          <br>
-          You can either rent a car or drive your own car going to Baguio, you just have to choose the most convenient route for you. You can either take the NLEX-SCTEX route, the TPLEX route, and many more.
-          <br>
-          Make use of apps like Waze or Google Maps. Book with an accredited operator for your car rentals to avoid mishaps along the way.
-		</p>
+          <h3> By Car</h3>
+          <h4> •You can either rent a car or drive your own car going to Baguio, you just have to choose the most convenient route for you. You can either take the NLEX-SCTEX route, the TPLEX route, and many more.</h4>
+          <h4> •Make use of apps like Waze or Google Maps. Book with an accredited operator for your car rentals to avoid mishaps along the way.</h4>
+		    </center></p>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -241,18 +238,14 @@
       </div>
       
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
+        <center><h2>PROFILE</h2>
         <p>
-          Dialect/Languages
-          <br>
-          Ilocano is the predominant dialect in the city. The national language, Filipino, is of course spoken by almost everyone. English is widely spoken and understood.
-          <br>
-          Profile
-          <br>
-          The name Baguio conjures, for both the international and domestic traveler, a highland retreat in the Grand Cordillera in Northern Luzon, with pine trees, crisp cold breezes and low verdant knolls and hillocks. Through the numerous decades Baguio has morphed from what was once a grassy marshland into one of the cleanest and greenest, most highly urbanized cities in the country. It has made its mark as a premiere tourist destination in the Northern part of the Philippines with its cool climate, foggy hills, panoramic views and lovely flowers. Being the ideal convergence zone of neighboring highland places, Baguio is the melting pot of different peoples and cultures and has boosted its ability to provide a center for education for its neighbors. Its rich culture and countless resources have lured numerous investments and business opportunities to the city.
-
-
-      </p>
+        <h3>Dialect/Languages: Ilocano,Filipino,English</h3>
+        <h3>Currency: Philippine Peso (PHP)</h3>
+        <h3> About Baguio</h3>
+        <h3>The name Baguio conjures, for both the international and domestic traveler, a highland retreat in the Grand Cordillera in Northern Luzon, with pine trees, crisp cold breezes and low verdant knolls and hillocks. 
+          It has made its mark as a premiere tourist destination in the Northern part of the Philippines with its cool climate, foggy hills, panoramic views and lovely flowers.</h3>
+      </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">
@@ -312,7 +305,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 

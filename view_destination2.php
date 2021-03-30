@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -169,15 +176,15 @@
       </div>
 
       <div id="Transportation" class="tabcontent">
-        <h2>HOW TO GET TO BOHOL</h2>
-        <p><h2>By Plane</h2><br>
-            •	From Manila to Tagbiliran City<br>
-            •	From Cebu City to Tagbiliran City<br></p>
-        <p><h2>By Boat</h2><br>
-            •	From Cebu City to Tagbiliran City Pier<br>
-            •	From Manila Tagbiliran City Piebr<br>
-            •	From Dipolog to Tagbiliran City Pierr<br> 
-            •	From Dumaguete to Tagbiliran City Pier <br></p>
+        <center><h2>HOW TO GET TO BOHOL</h2>
+        <p><h3>By Plane</h3>
+            <h4>•	From Manila to Tagbiliran City</h4>
+            <h4>•	From Cebu City to Tagbiliran City</h4></p><br>
+        <p><h3>By Boat</h3>
+        <h4>•	From Cebu City to Tagbiliran City Pier</h4>
+        <h4>•	From Manila Tagbiliran City Piebr</h4>
+        <h4> •	From Dipolog to Tagbiliran City Pierr</h4> 
+        <h4>•	From Dumaguete to Tagbiliran City Pier </h4></p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -210,13 +217,13 @@
       </div>
 
       <div id="Dialect" class="tabcontent">
-        <h2>PROFILE</h2>
-        <p>Languages: English and Tagalog<br>
-          Dialect : Cebuano and Boholano<br>
-          Currency: Philippine Peso (PHP)<br>
-          Location: Central Visayas, Philippines. It is the second main tourist destination in the country after Boracay. 
-          <br>Bohol Island is also the main scuba diving destination in the Phillipines and has excellent diving opportunities to offer.
-        </p>
+        <center><h2>PROFILE</h2>
+        <p><h3>Languages: English and Tagalog</h3>
+        <h3>Dialect : Cebuano and Boholano</h3>
+        <h3> Currency: Philippine Peso (PHP)</h3>
+        <h3>Location: Central Visayas, Philippines. It is the second main tourist destination in the country after Boracay. </h3>
+        <h3>Bohol Island is also the main scuba diving destination in the Phillipines and has excellent diving opportunities to offer.</h3>
+        </p></center>
       </div>
 
       <div id="Restaurant" class="tabcontent">
@@ -246,7 +253,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 

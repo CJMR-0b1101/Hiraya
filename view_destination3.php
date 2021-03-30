@@ -8,10 +8,17 @@
 </head>
 
 <style>
+  .main-body{
+    font-family: 'Poppins', sans-serif;
+  }
   div.text{
     font-family: 'Poppins', sans-serif;
     font-size: 30px;
     color: white;
+  }
+  h2{
+    color: #c9e265;
+    text-decoration: underline;
   }
 </style>
 
@@ -168,11 +175,11 @@
 
       <div id="Transportation" class="tabcontent">
         <center><h2>HOW TO GET TO EL NIDO?</h2>
-        <p>
-        	AirSwift is the only airline that flies from Manila directly to Lio Airport in El Nido. They operate up to four flights per day.
-        	<br>
-        	Vans are the most popular option among travelers for land travel to El Nido because it’s slightly faster than the bus with a travel time of 5-6 hours. The vans only leave once it’s full of passengers. The only stop is halfway for restroom and snack breaks. It’s advisable to book these in advance so they can pick you up straight from the airport. You can also hire a private van if you’re traveling as a group for a more convenient trip.  
-		</p></center>
+        <p><h3>Via Private Plane</h3>
+        <h4>•AirSwift is the only airline that flies from Manila directly to Lio Airport in El Nido. They operate up to four flights per day.</h4>
+        <h3>Via Puerto Prinsesa</h3>
+        <h4>•Vans are the most popular option among travelers for land travel to El Nido because it’s slightly faster than the bus with a travel time of 5-6 hours. </h4>
+		    </p></center>
       </div>
 
       <div id="Hotel" class="tabcontent">
@@ -203,15 +210,11 @@
       
       <div id="Dialect" class="tabcontent">
       <center> <h2>PROFILE</h2>
-        <p>
-        	Languages: English and Tagalog
-        	<br>
-			  Dialect: Cuyonon, Hiligaynon, Visayan dialect, Bicolano
-			<br>
- 			<h2>About El Nido:</h2>
- 			El Nido Resorts has received numerous international awards as testament to its green practices and commitment to sustainable tourism, <br>
-      including the prestigious ASEAN Green Hotel Standard in 2010 and the Wild Asia Responsible Tourism Award in 2009.
-
+        <p><h3>Languages: English and Tagalog</h3>
+        <h3>Dialect: Cuyonon, Hiligaynon, Visayan dialect, Bicolano</h3>
+			<br><h3>About El Nido:</h3>
+ 			<h3>El Nido Resorts has received numerous international awards as testament to its green practices and commitment to sustainable tourism, <br>
+      including the prestigious ASEAN Green Hotel Standard in 2010 and the Wild Asia Responsible Tourism Award in 2009.</h3>
       </p></center>
       </div>
 
@@ -248,7 +251,9 @@
     </div>
     
   </div>
-
+  <div class="div-blog-footer">
+    <h3>All rights reserve. Hiraya 2021</h3>
+  </div>
 </body>
 </html>
 
