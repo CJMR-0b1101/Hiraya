@@ -7,6 +7,7 @@
 
 <!-- LOGIN PHP -->
 <?php
+	$status_msg = "";
 	if(isset($_POST['login'])) {
 		$username = $_POST['uname'];
 		$password = sha1($_POST['pword']);
@@ -32,9 +33,10 @@
 			header("location: home_page.php");
 		} 
 		else {
-			echo '<h2 align="center" style="color: red;">Invalid Login Credentials!</h2>';
+			$status_msg = 'Invalid login credentials';
 		}
 	}
+	echo "<center><h3 style='color: red;'>$status_msg</h3></center>";
 ?>
 
 <!-- REGISTRATION PHP -->
@@ -42,6 +44,8 @@
 	$firstname = "";
 	$lastname = "";
 	$username = "";
+	$status_msg = "";
+	$color = 'red';
 
     if(isset($_POST['signup'])) {
         // include 'config.php';
@@ -60,8 +64,8 @@
 		if(isValidName($firstname, $status_msg) && isValidName($lastname, $status_msg) && isValidUsername($username, $status_msg) 
 		&& (isValidPassword($password, $status_msg))) {
 			if($password != $cpassword) {
-				echo "Password does not match<br>";
-				return;
+				$status_msg = 'Password does not match';
+				// return;
 			}
 			else {
 				// Check if user is existing
@@ -70,7 +74,7 @@
 				$result = mysqli_query($conn, $sql);
 
 				if(mysqli_num_rows($result) != 0) {
-					echo '<h2 align="center" style="color: red;">User already exist!</h2>';
+					$status_msg = 'User already exist';
 				}
 				else {
 					$password = sha1($password);
@@ -81,20 +85,22 @@
 					$insert_result = mysqli_query($conn, $sql);
 	
 					if($insert_result) {
-						echo '<h2 align="center" style="color: green";>Registered Succesfully</h2>';
-						echo '<h4 align="center" style="color: green";>Redirecting to Login in 3 seconds</h4>';
+						$status_msg = 'Registered Succesfully.<br>You may now login';
+						$color = 'green';
 
-						header( "Refresh:3; url=login.php", True, 303);
+						$firstname = "";
+						$lastname = "";
+						$username = "";
+
+						// header( "Refresh:3; url=login.php", True, 303);
 					}
 					else {
-						echo '<h2 align="center" style="color: red;">Registration Failed</h2>';
+						$status_msg = 'Registration Failed';
 					}
 				}
 			}
-				$firstname = "";
-				$lastname = "";
-				$username = "";
 		}
+		echo "<center><h3 style='color: $color;'>$status_msg</h3></center>";
     }
 ?>
 

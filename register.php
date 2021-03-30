@@ -128,7 +128,7 @@
 		if(isValidName($firstname, $status_msg) && isValidName($lastname, $status_msg) && isValidUsername($username, $status_msg) 
 		&& (isValidPassword($password, $status_msg))) {
 			if($password != $cpassword) {
-				$status_msg = 'Password does not match.';
+				$status_msg = 'Password does not match';
 			}
 			else {
 				// Check if user is existing
@@ -137,7 +137,7 @@
 				$result = mysqli_query($conn, $sql);
 
 				if(mysqli_num_rows($result) != 0) {
-					$status_msg = 'User already exist.';
+					$status_msg = 'User already exist';
 				}
 				else {
 					$password = sha1($password);
@@ -158,7 +158,7 @@
 						header("Refresh:2.5; url=login.php", True, 303);
 					}
 					else {
-						$status_msg = 'Registration Failed.';
+						$status_msg = 'Registration Failed';
 					}
 				}
 			}
