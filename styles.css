@@ -3,6 +3,7 @@
 .main-body {
   background-image: url(https://i.imgur.com/atdbjCR.jpg);
   font-family: 'Poppins', sans-serif;
+  background-attachment: scroll;
 }
 
 .div-body {
@@ -45,20 +46,19 @@ img{
 
 .div-nav-bar-left {
   float: left;
-  padding: 5px;
-  padding-bottom: 5px;
+  height: 70px;
 }
 
 .div-nav-bar-right {
   float: right;
+  height: 70px;
   padding-bottom: 5px;
-  border:2px solid black;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
-  min-width: 100px;
+  width: 150px;
   margin: 0px 10px;
 }
 
@@ -66,10 +66,15 @@ img{
   border: none;
   background: none;
   width: 100%;
+  height: 70px;
   color: black;
   font-family: 'Noto Sans TC', sans-serif;
   font-size: large;
-  padding-top: 10px;
+  padding: 5px;
+}
+
+.dropbtn a {
+  color: black;
 }
 
 .dropdown-content {
@@ -85,7 +90,7 @@ img{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  background-color: #A0A603;
+  background-color: #04ADBF;
 }
 
 .nav-bar-btn {
@@ -93,8 +98,8 @@ img{
   border: none;
   background: none;
   color: black;
-  min-width: 100px;
-  margin: 0px 10px;
+  width: 150px;
+  height: 70px;
   font-size: large;
   padding-bottom: 5px;
   padding-top: 15px;
@@ -103,9 +108,11 @@ img{
 
 .dropdown-content a:hover {background-color: #F2E0C9;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {color: #04ADBF;}
-.nav-bar-btn:hover {cursor: pointer; color: #04ADBF;}
+.dropdown:hover .dropbtn {color: white;}
+.dropbtn a:hover {color: white;}
+.nav-bar-btn:hover {cursor: pointer; color: white;}
 .nav-bar-btn:focus {outline: none;}
+.dropbtn:focus {outline: none;}
 
 /* HOME CONTENT */
 .div-content-background {
@@ -145,7 +152,8 @@ img{
   list-style: none;
   background: none;
   width: 100%;
-  background-color: #00c2cb;
+  /*background-color: #00c2cb;*/
+  background-color: rgb(0, 0, 0, 0.5);
   color: #c9e265;
 }
 
@@ -298,6 +306,7 @@ img{
   font-size: large;
 }
 .div-content-location {
+  margin-top: 20px;
   position: relative;
   text-align: center;
   color: white;
@@ -398,7 +407,8 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 80%;
   padding: 10px;
-  background-color: white;
+  background-color: black;
+  background-color: rgb(0, 0, 0, 0.2);
   
 }
 
@@ -412,6 +422,7 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   width: 80%;
+  background-color: rgb(0, 0, 0, 0.1);
 }
 
 .div-profile-content-right {
@@ -423,11 +434,11 @@ img{
 
 .div-profile-itinerary {
   width: 100%;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-left: -200px;
   margin-top: 20px;
-  background-color: #04ADBF;
+  background-color: rgb(0, 0, 0, 0.1);
 }
 
 .div-profile-blog {
@@ -435,6 +446,7 @@ img{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   margin-left: -200px;
+  background-color: rgb(0, 0, 0, 0.1);
 }
 
 .btn-submit {
@@ -445,6 +457,15 @@ img{
 .btn-upload {
   padding: 5px;
   width: 100%;
+}
+
+.profile-links {
+  text-decoration: none;
+  color: black;
+}
+
+.profile-links:hover {
+  text-decoration: underline;
 }
 
 

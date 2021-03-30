@@ -191,19 +191,19 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://mbcelnido.com/">
+              <a target="_blank"href="https://mbcelnido.com/">
                 <img class="location-station-img" src="https://i.imgur.com/eoBC1ID.png">
                  <div class="location-station-text"><center><h1>MAREMEGMEG BEACH CLUB</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://vellago.com/">
+              <a target="_blank"href="https://vellago.com/">
                 <img class="location-station-img" src="https://i.imgur.com/mB7bcRh.png">
                  <div class="location-station-text"><center><h1>VELLAGO RESORT</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://lio.sedahotels.com/">
+              <a target="_blank" href="https://lio.sedahotels.com/">
                 <img class="location-station-img" src="https://i.imgur.com/UYOGnVx.png">
                  <div class="location-station-text"><center><h1>SEDA LIO</h1></center></div>
               </a>
@@ -226,25 +226,25 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.thebirdhouseelnido.com/the-nesting-table/">
                 <img class="location-station-img" src="https://i.imgur.com/e10zYyJ.png">
                  <div class="location-station-text"><center><h1>The Nesting Table</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.facebook.com/bellavitaelnido/">
                 <img class="location-station-img" src="https://i.imgur.com/DQFCrVR.png">
                  <div class="location-station-text"><center><h1>Bella Vita El Nido</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.tamboks.ph">
                 <img class="location-station-img" src="https://i.imgur.com/FuBNr7m.png">
                  <div class="location-station-text"><center><h1>Tambok’s</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://bit.ly/3cAdS0E">
                 <img class="location-station-img" src="https://i.imgur.com/B6mu4bU.png">
                  <div class="location-station-text"><center><h1>Taste El Nido – The Vegan Café PH</h1></center></div>
               </a>

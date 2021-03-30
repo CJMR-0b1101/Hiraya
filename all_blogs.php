@@ -4,7 +4,7 @@
 	<link rel="icon" href="images/hiraya_icon.ico">
 	<link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -66,19 +66,11 @@
     .link_title{
         color: red;
     }
-    .x-button {
-        border-radius: 10px;
-    }
-    .x-button:focus {
-        outline: none;
-        box-shadow: 0px 0px 10px #0066ff;
-    }
 </style>
 <body class="main-body">
 	<div class="div-body">
 		<?php include 'navbar.php'; ?>
 		<div class="div-body-margin"></div>
-		<br>
 		<br>
 		<div class="div-body-margin"></div>
 		<div class="div-content">

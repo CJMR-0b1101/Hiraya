@@ -107,9 +107,7 @@
 <body>
 	<div class="div-nav-bar">
 		<div class="div-nav-bar-left">
-			<div class="dropdown">
-				<button class="nav-bar-btn"><a href="home_page.php"><img src="https://i.imgur.com/L9KYRtV.png"></a></button>
-			</div>
+			<button class="nav-bar-btn"><a href="home_page.php"><img src="https://i.imgur.com/L9KYRtV.png"></a></button>
 			<div class="dropdown">
 				<button class="dropbtn"><a href="destination_page.php">DESTINATION</a></button>
 				<div class="dropdown-content">

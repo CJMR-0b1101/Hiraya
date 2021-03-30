@@ -196,26 +196,26 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="https://www.islacabanaresort.com/">
+              <a target="_blank" href="https://www.islacabanaresort.com/">
                 <img class="location-station-img" src="https://i.imgur.com/ZW8aW28.png">
                  <div class="location-station-text"><center><h1>Isla Cabana Resort</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://bulanvillas.com/">
+              <a target="_blank" href="https://bulanvillas.com/">
                 <img class="location-station-img" src="https://i.imgur.com/k2tBTAd.png">
                  <div class="location-station-text"><center><h1>Bulan Villas Siargao</h1></center></div>
               </a>
             </div>
             <br>
             <div class="location-station-content">
-              <a href="https://www.bravosiargao.com/">
+              <a target="_blank" href="https://www.bravosiargao.com/">
                 <img class="location-station-img" src="https://i.imgur.com/1nuvI01.png">
                  <div class="location-station-text"><center><h1>Bravo Beach Resort</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="https://www.sandyfeetsiargao.com/">
+              <a target="_blank" href="https://www.sandyfeetsiargao.com/">
                 <img class="location-station-img" src="https://i.imgur.com/gsK2bfe.png">
                  <div class="location-station-text"><center><h1>Sandy Feet Siargao</h1></center></div>
               </a>
@@ -237,19 +237,19 @@
         <div class="location-station">
           <center>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://theblisssiargao.com">
                 <img class="location-station-img" src="https://i.imgur.com/vHHEnM6.png">
                  <div class="location-station-text"><center><h1>Bliss Restaurant</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.bravosiargao.com/restaurant/bravo-restaurant.html">
                 <img class="location-station-img" src="https://i.imgur.com/vHHEnM6.png">
                  <div class="location-station-text"><center><h1>Bravo Restaurant</h1></center></div>
               </a>
             </div>
             <div class="location-station-content">
-              <a href="#">
+              <a target="_blank" href="https://www.kalinawresort.com/drink-dine/">
                 <img class="location-station-img" src="https://i.imgur.com/FGsz9uJ.png">
                  <div class="location-station-text"><center><h1>Kalinaw Resort Restaurant</h1></center></div>
               </a>

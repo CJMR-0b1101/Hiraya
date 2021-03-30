@@ -121,13 +121,13 @@
 
                 <!-- DISPLAY USER INFORMATION -->
                 <div class="div-profile-info">
-                    <h3>Information</h3>
+                    <h2>Information</h2>
                     <?php
                         $fullname = $user['first_name'].' '.$user['last_name'];
-                        echo "Full name: ".$fullname.'<br>';
-                        echo empty($user['age']) ? "Age: Not yet set<br>" : "Age: ".$user['age'].'<br>';
-                        echo empty($user['email']) ? "Email: Not yet set<br>" : "Email: ".$user['email'].'<br>';
-                        echo empty($user['location']) ? "Location: Not yet set<br>" : "Location: ".$user['location'].'<br>';
+                        echo "<b>Full name:</b> ".$fullname.'<br>';
+                        echo empty($user['age']) ? "<b>Age:</b> Not yet set<br>" : "<b>Age:</b> ".$user['age'].'<br>';
+                        echo empty($user['email']) ? "<b>Email:</b> Not yet set<br>" : "<b>Email:</b> ".$user['email'].'<br>';
+                        echo empty($user['location']) ? "<b>Location:</b> Not yet set<br>" : "<b>Location:</b> ".$user['location'].'<br>';
 
                         // EDIT PROFILE IS CLICKED
                         if(isset($_POST['edit_info']))
@@ -150,7 +150,7 @@
                         $rows = mysqli_fetch_all($plan_result);
                         $len = count($rows);
                         if($len == 0) {
-                            echo "<p>You don't have plans yet</p>";
+                            echo "<p><h2>You don't have plans yet</h2></p>";
                         }
                         else {
                             for($i = 0; $i < $len; $i++) {
@@ -159,7 +159,7 @@
                                 $fetch = mysqli_fetch_array($location_result);
                                 $location_name = $fetch['location_name'];
 
-                                echo "<a href='view_itinerary.php?location_id=".$rows[$i][2]."&user_id=".$rows[$i][1]."'>Location: ".$location_name."</a><br>";
+                                echo "<h2><a class='profile-links' href='view_itinerary.php?location_id=".$rows[$i][2]."&user_id=".$rows[$i][1]."'>Location: ".$location_name."</a></h2><br>";
                             }
                         }
                     ?>
@@ -189,7 +189,7 @@
                                         $blog_id_array[$i] = $row[$i][$j];
                                     }
                                     elseif($j == 1)
-                                        echo "<a href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a><br>";
+                                        echo "<h2><a class'profile-links' href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a></h2><br>";
                                     else
                                         echo "Description: ".$row[$i][$j].'<br>';
                                 }
@@ -197,7 +197,7 @@
                             }
                         }
                         else {
-                            echo "You don't have blogs yet.";
+                            echo "<h2>You don't have blogs yet.</h2>";
                         }
                     ?>
                     <form action="create_blog.php" method="post">
