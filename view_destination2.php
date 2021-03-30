@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="images/hiraya_icon.ico">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
   <title>Bohol</title>

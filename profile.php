@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Profile</title>
+	<link rel="icon" href="images/hiraya_icon.ico">
 </head>
 
 <script src="https://kit.fontawesome.com/69e995a5a1.js" crossorigin="anonymous"></script>
