@@ -402,6 +402,12 @@ img{
   width: 50%;
   margin-left: -150px;
 }
+.div-profile-content-edit {
+  margin-top: 60px;
+  width: 100%;
+  margin: 80px auto;
+  align-content: center;
+}
 
 .div-profile-picture {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -409,7 +415,7 @@ img{
   padding: 10px;
   background-color: black;
   background-color: rgb(0, 0, 0, 0.2);
-  
+  margin:auto;
 }
 
 .div-profile-picture img {
@@ -423,7 +429,9 @@ img{
   padding: 10px;
   width: 80%;
   background-color: rgb(0, 0, 0, 0.1);
+  margin: auto;
 }
+
 
 .div-profile-content-right {
   width: 69%;

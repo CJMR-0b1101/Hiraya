@@ -53,7 +53,10 @@
 				background-color: #04BFBF;
 				outline: none;
 				box-shadow: 0px 0px 2px #0066ff;
-			}
+	}
+    .btn-upload{
+        margin-left: 30%;
+    }
 </style>
 
 <body class="main-body">
@@ -107,7 +110,7 @@
         <!-- PROFILE PICTURE SECTION -->
         
         <div class="div-content">
-            <div class="div-profile-content-left">
+            <div class="div-profile-content-edit">
                 <div class="div-profile-picture">
                     <?php
                         $filename = "default_icon.png";
@@ -120,7 +123,7 @@
                         <br>
                         <label for="">Browse:</label>
                         <br>
-                        <input class="btn-upload" type="file" name="profilepic">
+                        <center><input class="btn-upload" type="file" name="profilepic"></center>
                         <br>
                         <center><input class="button-style" type="submit" name="upload" value="Upload Photo"></center>
                     </form>

@@ -189,7 +189,7 @@
                                         $blog_id_array[$i] = $row[$i][$j];
                                     }
                                     elseif($j == 1)
-                                        echo "<h2><a class'profile-links' href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a></h2><br>";
+                                        echo "<h2><a class='profile-links' href='view_blog.php?blog_id=".$row[$i][0]."'>Title: ".$row[$i][$j]."</a></h2><br>";
                                     else
                                         echo "Description: ".$row[$i][$j].'<br>';
                                 }
