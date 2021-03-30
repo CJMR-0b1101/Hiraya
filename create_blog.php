@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Blogs</title>
+	<link rel="icon" href="images/hiraya_icon.ico">
 </head>
 <style>
   .main-body{

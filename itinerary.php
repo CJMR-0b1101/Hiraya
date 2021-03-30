@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="images/hiraya_icon.ico">
 	<link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -158,11 +159,6 @@
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id=0\';">';
                         echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
-                        // echo '      <div class="container">';
-                        // echo '          <div class="location-name">';
-                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        // echo '          </div>';
-                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }
@@ -179,11 +175,6 @@
                         echo '<div class="column">';
                         echo '  <div class="card" onclick="location.href=\'view_itinerary.php?location_id='.$rows[$i][0].'&user_id='.$user_id.'\';">';
                         echo '      <img src="'.$rows[$i][5].'" alt="Avatar" style="width: 100%; height: 100%;">';
-                        // echo '      <div class="container">';
-                        // echo '          <div class="location-name">';
-                        // echo '              <h5><b>'.$rows[$i][1].'</b></h5>';
-                        // echo '          </div>';
-                        // echo '      </div>';
                         echo '  </div>';
                         echo '</div>';
                     }

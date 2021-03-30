@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="images/hiraya_icon.ico">
   <title>Edit Blog</title>
 </head>
 <style>
